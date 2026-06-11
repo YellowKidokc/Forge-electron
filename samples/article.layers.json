@@ -1,0 +1,16 @@
+{
+  "document_id": "article",
+  "layers": {
+    "paragraph-a-society-cannot-measure-moral-decline-if-it-has": {
+      "easy": "You cannot say society is getting worse unless you know what good means.",
+      "academic": "A claim of moral decline presupposes a prior normative standard by which decline can be measured.",
+      "math_translation": "decline = current moral state - moral-health baseline",
+      "commentary": [
+        {
+          "label": "Core idea",
+          "value": "Moral decline requires a reference standard."
+        }
+      ]
+    }
+  }
+}

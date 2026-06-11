@@ -1,0 +1,167 @@
+#!/usr/bin/env node
+import { mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { basename, dirname, extname, join, relative, resolve } from 'node:path';
+import { exportHtml } from '../export/htmlExporter.ts';
+import { getForgeSidecarPath, loadLayers } from '../layers/layerStore.ts';
+import { parseMarkdown } from '../parser/markdownParser.ts';
+import { stampMarkdownFile } from '../parser/stamper.ts';
+import { formatValidation, validateMarkdownFile } from '../validation/validate.ts';
+
+interface CliOptions {
+  dryRun: boolean;
+  preserveIds: boolean;
+}
+
+function usage(): never {
+  console.error(`Usage: npm run forge -- <command> <path> [options]
+
+Commands:
+  parse <file.md> [--preserve-ids]
+  stamp <file.md> [--dry-run]
+  validate <file.md>
+  export <file.md>
+  export-folder <folder> [--dry-run]`);
+  process.exit(1);
+}
+
+function parseOptions(args: string[]): { command?: string; target?: string; options: CliOptions } {
+  const [command, target, ...flags] = args;
+  return {
+    command,
+    target,
+    options: {
+      dryRun: flags.includes('--dry-run'),
+      preserveIds: flags.includes('--preserve-ids')
+    }
+  };
+}
+
+function parseDocument(markdownPath: string) {
+  const absolutePath = resolve(markdownPath);
+  const markdown = readFileSync(absolutePath, 'utf8');
+  return { absolutePath, document: parseMarkdown(markdown, absolutePath) };
+}
+
+function writeForgeSidecar(absolutePath: string): { outputPath: string; diagnostics: string[] } {
+  const { document } = parseDocument(absolutePath);
+  const outputPath = getForgeSidecarPath(absolutePath);
+  mkdirSync(dirname(outputPath), { recursive: true });
+  writeFileSync(outputPath, `${JSON.stringify(document, null, 2)}\n`, 'utf8');
+  return {
+    outputPath,
+    diagnostics: (document.diagnostics ?? []).map(
+      (diagnostic) => `Duplicate ID '${diagnostic.requestedId}' at line ${diagnostic.line}; repaired to '${diagnostic.repairedId}'`
+    )
+  };
+}
+
+function parseCommand(markdownPath: string): void {
+  const result = writeForgeSidecar(resolve(markdownPath));
+  for (const diagnostic of result.diagnostics) console.warn(`Warning: ${diagnostic}`);
+  console.log(`Wrote ${result.outputPath}`);
+}
+
+function stampCommand(markdownPath: string, dryRun: boolean): void {
+  const absolutePath = resolve(markdownPath);
+  const result = stampMarkdownFile(absolutePath, dryRun);
+
+  if (result.additions.length === 0) {
+    console.log(`No missing FORGE IDs found in ${absolutePath}`);
+    return;
+  }
+
+  const prefix = dryRun ? 'Would add' : 'Added';
+  for (const addition of result.additions) {
+    console.log(`${prefix} line ${addition.line}: ${addition.text}`);
+  }
+
+  if (dryRun) {
+    console.log('Dry run only; file was not modified.');
+  } else {
+    console.log(`Backup written to ${result.backupPath}`);
+    console.log(`Stamped ${absolutePath}`);
+  }
+}
+
+function validateCommand(markdownPath: string): void {
+  const result = validateMarkdownFile(resolve(markdownPath));
+  console.log(formatValidation(result));
+  if (!result.ok) process.exit(1);
+}
+
+function exportCommand(markdownPath: string, outputPath?: string): string {
+  const { absolutePath, document } = parseDocument(markdownPath);
+  const sidecar = writeForgeSidecar(absolutePath);
+  const layers = loadLayers(absolutePath);
+  const html = exportHtml(document, layers, { sourcePath: absolutePath });
+  const stem = basename(absolutePath, extname(absolutePath));
+  const resolvedOutputPath = outputPath ?? join(process.cwd(), 'exports', `${stem}.html`);
+  mkdirSync(dirname(resolvedOutputPath), { recursive: true });
+  writeFileSync(resolvedOutputPath, html, 'utf8');
+  for (const diagnostic of sidecar.diagnostics) console.warn(`Warning: ${diagnostic}`);
+  console.log(`Wrote ${sidecar.outputPath}`);
+  console.log(`Wrote ${resolvedOutputPath}`);
+  return resolvedOutputPath;
+}
+
+function shouldSkipDirectory(name: string): boolean {
+  return name === 'node_modules' || name === '.git' || name === 'exports' || name.startsWith('.');
+}
+
+function findMarkdownFiles(folderPath: string): string[] {
+  const entries = readdirSync(folderPath, { withFileTypes: true });
+  const files: string[] = [];
+
+  for (const entry of entries) {
+    const entryPath = join(folderPath, entry.name);
+    if (entry.isDirectory()) {
+      if (!shouldSkipDirectory(entry.name)) files.push(...findMarkdownFiles(entryPath));
+      continue;
+    }
+    if (entry.isFile() && entry.name.toLowerCase().endsWith('.md')) files.push(entryPath);
+  }
+
+  return files;
+}
+
+function exportFolderCommand(folderPath: string, dryRun: boolean): void {
+  const root = resolve(folderPath);
+  if (!statSync(root).isDirectory()) throw new Error(`Not a directory: ${root}`);
+  const files = findMarkdownFiles(root);
+
+  for (const file of files) {
+    const relativePath = relative(root, file);
+    const outputPath = join(process.cwd(), 'exports', dirname(relativePath), `${basename(file, extname(file))}.html`);
+    if (dryRun) {
+      console.log(`Would export ${file} -> ${outputPath}`);
+    } else {
+      exportCommand(file, outputPath);
+    }
+  }
+
+  console.log(`${dryRun ? 'Found' : 'Exported'} ${files.length} Markdown file(s).`);
+}
+
+const { command, target, options } = parseOptions(process.argv.slice(2));
+if (!command || !target) usage();
+const targetPath = target;
+
+switch (command) {
+  case 'parse':
+    parseCommand(targetPath);
+    break;
+  case 'stamp':
+    stampCommand(targetPath, options.dryRun);
+    break;
+  case 'validate':
+    validateCommand(targetPath);
+    break;
+  case 'export':
+    exportCommand(targetPath);
+    break;
+  case 'export-folder':
+    exportFolderCommand(targetPath, options.dryRun);
+    break;
+  default:
+    usage();
+}

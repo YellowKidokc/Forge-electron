@@ -10,6 +10,26 @@ commentary panels, and reusable template components.
 dropdowns, proof panels, equation translators, reading-level toggles, and
 structured annotation — all composable and reusable.
 
+
+## Markdown-First CLI
+
+Phase 1 and Phase 2 include a local Markdown-first FORGE engine. It does not require Electron, Postgres, BlockNote, or AI APIs.
+
+```bash
+npm run forge -- parse samples/article.md
+npm run forge -- parse samples/article.md --preserve-ids
+npm run forge -- stamp samples/article.md --dry-run
+npm run forge -- stamp samples/article.md
+npm run forge -- validate samples/article.md
+npm run forge -- export samples/article.md
+npm run forge -- export-folder samples --dry-run
+npm run forge -- export-folder samples
+npm test
+npm run typecheck
+```
+
+See `docs/PHASE_2_MARKDOWN_HARDENING.md` for the hardened Markdown workflow, safety rules, and known limitations.
+
 ## Architecture
 
 ```
