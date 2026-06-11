@@ -7,11 +7,15 @@ import { parseMarkdown } from '../parser/markdownParser.ts';
 import { stampMarkdownFile } from '../parser/stamper.ts';
 import { formatValidation, validateMarkdownFile } from '../validation/validate.ts';
 import { importFolderToVault } from '../vault/importer.ts';
+import { loadEngines, resolveEnginesRoot, runEngine } from '../engine/engine.ts';
+import { syncMirror } from '../mirror/mirror.ts';
 
 interface CliOptions {
   dryRun: boolean;
   preserveIds: boolean;
   vaultPath?: string;
+  mirrorPath?: string;
+  engineId?: string;
 }
 
 function usage(): never {
@@ -23,7 +27,10 @@ Commands:
   validate <file.md>
   export <file.md>
   export-folder <folder> [--dry-run]
-  import-folder <folder> [--vault vault/imported] [--dry-run]`);
+  import-folder <folder> [--vault vault/imported] [--dry-run]
+  mirror <folder> [--mirror folder/_data] [--dry-run]
+  engines <folder>
+  run-engine <folder> <engine-id> [--mirror folder/_data] [--dry-run]`);
   process.exit(1);
 }
 
@@ -33,15 +40,31 @@ function optionValue(flags: string[], name: string): string | undefined {
   return flags[index + 1];
 }
 
+function positionalValues(values: string[]): string[] {
+  const positional: string[] = [];
+  for (let index = 0; index < values.length; index += 1) {
+    const value = values[index];
+    if (value.startsWith('--')) {
+      if (value === '--vault' || value === '--mirror') index += 1;
+      continue;
+    }
+    positional.push(value);
+  }
+  return positional;
+}
+
 function parseOptions(args: string[]): { command?: string; target?: string; options: CliOptions } {
   const [command, target, ...flags] = args;
+  const positional = positionalValues(flags);
   return {
     command,
     target,
     options: {
       dryRun: flags.includes('--dry-run'),
       preserveIds: flags.includes('--preserve-ids'),
-      vaultPath: optionValue(flags, '--vault')
+      vaultPath: optionValue(flags, '--vault'),
+      mirrorPath: optionValue(flags, '--mirror'),
+      engineId: positional[0]
     }
   };
 }
@@ -135,6 +158,41 @@ function findMarkdownFiles(folderPath: string): string[] {
 }
 
 
+
+function mirrorCommand(folderPath: string, options: CliOptions): void {
+  const plan = syncMirror(folderPath, options.mirrorPath, options.dryRun);
+  for (const directory of plan.directories) {
+    const prefix = options.dryRun ? 'Would create' : 'Ensured';
+    console.log(`${prefix} ${directory}`);
+  }
+
+  if (options.dryRun) {
+    console.log(`Dry run only; mirror would track ${plan.files.length} file(s) at ${plan.mirrorRoot}.`);
+  } else {
+    console.log(`Mirror synced ${plan.files.length} file(s) at ${plan.mirrorRoot}.`);
+    console.log(`Wrote ${plan.manifestPath}`);
+  }
+}
+
+function enginesCommand(folderPath: string): void {
+  const enginesRoot = resolveEnginesRoot(folderPath);
+  const engines = loadEngines(folderPath, enginesRoot);
+  console.log(`FORGE engines: ${enginesRoot}`);
+  for (const engine of engines) {
+    console.log(`${engine.enabled ? '✅' : '⚠'} ${engine.id} (${engine.engine}) trigger=${engine.trigger ?? 'manual'}`);
+  }
+}
+
+
+function runEngineCommand(folderPath: string, options: CliOptions): void {
+  if (!options.engineId) throw new Error('run-engine requires an engine id, for example: npm run forge -- run-engine notes export_html');
+  const result = runEngine(folderPath, options.engineId, options.mirrorPath, options.dryRun);
+  for (const output of result.outputs) {
+    console.log(`${output.action === 'would-write' ? 'Would write' : 'Wrote'} ${output.outputPath}`);
+  }
+  console.log(`${options.dryRun ? 'Dry run for' : 'Ran'} engine ${result.engine.id}; ${result.outputs.length} output(s).`);
+}
+
 function importFolderCommand(folderPath: string, options: CliOptions): void {
   const vaultPath = options.vaultPath ?? join(process.cwd(), 'vault', basename(resolve(folderPath)));
   const result = importFolderToVault(folderPath, vaultPath, options.dryRun);
@@ -192,6 +250,15 @@ switch (command) {
     break;
   case 'import-folder':
     importFolderCommand(targetPath, options);
+    break;
+  case 'mirror':
+    mirrorCommand(targetPath, options);
+    break;
+  case 'engines':
+    enginesCommand(targetPath);
+    break;
+  case 'run-engine':
+    runEngineCommand(targetPath, options);
     break;
   default:
     usage();

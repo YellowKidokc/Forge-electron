@@ -6,6 +6,8 @@ import { exportHtml } from '../export/htmlExporter.ts';
 import { loadLayers } from '../layers/layerStore.ts';
 import { validateMarkdownFile } from '../validation/validate.ts';
 import { importFolderToVault } from '../vault/importer.ts';
+import { loadEngines, runEngine } from '../engine/engine.ts';
+import { syncMirror } from '../mirror/mirror.ts';
 import { createBlockId } from './blockId.ts';
 import { parseMarkdown } from './markdownParser.ts';
 
@@ -109,5 +111,37 @@ test('imports many markdown and text files into a vault manifest', () => {
   assert.equal(result.files.length, 2);
   assert.match(readFileSync(join(vault, 'manifest.json'), 'utf8'), /message.txt/);
   assert.equal(readFileSync(join(vault, 'nested', 'message.txt'), 'utf8'), 'hello');
+  rmSync(root, { recursive: true, force: true });
+});
+
+
+test('syncs a data mirror for content files', () => {
+  const root = join(process.cwd(), '.tmp-forge-tests');
+  const content = join(root, 'content');
+  rmSync(root, { recursive: true, force: true });
+  mkdirSync(join(content, 'folder'), { recursive: true });
+  writeFileSync(join(content, 'folder', 'note.md'), '# Note', 'utf8');
+
+  const plan = syncMirror(content, undefined, false);
+  assert.equal(plan.files.length, 1);
+  assert.match(readFileSync(plan.manifestPath, 'utf8'), /folder\/note.md/);
+  assert.ok(plan.files[0].mirrorDirectory.endsWith('folder/note'));
+  rmSync(root, { recursive: true, force: true });
+});
+
+test('loads default engines and dry-runs statistics output', () => {
+  const root = join(process.cwd(), '.tmp-forge-tests');
+  const content = join(root, 'content');
+  rmSync(root, { recursive: true, force: true });
+  mkdirSync(content, { recursive: true });
+  writeFileSync(join(content, 'note.md'), '# Note\n\nhello world', 'utf8');
+
+  const result = runEngine(content, 'statistics', undefined, true);
+  const engines = loadEngines(content);
+  assert.ok(engines.some((engine) => engine.id === 'statistics'));
+  assert.equal(result.engine.id, 'statistics');
+  assert.equal(result.outputs.length, 1);
+  assert.equal(result.outputs[0].action, 'would-write');
+  assert.ok(result.outputs[0].outputPath.endsWith('note.stats.json'));
   rmSync(root, { recursive: true, force: true });
 });
