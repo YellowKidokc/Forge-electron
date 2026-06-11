@@ -1,10 +1,13 @@
 import assert from 'node:assert/strict';
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { test } from 'node:test';
 import { exportHtml } from '../export/htmlExporter.ts';
 import { loadLayers } from '../layers/layerStore.ts';
 import { validateMarkdownFile } from '../validation/validate.ts';
+import { importFolderToVault } from '../vault/importer.ts';
+import { loadEngines, runEngine } from '../engine/engine.ts';
+import { syncMirror } from '../mirror/mirror.ts';
 import { createBlockId } from './blockId.ts';
 import { parseMarkdown } from './markdownParser.ts';
 
@@ -87,5 +90,58 @@ test('missing layer and claim sidecars do not crash export', () => {
   const html = exportHtml(document, loadLayers(markdownPath), { sourcePath: markdownPath, exportedAt: 'test-time' });
   assert.match(html, /Layer file<\/dt><dd>plain\.layers\.json: missing/);
   assert.match(html, /Claims file<\/dt><dd>plain\.claims\.json: missing/);
+  assert.match(html, /Toggle files/);
+  assert.match(html, /Toggle layers/);
+  rmSync(root, { recursive: true, force: true });
+});
+
+
+test('imports many markdown and text files into a vault manifest', () => {
+  const root = join(process.cwd(), '.tmp-forge-tests');
+  const source = join(root, 'source');
+  const vault = join(root, 'vault');
+  rmSync(root, { recursive: true, force: true });
+  mkdirSync(join(source, 'nested'), { recursive: true });
+  mkdirSync(join(source, '.hidden'), { recursive: true });
+  writeFileSync(join(source, 'note.md'), '# Note', 'utf8');
+  writeFileSync(join(source, 'nested', 'message.txt'), 'hello', 'utf8');
+  writeFileSync(join(source, '.hidden', 'skip.md'), '# Skip', 'utf8');
+
+  const result = importFolderToVault(source, vault, false);
+  assert.equal(result.files.length, 2);
+  assert.match(readFileSync(join(vault, 'manifest.json'), 'utf8'), /message.txt/);
+  assert.equal(readFileSync(join(vault, 'nested', 'message.txt'), 'utf8'), 'hello');
+  rmSync(root, { recursive: true, force: true });
+});
+
+
+test('syncs a data mirror for content files', () => {
+  const root = join(process.cwd(), '.tmp-forge-tests');
+  const content = join(root, 'content');
+  rmSync(root, { recursive: true, force: true });
+  mkdirSync(join(content, 'folder'), { recursive: true });
+  writeFileSync(join(content, 'folder', 'note.md'), '# Note', 'utf8');
+
+  const plan = syncMirror(content, undefined, false);
+  assert.equal(plan.files.length, 1);
+  assert.match(readFileSync(plan.manifestPath, 'utf8'), /folder\/note.md/);
+  assert.ok(plan.files[0].mirrorDirectory.endsWith('folder/note'));
+  rmSync(root, { recursive: true, force: true });
+});
+
+test('loads default engines and dry-runs statistics output', () => {
+  const root = join(process.cwd(), '.tmp-forge-tests');
+  const content = join(root, 'content');
+  rmSync(root, { recursive: true, force: true });
+  mkdirSync(content, { recursive: true });
+  writeFileSync(join(content, 'note.md'), '# Note\n\nhello world', 'utf8');
+
+  const result = runEngine(content, 'statistics', undefined, true);
+  const engines = loadEngines(content);
+  assert.ok(engines.some((engine) => engine.id === 'statistics'));
+  assert.equal(result.engine.id, 'statistics');
+  assert.equal(result.outputs.length, 1);
+  assert.equal(result.outputs[0].action, 'would-write');
+  assert.ok(result.outputs[0].outputPath.endsWith('note.stats.json'));
   rmSync(root, { recursive: true, force: true });
 });

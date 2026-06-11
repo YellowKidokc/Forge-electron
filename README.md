@@ -24,11 +24,16 @@ npm run forge -- validate samples/article.md
 npm run forge -- export samples/article.md
 npm run forge -- export-folder samples --dry-run
 npm run forge -- export-folder samples
+npm run forge -- import-folder path/to/notes --vault vault/notes --dry-run
+npm run forge -- import-folder path/to/notes --vault vault/notes
+npm run forge -- mirror path/to/notes --dry-run
+npm run forge -- engines path/to/notes
+npm run forge -- run-engine path/to/notes statistics --dry-run
 npm test
 npm run typecheck
 ```
 
-See `docs/PHASE_2_MARKDOWN_HARDENING.md` for the hardened Markdown workflow, safety rules, and known limitations.
+See `docs/PHASE_2_MARKDOWN_HARDENING.md` for the hardened Markdown workflow, `docs/VAULT_IMPORT_AND_COLUMNS.md` for bulk import plus the two-column model, and `docs/DATA_MIRROR_AND_GLOBAL_ENGINE.md` for `_data/` mirrors and YAML engines.
 
 ## Architecture
 

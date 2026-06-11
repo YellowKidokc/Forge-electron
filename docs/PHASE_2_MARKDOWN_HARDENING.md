@@ -10,6 +10,10 @@ Phase 2 keeps FORGE boring, local, and Markdown-first. The engine still treats t
 - `validate` checks parsed Markdown, `.forge.json`, `.layers.json`, and `.claims.json` references.
 - HTML export now includes a table of contents, visible anchors, copy-link buttons, and document metadata.
 - `export-folder` recursively exports Markdown folders while skipping hidden folders, `.git`, `node_modules`, and `exports`.
+- `import-folder` intakes large Markdown/text folders into a local vault manifest.
+- HTML exports expose left/right sliding columns for organization and layer metadata.
+- `_data/` mirrors keep generated outputs separate from clean Markdown.
+- `_engines/` YAML configs define small global engine runners.
 - Tests cover core parser, ID, validation, and missing-sidecar behavior.
 
 ## Parse a Markdown File
@@ -102,6 +106,29 @@ Dry-run mode shows the planned exports without writing files:
 ```bash
 npm run forge -- export-folder samples --dry-run
 ```
+
+## Import Many Notes
+
+```bash
+npm run forge -- import-folder path/to/notes --vault vault/notes --dry-run
+npm run forge -- import-folder path/to/notes --vault vault/notes
+```
+
+The importer accepts `.md`, `.markdown`, and `.txt` files, preserves relative paths, skips hidden/noisy folders, and writes `vault/notes/manifest.json`.
+
+## Sliding Export Columns
+
+HTML exports include a left files/organization column and a right layers/metadata column. Use `Toggle files` and `Toggle layers` in the export to slide either side in or out.
+
+## Data Mirror and Global Engines
+
+```bash
+npm run forge -- mirror path/to/vault --dry-run
+npm run forge -- engines path/to/vault
+npm run forge -- run-engine path/to/vault statistics --dry-run
+```
+
+The mirror writes generated outputs under `_data/`; engines live under `_engines/`. See `docs/DATA_MIRROR_AND_GLOBAL_ENGINE.md`.
 
 ## Safety Rules
 
