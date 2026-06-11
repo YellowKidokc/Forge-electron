@@ -1,0 +1,11 @@
+{
+  "name": "forge-electron",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "forge": "node --experimental-strip-types --experimental-transform-types src/cli/forge.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --experimental-transform-types --test \"src/**/*.test.ts\""
+  }
+}
