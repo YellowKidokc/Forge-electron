@@ -1,91 +1,100 @@
 # FORGE — File-Oriented Research Graph Engine
-## The React shell that wraps faiththruphysics.com articles
+## Template engine for complex interactive documents
+## Built on Electron + React + TypeScript
 
-FORGE is a React wrapper that provides a unified reading experience for
-Theophysics articles. It wraps existing HTML articles in a common frame
-with layer toggles, commentary panels, and navigation.
+FORGE is a desktop app for building and viewing complex, layered documents.
+It wraps existing HTML articles in a React shell that provides layer toggles,
+commentary panels, and reusable template components.
+
+**FORGE is not a note app.** It's a template engine for documents that need
+dropdowns, proof panels, equation translators, reading-level toggles, and
+structured annotation — all composable and reusable.
 
 ## Architecture
 
 ```
-React Shell (the frame)
-├── Topbar — site navigation, series info
-├── Sidebar — article TOC, layer toggles
-├── Content Area — loads existing HTML articles as-is
-├── Layer Toggles — activate/deactivate depth layers
+Electron Shell
+├── React Frame (topbar, sidebar, content area, footer)
+├── Layer System (activates existing vanilla JS layers)
 │   ├── Math Translation Layer (shared/js/mtl-equation.js)
 │   ├── Claim Layer (shared/js/claim-layer.js)
 │   ├── Glossary Layer (shared/js/glossary-layer.js)
 │   └── TTS Audio (shared/js/mda-browser-tts.js)
-└── Footer — series navigation, prev/next
+├── Block Editor (BlockNote — Notion-style blocks)
+├── File Tree Sidebar (vault navigation)
+├── Template System (composable, reusable document components)
+└── Postgres Connection (knowledge graph, Bible DB)
 ```
 
-**The articles don't get rewritten.** They plug into the shell as content.
-The shared JS/CSS layers already exist and activate/deactivate based on
-which layer the user selects.
+## The Vision
+
+A document is not just text. A document is an addressable thinking surface.
+
+- **Layer 1 (Markdown)** — Clean writing. Files over apps.
+- **Layer 2 (Blocks)** — Structured components drop into the document. Dropdowns,
+  tables, proof panels, tabs — one block per line, composable.
+- **Layer 3 (AI)** — Select text, chat box appears, say what you want. AI executes
+  against the structured layers. No plugins. No config.
+- **Layer 4 (Graph)** — Claims, dependencies, contradictions, kill chains.
+  Emerges from the work.
+
+Design principle: **if a feature requires more than select → declare → done,
+it is overcomplicated.**
 
 ## What's in this repo
 
-### content/ — Sample articles (6 best representatives)
-- `moral-decline/MDA-043-amish-proof-THE-PROOF.html` — Most feature-complete (MTL, Glossary, Audio, MathJax, Tabs)
-- `moral-decline/MDA-030-trinity-mechanism.html` — Framework showcase with equations
-- `moral-decline/MDA-040-statistical-synthesis.html` — Heavy data/tables article
-- `moral-decline/MDA-005-empirical-evidence.html` — Evidence presentation
-- `moral-decline/mda-part-01-measuring-moral-health.html` — Clean baseline (simplest article)
-- `proof-explorer/mda-proof-packet.html` — Proof layer viewer (different architecture)
-- `isomorphism/iso-003_entropy_sin.html` — Isomorphism template (different style family)
-- `homepage-index.html` — The main site homepage
+### content/ — Sample articles from faiththruphysics.com
+7 articles across 3 template families (MDA, Isomorphism, Proof Explorer).
+These are the documents the React shell wraps around.
 
 ### shared/ — Existing layer implementations (ALREADY BUILT)
-- `js/claim-layer.js` — Claims/evidence layer (built, not yet wired into articles)
-- `js/mtl-equation.js` — Math Translation Layer (active in articles)
-- `js/glossary-layer.js` — Glossary hover/click layer (active)
-- `js/glossary-linker.js` — Auto-links glossary terms
+Vanilla JS/CSS/JSON layers that activate on top of articles:
+- `js/claim-layer.js` — Claims/evidence layer
+- `js/mtl-equation.js` — Math Translation Layer
+- `js/glossary-layer.js` — Glossary hover/click
 - `js/mda-browser-tts.js` — Text-to-speech
-- `css/claim-layer.css` — Claims styling
-- `css/mtl-equation.css` — Math translation styling
-- `css/glossary-layer.css` — Glossary styling
-- `css/theophysics.css` — Base theme
-- `data/mtl-equations.json` — Equation definitions
-- `data/glossary.json` — Glossary terms
-- `data/glossary_data_full.json` — Full glossary data
-- `data/eq-id-mapping.json` — Equation ID mapping
+- `css/` — Styling for each layer
+- `data/` — Equations, glossary terms, mappings
 
-### docs/ — Architecture and build docs
+### docs/ — Architecture and reference
+- `REFERENCE_REPOS.md` — Open-source Electron apps to study/steal from
 
-## Design
+## Tech Stack
 
-### Theme (from existing articles)
-- Background: `#050505` (near black)
-- Card: `#0a0a0a`
-- Accent: `#dc2626` (red)
-- Secondary: `#f59e0b` (amber)
-- Serif: Crimson Text
-- Display: Oswald
-- Sans: Inter
-- Mono: JetBrains Mono
+- **Electron** — desktop shell (electron-vite for dev)
+- **React + TypeScript** — UI framework
+- **BlockNote** — Notion-style block editor (MPL-2.0)
+- **TipTap/ProseMirror** — editor substrate (underneath BlockNote)
+- **Tailwind CSS** — styling
+- **PostgreSQL** — knowledge graph, Bible database (192.168.1.97:5432)
 
-### Article component markers
-Every article uses `<!-- BEGIN:COMPONENT:type:name -->` / `<!-- END:COMPONENT:type:name -->` markers.
-Types: topbar, sidebar, hero, content, section, executive-summary, cta
-The React shell reads these markers to know where sections are.
+## Theme
 
-### Two interaction patterns
-1. **Section-level toggles** — Easy/Academic/Math/Claims buttons per section, switching reading depth
-2. **Inline expansion** — specific sentences expand to show claims, evidence, kill conditions underneath
+```
+--dark:        #050505
+--card:        #0a0a0a
+--accent:      #dc2626 (red)
+--amber:       #f59e0b
+--text:        #d1d5db
+--text-bright: #f9fafb
 
-## For Kimi (React Template Build)
+Serif:    Crimson Text
+Display:  Oswald
+Sans:     Inter
+Mono:     JetBrains Mono
+```
 
-Build a React app (Vite + React + TypeScript) that:
-1. Renders the frame (topbar, sidebar, content area, footer)
-2. Loads any article HTML into the content area
-3. Adds layer toggle buttons that activate the existing shared/js layers
-4. Matches the dark industrial theme from the articles
-5. Handles multiple template styles (MDA, Isomorphism, Proof Explorer)
+## Build Order
 
-The shared JS layers are vanilla JavaScript. The React shell calls them
-to activate/deactivate. The articles are static HTML. React doesn't
-rewrite them — it wraps them.
+1. Electron + Vite + React scaffold
+2. Dark theme + frame (topbar, sidebar, footer)
+3. Content area that loads article HTML
+4. Layer toggle buttons wired to existing shared/js
+5. File tree sidebar for vault navigation
+6. BlockNote integration for block editing
+7. Postgres connection for graph data
+8. AI panel (Claude/OpenAI API)
+9. Template system (composable reusable components)
 
 ---
 POF 2828 · Theophysics Research Initiative · June 2026
