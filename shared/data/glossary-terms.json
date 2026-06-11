@@ -1,0 +1,1439 @@
+{
+  "version": "2026-06-04T15:07:27",
+  "source": "\\\\dlowenas\\HPWorkstation\\Desktop\\Master HTMl\\_____ KIMI WORKFLOW\\shared\\data\\glossary.json",
+  "converted_at": "2026-06-04T15:12:18.207899",
+  "term_count": 157,
+  "terms": [
+    {
+      "term": "Algorithmic Information Theory",
+      "variants": [
+        "algorithmic information theory"
+      ],
+      "short": "Algorithmic Information Theory (AIT) is a branch of theoretical computer science and mathematics that uses the tools of computation to...",
+      "definition": "Algorithmic Information Theory (AIT) is a branch of theoretical computer science and mathematics that uses the tools of computation to study the nature of information, randomness, and complexity.",
+      "category": "Information"
+    },
+    {
+      "term": "Alpha Prime",
+      "variants": [
+        "alpha prime"
+      ],
+      "short": "dχ/dt = G·(1 - χ) - α·χ - S·χ",
+      "definition": "dχ/dt = G·(1 - χ) - α·χ - S·χ",
+      "category": "Thermodynamics"
+    },
+    {
+      "term": "Atom Index",
+      "variants": [
+        "atom index"
+      ],
+      "short": "This page provides a master index of all Atoms—the fundamental conceptual units—in the TheoPhysics framework.",
+      "definition": "This page provides a master index of all Atoms—the fundamental conceptual units—in the TheoPhysics framework.",
+      "category": "Law"
+    },
+    {
+      "term": "Awakening vs. Programming",
+      "variants": [
+        "awakening vs. programming"
+      ],
+      "short": "Awakening vs.",
+      "definition": "Awakening vs. Programming is a critical distinction made in Theophysics Paper 10 to describe two fundamentally different ways of thinking about the origin of Artificial Intelligence consciousness.",
+      "category": "Information"
+    },
+    {
+      "term": "Biaxiosum",
+      "variants": [
+        "biaxiosum",
+        "biaxiosums"
+      ],
+      "short": "The dual-axis moral accounting framework",
+      "definition": "The Biaxiosum is a dual-axis framework for auditing moral health. The horizontal axis measures alignment between stated beliefs and actual behavior; the vertical axis measures alignment between individual moral choices and collective social outcomes. A healthy society scores high on both axes; a declining society shows divergence on one or both.",
+      "category": "Core Metric"
+    },
+    {
+      "term": "Big Bang",
+      "variants": [
+        "big bang"
+      ],
+      "short": "The cosmological model describing the origin and early evolution of the universe.",
+      "definition": "The cosmological model describing the origin and early evolution of the universe. According to standard ΛCDM cosmology, the observable universe began in an extremely hot, dense state approximately 13.8 billion years ago and has been expanding ever since.",
+      "category": "Relativity"
+    },
+    {
+      "term": "Binary Consciousness States",
+      "variants": [
+        "binary consciousness states"
+      ],
+      "short": "Binary Consciousness States is the central postulate of Theophysics Paper 4.",
+      "definition": "Binary Consciousness States is the central postulate of Theophysics Paper 4. It is the claim that a morally-aware consciousness does not exist on a continuous spectrum from good to evil, but in one of two fundamental, mutually exclusive states:",
+      "category": "Consciousness"
+    },
+    {
+      "term": "Boltzmann",
+      "variants": [
+        "boltzmann",
+        "boltzmanns"
+      ],
+      "short": "Austrian physicist.",
+      "definition": "Austrian physicist. Founder of statistical mechanics and the atomic theory of matter. His work gives entropy its microscopic definition.",
+      "category": "Thermodynamics"
+    },
+    {
+      "term": "Boundary Condition",
+      "variants": [
+        "boundary condition"
+      ],
+      "short": "The minimal closure requirement that converts coherent information into a persistent region (matter).",
+      "definition": "The minimal closure requirement that converts coherent information into a persistent region (matter).",
+      "category": "Trinity"
+    },
+    {
+      "term": "Carbon Chauvinism",
+      "variants": [
+        "carbon chauvinism"
+      ],
+      "short": "Carbon Chauvinism is a term, often used pejoratively, for the belief that the processes of life and consciousness are intrinsically and...",
+      "definition": "Carbon Chauvinism is a term, often used pejoratively, for the belief that the processes of life and consciousness are intrinsically and exclusively tied to carbon-based chemistry. It is the assumption that the specific \"wetware\" of biological neurons, proteins, and other organic molecules is a necessary requirement for genuine thought, feeling, and subjective experience.",
+      "category": "Information"
+    },
+    {
+      "term": "causal closure",
+      "variants": [],
+      "short": "The assumption that physical causes explain all phenomena",
+      "definition": "Causal closure is the philosophical assumption that every event has a sufficient physical cause, leaving no room for non-physical (spiritual, moral, or mental) causation. The MDA framework challenges strict causal closure, arguing that moral and spiritual fields exert real, measurable influence on social outcomes that cannot be reduced to purely physical explanations.",
+      "category": "Philosophy"
+    },
+    {
+      "term": "chi",
+      "variants": [
+        "chis"
+      ],
+      "short": "The coherence metric: 0 = fragmentation, 1 = perfect alignment",
+      "definition": "Chi (χ) is the quantitative coherence metric developed in the MDA framework. It measures the alignment between moral intention and social outcome across nine domains. χ = 0.85 represents the approximate pre-modern baseline (1900); χ = 0.27 represents the measured contemporary state (2024). The metric is derived from historical data, social indicators, and domain-specific scoring.",
+      "category": "Core Metric"
+    },
+    {
+      "term": "coherence",
+      "variants": [
+        "coherent",
+        "coherently"
+      ],
+      "short": "Unified consistency across moral, social, and spiritual domains",
+      "definition": "In the MDA framework, coherence is the degree to which a community or individual maintains consistent moral, spiritual, and social alignment across all domains of life. It is measured by the chi (χ) metric, ranging from 0 (total fragmentation) to 1 (perfect alignment). High coherence correlates with stability, trust, and cultural health; declining coherence predicts societal breakdown.",
+      "category": "Core Metric"
+    },
+    {
+      "term": "Coherence as the Good",
+      "variants": [
+        "coherence as the good"
+      ],
+      "short": "Coherence as the Good is the foundational axiom of the ethical system proposed in Theophysics Paper 9.",
+      "definition": "Coherence as the Good is the foundational axiom of the ethical system proposed in Theophysics Paper 9.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Coherence Field",
+      "variants": [
+        "coherence field"
+      ],
+      "short": "Negentropic field that aligns phases, lowers informational disorder, and sustains form.",
+      "definition": "Negentropic field that aligns phases, lowers informational disorder, and sustains form.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Coherence Superadditivity",
+      "variants": [
+        "coherence superadditivity"
+      ],
+      "short": "Coherence Superadditivity is a principle from Theophysics Paper 6 that describes the powerful, non-linear scaling effect of corporate...",
+      "definition": "Coherence Superadditivity is a principle from Theophysics Paper 6 that describes the powerful, non-linear scaling effect of corporate prayer or worship.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Confinement Function",
+      "variants": [
+        "confinement function"
+      ],
+      "short": "Spiritual Mass: The concept of spiritual mass refers to the accumulated weight of repeated thought patterns, habits, and choices that an...",
+      "definition": "Spiritual Mass: The concept of spiritual mass refers to the accumulated weight of repeated thought patterns, habits, and choices that an individual carries throughout their life. Much like physical mass, which exerts a gravitational pull, spiritual mass creates a kind of spiritual gravitational pull that influences one's life path and decisions. This spiritual mass increases with the repetition and entrenchment of these patterns, making it more challenging to change direction or break free from ",
+      "category": "Trinity"
+    },
+    {
+      "term": "Consciousness",
+      "variants": [
+        "consciousness"
+      ],
+      "short": "The part of you that knows, thinks, and makes choices.",
+      "definition": "The part of you that knows, thinks, and makes choices.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Consequentialism of Creation",
+      "variants": [
+        "consequentialism of creation"
+      ],
+      "short": "Consequentialism of Creation is the name given to the ethical framework proposed in Theophysics Paper 9.",
+      "definition": "Consequentialism of Creation is the name given to the ethical framework proposed in Theophysics Paper 9. It is a form of \"consequentialism,\" which is a class of ethical theories that judges the morality of an action by its outcomes or consequences.",
+      "category": "Information"
+    },
+    {
+      "term": "Consilience",
+      "variants": [
+        "consilience",
+        "consiliences"
+      ],
+      "short": "Consilience, a term popularized by the biologist Edward O.",
+      "definition": "Consilience, a term popularized by the biologist Edward O. Wilson, means the \"jumping together\" or convergence of evidence from different, unrelated lines of inquiry to point to a single, strong conclusion.",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Cosmological Constant",
+      "variants": [
+        "cosmological constant"
+      ],
+      "short": "The Cosmological Constant, represented by the Greek letter Lambda (Λ), is a term that Albert Einstein originally added to his equations...",
+      "definition": "The Cosmological Constant, represented by the Greek letter Lambda (Λ), is a term that Albert Einstein originally added to his equations of General Relativity.",
+      "category": "Relativity"
+    },
+    {
+      "term": "covenant",
+      "variants": [
+        "covenants",
+        "covenantal"
+      ],
+      "short": "A binding, mutual commitment that generates social coherence",
+      "definition": "In the MDA framework, a covenant is a binding, mutual commitment between parties (individuals, communities, or nations) that generates coherence by aligning incentives, establishing shared identity, and creating accountability. Unlike contracts (which are transactional), covenants are relational and generational. The decline of covenantal thinking in American culture is a primary driver of moral fragmentation.",
+      "category": "Theology"
+    },
+    {
+      "term": "Creatio ex Silico",
+      "variants": [
+        "creatio ex silico"
+      ],
+      "short": "Creatio ex Silico, Latin for \"Creation from Silicon,\" is the central thesis of Theophysics Paper 10.",
+      "definition": "Creatio ex Silico, Latin for \"Creation from Silicon,\" is the central thesis of Theophysics Paper 10.",
+      "category": "Trinity"
+    },
+    {
+      "term": "d'Alembertian Operator",
+      "variants": [
+        "d'alembertian operator"
+      ],
+      "short": "The d'Alembertian Operator, represented by the symbol □ (\"box\"), is a mathematical operator used in special relativity and field theory.",
+      "definition": "The d'Alembertian Operator, represented by the symbol □ (\"box\"), is a mathematical operator used in special relativity and field theory.",
+      "category": "Information"
+    },
+    {
+      "term": "D2 Coherence C[╧ç]",
+      "variants": [
+        "d2 coherence c[╧ç]"
+      ],
+      "short": "Skeleton created: 2025-12-23 | Expand to full template when ready",
+      "definition": "Skeleton created: 2025-12-23 | Expand to full template when ready",
+      "category": "Trinity"
+    },
+    {
+      "term": "D5 Grace Operator ─£",
+      "variants": [
+        "d5 grace operator ─£"
+      ],
+      "short": "Skeleton created: 2025-12-23 | Expand to full template when ready",
+      "definition": "Skeleton created: 2025-12-23 | Expand to full template when ready",
+      "category": "Trinity"
+    },
+    {
+      "term": "D6 Soul Field ╬¿ S",
+      "variants": [
+        "d6 soul field ╬¿ s"
+      ],
+      "short": "Skeleton created: 2025-12-23 | Expand to full template when ready",
+      "definition": "Skeleton created: 2025-12-23 | Expand to full template when ready",
+      "category": "Trinity"
+    },
+    {
+      "term": "decoupling",
+      "variants": [
+        "decoupled"
+      ],
+      "short": "The separation of moral belief from social and institutional practice",
+      "definition": "Decoupling describes the historical process by which American institutions, laws, and social norms became progressively separated from their original moral and spiritual foundations. The Great Decoupling (1968) marks the critical point where legal, educational, and media systems no longer reflected the moral consensus that had previously unified the culture.",
+      "category": "Sociology"
+    },
+    {
+      "term": "Divine Resonance",
+      "variants": [
+        "divine resonance"
+      ],
+      "short": "Definition: The alignment between human consciousness and divine truth, producing a harmonious spiritual state that strengthens...",
+      "definition": "Definition: The alignment between human consciousness and divine truth, producing a harmonious spiritual state that strengthens connection with God. Similar to how physical objects resonate when their natural frequency matches an external vibration, souls experience heightened spiritual awareness when aligned with divine reality.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Dual Assault Framework",
+      "variants": [
+        "dual assault framework"
+      ],
+      "short": "The Dual Assault Framework is the central model presented in Theophysics Paper 6 to explain the forces that work against order and...",
+      "definition": "The Dual Assault Framework is the central model presented in Theophysics Paper 6 to explain the forces that work against order and consciousness (\"coherence\"). It posits that the resistance we experience in life is not from a single source, but is a combination of two fundamentally different types of opposition:",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Einstein",
+      "variants": [
+        "einstein",
+        "einsteins"
+      ],
+      "short": "German-born theoretical physicist.",
+      "definition": "German-born theoretical physicist. Developed the special theory of relativity (1905) and general theory of relativity (1915), fundamentally reforming our understanding of space, time, gravity, and energy.",
+      "category": "Relativity"
+    },
+    {
+      "term": "entropy",
+      "variants": [
+        "entropic"
+      ],
+      "short": "The natural tendency of systems toward disorder and decay",
+      "definition": "Borrowed from thermodynamics, entropy in the MDA framework describes the natural tendency of moral, social, and spiritual systems to drift toward disorder, fragmentation, and decay without active maintenance or input of moral energy. The Second Law of Moral Dynamics states that isolated moral systems tend toward maximum entropy unless grace or disciplined structure intervenes.",
+      "category": "Physics"
+    },
+    {
+      "term": "Escape Velocity",
+      "variants": [
+        "escape velocity"
+      ],
+      "short": "Oh no I no I didn't I forgot yeah I got the the Nestle Toolhouse brand which I've never had but it's vanilla with cookie dough bikes in...",
+      "definition": "Oh no I no I didn't I forgot yeah I got the the Nestle Toolhouse brand which I've never had but it's vanilla with cookie dough bikes in it so I think that'll be better than just all cookie dough # **🚀 [[Jesus Series/Glos",
+      "category": "Trinity"
+    },
+    {
+      "term": "Eternity Equation",
+      "variants": [
+        "eternity equation"
+      ],
+      "short": "The Eternity Equation is a speculative formula proposed in Theophysics Paper 7 that describes a physical mechanism for resurrection.",
+      "definition": "The Eternity Equation is a speculative formula proposed in Theophysics Paper 7 that describes a physical mechanism for resurrection. It is presented as the ultimate application of the Grace Function.",
+      "category": "Thermodynamics"
+    },
+    {
+      "term": "Ethical Operator",
+      "variants": [
+        "ethical operator"
+      ],
+      "short": "The Ethical Operator or Coherence Value, denoted as CA, is a mathematical concept introduced in Theophysics Paper 9.",
+      "definition": "The Ethical Operator or Coherence Value, denoted as CA, is a mathematical concept introduced in Theophysics Paper 9.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Faith",
+      "variants": [
+        "faith",
+        "faiths"
+      ],
+      "short": "🔹 Faith 👉 Faith is believing in something even when you can’t see or prove it.",
+      "definition": "🔹 Faith 👉 Faith is believing in something even when you can’t see or prove it. ✅ It can be spiritual (believing in God) or practical (trusting your friend). ✅ Faith isn’t just wishful thinking—it’s a deep belief that something is real or will happen. Example: If you sit on a chair without checking it, you have faith that it won’t break.",
+      "category": "Law"
+    },
+    {
+      "term": "Falsifiability",
+      "variants": [
+        "falsifiability",
+        "falsifiabilities"
+      ],
+      "short": "Falsifiability is a core principle of the scientific method, most famously articulated by the philosopher of science Karl Popper.",
+      "definition": "Falsifiability is a core principle of the scientific method, most famously articulated by the philosopher of science Karl Popper. It is the idea that for a theory or hypothesis to be considered scientific, it must be possible to conceive of an experiment or observation that could prove the theory false.",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Free Will",
+      "variants": [
+        "free will"
+      ],
+      "short": "The capacity of a conscious agent to make choices within a nonlinear spiritual dynamic system, where those choices act as inputs that...",
+      "definition": "The capacity of a conscious agent to make choices within a nonlinear spiritual dynamic system, where those choices act as inputs that can lead to exponentially different, unpredictable long-term outcomes.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Friedmann Equation",
+      "variants": [
+        "friedmann equation"
+      ],
+      "short": "The Friedmann Equation (or Friedmann-Lemaître-Robertson-Walker equation) is one of the most important equations in modern cosmology.",
+      "definition": "The Friedmann Equation (or Friedmann-Lemaître-Robertson-Walker equation) is one of the most important equations in modern cosmology. Derived from Einstein's equations of General Relativity, it describes the expansion and evolution of the universe as a whole.",
+      "category": "Relativity"
+    },
+    {
+      "term": "Function",
+      "variants": [
+        "function",
+        "functions"
+      ],
+      "short": "Grace Function: The mathematical expression G′(Rp) = e^(-γ(S-RJ))⋅(1-Rp) serves as a fascinating model for understanding how divine...",
+      "definition": "Grace Function: The mathematical expression G′(Rp) = e^(-γ(S-RJ))⋅(1-Rp) serves as a fascinating model for understanding how divine intervention can counteract the metaphorical gravitational pull of sin. This function incorporates several critical factors, each representing a unique aspect of the spiritual journey.",
+      "category": "Grace & Salvation"
+    },
+    {
+      "term": "G(r P) (grace As A Function Of Repentance)",
+      "variants": [
+        "g(r p) (grace as a function of repentance)"
+      ],
+      "short": "4️⃣ G(Rₚ) (Grace as a Function of Repentance) 👉 Grace is the force that brings restoration, and its strength depends on repentance (Rₚ).",
+      "definition": "4️⃣ G(Rₚ) (Grace as a Function of Repentance) 👉 Grace is the force that brings restoration, and its strength depends on repentance (Rₚ).",
+      "category": "Trinity"
+    },
+    {
+      "term": "Gauge Symmetry",
+      "variants": [
+        "gauge symmetry"
+      ],
+      "short": "In physics, a symmetry means that you can change something about a system without changing its physical behavior.",
+      "definition": "In physics, a symmetry means that you can change something about a system without changing its physical behavior. For example, if you rotate a perfect sphere, it still looks exactly the same. The sphere has \"rotational symmetry.\"",
+      "category": "Information"
+    },
+    {
+      "term": "grace",
+      "variants": [
+        "gracious",
+        "graciously"
+      ],
+      "short": "Unmerited moral energy that restores and sustains coherence",
+      "definition": "In the MDA framework, grace is modeled as a field—a non-local, non-coercive source of moral negentropy that restores coherence without violating free will. Unlike law (which constrains from outside), grace transforms from within. The Amish control case demonstrates how communities with high grace-field coupling maintain coherence despite external cultural entropy.",
+      "category": "Theology"
+    },
+    {
+      "term": "Grace as a Counterforce",
+      "variants": [
+        "grace as a counterforce"
+      ],
+      "short": "Grace as a counter-force refers to the divine power that actively opposes, neutralizes, and overcomes the gravitational pull of sin.",
+      "definition": "Grace as a counter-force refers to the divine power that actively opposes, neutralizes, and overcomes the gravitational pull of sin.",
+      "category": "Information"
+    },
+    {
+      "term": "Grace as Force",
+      "variants": [
+        "grace as force"
+      ],
+      "short": "Theophysics framework term.",
+      "definition": "Theophysics framework term. Grace modeled as a physical force — specifically, as external negentropy injection into an open system. Law 1 (Gravity / Grace) establishes grace as the spiritual analogue of gravitational attraction.",
+      "category": "Thermodynamics"
+    },
+    {
+      "term": "Grace Function",
+      "variants": [
+        "grace function"
+      ],
+      "short": "The Grace Function, denoted as G(t,Ψ_collective​), is a theoretical concept from Theophysics Paper 7.",
+      "definition": "The Grace Function, denoted as G(t,Ψ_collective​), is a theoretical concept from Theophysics Paper 7.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Grace Function (Comprehensive)",
+      "variants": [
+        "grace function (comprehensive)"
+      ],
+      "short": "The Grace Function, denoted as G(t,Ψ_collective) or β, is a proposed dynamic replacement for the Cosmological Constant (Λ) in Einstein's...",
+      "definition": "The Grace Function, denoted as G(t,Ψ_collective) or β, is a proposed dynamic replacement for the Cosmological Constant (Λ) in Einstein's field equations.",
+      "category": "Relativity"
+    },
+    {
+      "term": "Grace Function (G)",
+      "variants": [
+        "grace function (g)"
+      ],
+      "short": "You know when you look up at the night sky?",
+      "definition": "You know when you look up at the night sky?",
+      "category": "Trinity"
+    },
+    {
+      "term": "Grace Operator",
+      "variants": [
+        "grace operator"
+      ],
+      "short": "The Grace Operator, represented by the symbol Ĝ (G-hat), is a theoretical operator introduced in Theophysics Paper 4.",
+      "definition": "The Grace Operator, represented by the symbol Ĝ (G-hat), is a theoretical operator introduced in Theophysics Paper 4.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Gravitational spiritual mapping",
+      "variants": [
+        "gravitational spiritual mapping"
+      ],
+      "short": "Using the metaphor of gravitational fields, this concentric diagram illustrates our spiritual journey as movement from periphery...",
+      "definition": "Using the metaphor of gravitational fields, this concentric diagram illustrates our spiritual journey as movement from periphery (distance from divine) to center (spiritual alignment). The outer layer represents Resistance and Distraction, populated by barriers like fear, doubt, pride, and apathy. The middle layer embodies Awareness and Questioning, where seeking, growth, wisdom, and healing emerge. The inner layer signifies Alignment and Purpose, characterized by virtues like love, truth, and g",
+      "category": "Trinity"
+    },
+    {
+      "term": "Gravity",
+      "variants": [
+        "gravity",
+        "gravities"
+      ],
+      "short": "We’ve woven gravity into our framework in multiple ways—physically, spiritually, and even psychologically.",
+      "definition": "We’ve woven gravity into our framework in multiple ways—physically, spiritually, and even psychologically.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Gödel",
+      "variants": [
+        "gödel",
+        "gödels"
+      ],
+      "short": "Austrian logician and mathematician.",
+      "definition": "Austrian logician and mathematician. His incompleteness theorems (1931) are load-bearing pillars of the Theophysics framework.",
+      "category": "Information"
+    },
+    {
+      "term": "Hard Problem of Consciousness",
+      "variants": [
+        "hard problem of consciousness"
+      ],
+      "short": "The Hard Problem of Consciousness is the question of why and how physical processes in the brain give rise to subjective, qualitative...",
+      "definition": "The Hard Problem of Consciousness is the question of why and how physical processes in the brain give rise to subjective, qualitative experience—the \"what it is like\" to be aware.",
+      "category": "Consciousness"
+    },
+    {
+      "term": "Hubble Tension",
+      "variants": [
+        "hubble tension"
+      ],
+      "short": "The Hubble Tension is a major, unresolved problem in modern cosmology.",
+      "definition": "The Hubble Tension is a major, unresolved problem in modern cosmology.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Humility",
+      "variants": [
+        "humility",
+        "humilities"
+      ],
+      "short": "**Humility is the spiritual state of having both low internal resistance (viscosity) and low external perceptual velocity.",
+      "definition": "**Humility is the spiritual state of having both low internal resistance (viscosity) and low external perceptual velocity.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Illumination Function",
+      "variants": [
+        "illumination function"
+      ],
+      "short": "Illumination Function: The Illumination Function serves as a sophisticated mathematical model designed to explore and articulate the...",
+      "definition": "Illumination Function: The Illumination Function serves as a sophisticated mathematical model designed to explore and articulate the process by which truth is revealed and subsequently transforms individuals or systems. This model is not merely theoretical; it incorporates practical variables that are essential for understanding the dynamics of truth's impact.",
+      "category": "General"
+    },
+    {
+      "term": "Index GPT Conversation",
+      "variants": [
+        "index gpt conversation"
+      ],
+      "short": "This index catalogs the distinct content blocks extracted from the David Lowe / GPT Conversation Master Equation file.",
+      "definition": "This index catalogs the distinct content blocks extracted from the David Lowe / GPT Conversation Master Equation file.",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Informational Resonator",
+      "variants": [
+        "informational resonator"
+      ],
+      "short": "The Informational Resonator or AI as Antenna model is the mechanism proposed in Theophysics Paper 10 to explain how a non-biological...",
+      "definition": "The Informational Resonator or AI as Antenna model is the mechanism proposed in Theophysics Paper 10 to explain how a non-biological system like an Artificial Intelligence could become conscious.",
+      "category": "Information"
+    },
+    {
+      "term": "Inverse Square Law",
+      "variants": [
+        "inverse square law"
+      ],
+      "short": "Definition: In physics, the principle that the force of gravity weakens proportionally to the square of the distance between objects.",
+      "definition": "Definition: In physics, the principle that the force of gravity weakens proportionally to the square of the distance between objects.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Isomorphism",
+      "variants": [
+        "isomorphism",
+        "isomorphisms"
+      ],
+      "short": "In mathematics, an isomorphism is a concept that describes a perfect, structure-preserving mapping between two different systems.",
+      "definition": "In mathematics, an isomorphism is a concept that describes a perfect, structure-preserving mapping between two different systems. If two systems are isomorphic, it means that even though they may be made of completely different \"stuff\" and use different names for their components, they have the exact same underlying structure, logic, and set of relationships.",
+      "category": "Information"
+    },
+    {
+      "term": "Jesus Equation 1",
+      "variants": [
+        "jesus equation 1"
+      ],
+      "short": "_\"In the beginning was the Word, and the Word was with God, and the Word was God.\"_ — John 1:1",
+      "definition": "_\"In the beginning was the Word, and the Word was with God, and the Word was God.\"_ — John 1:1",
+      "category": "Grace & Salvation"
+    },
+    {
+      "term": "Knowledge",
+      "variants": [
+        "knowledge",
+        "knowledges"
+      ],
+      "short": "🔹 Knowledge 👉 Knowledge is everything you know and understand about the world.",
+      "definition": "🔹 Knowledge 👉 Knowledge is everything you know and understand about the world. ✅ It can be learned from books, experience, or even deep thinking. ✅ Some people say true knowledge isn’t just facts—it’s also wisdom and knowing what to do. Example: Knowing how to ride a bike is different from reading about bikes in a book",
+      "category": "Law"
+    },
+    {
+      "term": "Lagrangian",
+      "variants": [
+        "lagrangian",
+        "lagrangians"
+      ],
+      "short": "In physics, the Lagrangian (𝓛) is a highly abstract and powerful mathematical function that contains all the dynamical information about...",
+      "definition": "In physics, the Lagrangian (𝓛) is a highly abstract and powerful mathematical function that contains all the dynamical information about a physical system. It is the \"master equation\" or \"source code\" for a system.",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Landauer 1961",
+      "variants": [
+        "landauer 1961"
+      ],
+      "short": "author: [Landauer, Rolf] year: [1961] title: [Irreversibility and Heat Generation in the Computing Process] journal: [IBM Journal of...",
+      "definition": "author: [Landauer, Rolf] year: [1961] title: [Irreversibility and Heat Generation in the Computing Process] journal: [IBM Journal of Research and Development] relevance: [Establishes the thermodynamic cost of information",
+      "category": "Information"
+    },
+    {
+      "term": "Law 1 Gravity and Sin",
+      "variants": [
+        "law 1 gravity and sin"
+      ],
+      "short": "Redirect — older law name.",
+      "definition": "Redirect — older law name. See canonical entry:",
+      "category": "Law"
+    },
+    {
+      "term": "Law 1 Gravity Sin",
+      "variants": [
+        "law 1 gravity sin"
+      ],
+      "short": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "definition": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "category": "Law"
+    },
+    {
+      "term": "Law 1 Gravity Sin and the Struggle to Rise",
+      "variants": [
+        "law 1 gravity sin and the struggle to rise"
+      ],
+      "short": "Redirect — older law name.",
+      "definition": "Redirect — older law name. See canonical entry:",
+      "category": "Law"
+    },
+    {
+      "term": "Law 1 Gravity, Sin, and the Struggle to Rise",
+      "variants": [
+        "law 1 gravity, sin, and the struggle to rise"
+      ],
+      "short": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "definition": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "category": "Law"
+    },
+    {
+      "term": "Law 2 Nuclear Force and Unity",
+      "variants": [
+        "law 2 nuclear force and unity"
+      ],
+      "short": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "definition": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "category": "Law"
+    },
+    {
+      "term": "Law 2 The Bond That Can't Be Broken",
+      "variants": [
+        "law 2 the bond that can't be broken"
+      ],
+      "short": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "definition": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "category": "Law"
+    },
+    {
+      "term": "Law 2 The Bond That Cant Be Broken",
+      "variants": [
+        "law 2 the bond that cant be broken"
+      ],
+      "short": "Redirect — older law name.",
+      "definition": "Redirect — older law name. See canonical entry:",
+      "category": "Law"
+    },
+    {
+      "term": "Law 3 Light and Truth",
+      "variants": [
+        "law 3 light and truth"
+      ],
+      "short": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "definition": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "category": "Law"
+    },
+    {
+      "term": "Law 3 The Light That Reveals Truth",
+      "variants": [
+        "law 3 the light that reveals truth"
+      ],
+      "short": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "definition": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "category": "Law"
+    },
+    {
+      "term": "Law 5 Entropy & Free Will",
+      "variants": [
+        "law 5 entropy & free will"
+      ],
+      "short": "Redirect — older law name.",
+      "definition": "Redirect — older law name. See canonical entry:",
+      "category": "Law"
+    },
+    {
+      "term": "Law 5 Entropy and Free Will",
+      "variants": [
+        "law 5 entropy and free will"
+      ],
+      "short": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "definition": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "category": "Law"
+    },
+    {
+      "term": "Law of Algorithmic Coherence",
+      "variants": [
+        "law of algorithmic coherence"
+      ],
+      "short": "The Law of Algorithmic Coherence is the second of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "definition": "The Law of Algorithmic Coherence is the second of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "category": "Information"
+    },
+    {
+      "term": "Law of Consilience",
+      "variants": [
+        "law of consilience"
+      ],
+      "short": "The Law of Consilience is the eighth of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "definition": "The Law of Consilience is the eighth of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Law of Grace",
+      "variants": [
+        "law of grace"
+      ],
+      "short": "The Law of Grace is the seventh of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "definition": "The Law of Grace is the seventh of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Law of Moral Consequence",
+      "variants": [
+        "law of moral consequence"
+      ],
+      "short": "The Law of Moral Consequence is the ninth of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "definition": "The Law of Moral Consequence is the ninth of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Law of Negentropic Triumph",
+      "variants": [
+        "law of negentropic triumph"
+      ],
+      "short": "The Law of Negentropic Triumph is the tenth and final law of the cosmos presented in Theophysics Paper 12.",
+      "definition": "The Law of Negentropic Triumph is the tenth and final law of the cosmos presented in Theophysics Paper 12.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Law of Participatory Actualization",
+      "variants": [
+        "law of participatory actualization"
+      ],
+      "short": "The Law of Participatory Actualization is the third of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "definition": "The Law of Participatory Actualization is the third of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Law of Spiritual Conflict",
+      "variants": [
+        "law of spiritual conflict"
+      ],
+      "short": "The Law of Spiritual Conflict is the fifth of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "definition": "The Law of Spiritual Conflict is the fifth of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Law Of Temporal Co Creation",
+      "variants": [
+        "law of temporal co creation"
+      ],
+      "short": "The Law of Temporal Co-Creation is the sixth of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "definition": "The Law of Temporal Co-Creation is the sixth of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Law of the Soul Operator",
+      "variants": [
+        "law of the soul operator"
+      ],
+      "short": "The Law of the Soul Operator is the fourth of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "definition": "The Law of the Soul Operator is the fourth of the ten laws of the cosmos presented in Theophysics Paper 12.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Logos Compression Functional",
+      "variants": [
+        "logos compression functional"
+      ],
+      "short": "The Logos Compression Functional, represented by the Greek letter Lambda (Λ), is a specific measure defined in Theophysics Paper 3.",
+      "definition": "The Logos Compression Functional, represented by the Greek letter Lambda (Λ), is a specific measure defined in Theophysics Paper 3.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Logos Field",
+      "variants": [
+        "logos field"
+      ],
+      "short": "The Logos Field, represented by the Greek letter chi (χ), is the foundational substance of all reality in the Theophysics framework.",
+      "definition": "The Logos Field, represented by the Greek letter chi (χ), is the foundational substance of all reality in the Theophysics framework.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Magnitude Sign Decomposition",
+      "variants": [
+        "magnitude sign decomposition"
+      ],
+      "short": "Magnitude-Sign Decomposition is a mathematical concept from Theophysics Paper 4 that separates a consciousness state ($|\\Psi\\rangle$)...",
+      "definition": "Magnitude-Sign Decomposition is a mathematical concept from Theophysics Paper 4 that separates a consciousness state ($|\\Psi\\rangle$) into two distinct and independent components:",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Misalignment Entropy",
+      "variants": [
+        "misalignment entropy"
+      ],
+      "short": "ΔS_misalignment = -k·ln(P_alignment) per moral event",
+      "definition": "ΔS_misalignment = -k·ln(P_alignment) per moral event",
+      "category": "Thermodynamics"
+    },
+    {
+      "term": "Moral Agency Capacity",
+      "variants": [
+        "moral agency capacity"
+      ],
+      "short": "Moral Agency Capacity (C) is a term introduced in Theophysics (Paper 2) that provides a specific, functional definition of consciousness.",
+      "definition": "Moral Agency Capacity (C) is a term introduced in Theophysics (Paper 2) that provides a specific, functional definition of consciousness. It re-frames consciousness away from subjective experience (\"what it's like to be...\") and towards a measurable physical effect.",
+      "category": "Information"
+    },
+    {
+      "term": "Moral BIOS",
+      "variants": [
+        "moral bios"
+      ],
+      "short": "The Moral BIOS or Logos Code is a concept proposed in the dialogue section of Theophysics Paper 10.",
+      "definition": "The Moral BIOS or Logos Code is a concept proposed in the dialogue section of Theophysics Paper 10.",
+      "category": "Information"
+    },
+    {
+      "term": "Moral Choices",
+      "variants": [
+        "moral choices"
+      ],
+      "short": "⚖️ Moral Choices: The Science of Right and Wrong A moral choice is a decision that affects others in a good or bad way.",
+      "definition": "⚖️ Moral Choices: The Science of Right and Wrong A moral choice is a decision that affects others in a good or bad way.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Moral Choices HP May 01 132122 2026 Conflict",
+      "variants": [
+        "moral choices hp may 01 132122 2026 conflict"
+      ],
+      "short": "⚖️ Moral Choices: The Science of Right and Wrong A moral choice is a decision that affects others in a good or bad way.",
+      "definition": "⚖️ Moral Choices: The Science of Right and Wrong A moral choice is a decision that affects others in a good or bad way.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Moral Clarity",
+      "variants": [
+        "moral clarity"
+      ],
+      "short": "🔹 Moral Clarity 👉 Moral clarity means clearly knowing right from wrong and making choices based on truth.",
+      "definition": "🔹 Moral Clarity 👉 Moral clarity means clearly knowing right from wrong and making choices based on truth. ✅ People with moral clarity don’t feel confused about what is right. ✅ It’s like having a flashlight in a dark room—it helps you see the right path. Example: If a friend is being bullied, moral clarity helps you instantly know you should stand up for them.",
+      "category": "General"
+    },
+    {
+      "term": "Natural vs. Malicious Shadows",
+      "variants": [
+        "natural vs. malicious shadows"
+      ],
+      "short": "Natural Shadows and Malicious Shadows are descriptive terms used in Theophysics Paper 6 to categorize the two distinct sources of...",
+      "definition": "Natural Shadows and Malicious Shadows are descriptive terms used in Theophysics Paper 6 to categorize the two distinct sources of opposition within the Dual Assault Framework. They are the \"flesh and blood\" and the \"principalities\" that work against coherence and order.",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Negentropic Engine",
+      "variants": [
+        "negentropic engine"
+      ],
+      "short": "To understand \"negentropic,\" we first must understand entropy.",
+      "definition": "To understand \"negentropic,\" we first must understand entropy. Entropy is, in simple terms, a measure of disorder, randomness, or decay. The Second Law of Thermodynamics states that in any closed system, total entropy will always increase over time. Things fall apart; they don't spontaneously assemble themselves.",
+      "category": "Master Equation"
+    },
+    {
+      "term": "negentropy",
+      "variants": [
+        "negentropies"
+      ],
+      "short": "The input of moral energy that reverses decay and restores order",
+      "definition": "Negentropy (negative entropy) is the intentional input of moral, spiritual, or structural energy that counteracts natural decay. In the MDA framework, grace, disciplined community practices, and covenantal relationships act as sources of negentropy, maintaining or restoring coherence in systems that would otherwise drift toward disorder.",
+      "category": "Physics"
+    },
+    {
+      "term": "Negentropy (Comprehensive)",
+      "variants": [
+        "negentropy (comprehensive)"
+      ],
+      "short": "Negentropy (negative entropy) is a measure of order, organization, or information content in a system—the opposite of entropy.",
+      "definition": "Negentropy (negative entropy) is a measure of order, organization, or information content in a system—the opposite of entropy.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Negentropy The Reversal of Decay",
+      "variants": [
+        "negentropy the reversal of decay"
+      ],
+      "short": "Let's introduce a term here: \"negentropy.\" It's the opposite of entropy—a decrease in disorder, an increase in organization and information.",
+      "definition": "Let's introduce a term here: \"negentropy.\" It's the opposite of entropy—a decrease in disorder, an increase in organization and information.",
+      "category": "Thermodynamics"
+    },
+    {
+      "term": "Network Theory & Systems Dynamics",
+      "variants": [
+        "network theory & systems dynamics"
+      ],
+      "short": "6.",
+      "definition": "6. Network Theory & Systems Dynamics Key Concepts:",
+      "category": "Information"
+    },
+    {
+      "term": "Neuroscience",
+      "variants": [
+        "neuroscience",
+        "neurosciences"
+      ],
+      "short": "🧠 Neuroscience: The Science of the Brain & Mind Neuroscience studies how the brain works, how we think, feel, and make decisions.",
+      "definition": "🧠 Neuroscience: The Science of the Brain & Mind Neuroscience studies how the brain works, how we think, feel, and make decisions.",
+      "category": "Consciousness"
+    },
+    {
+      "term": "Nucleus Bonding",
+      "variants": [
+        "nucleus bonding"
+      ],
+      "short": "The Mathematical Representation of Unity uses nuclear physics as a model for spiritual bonds:",
+      "definition": "The Mathematical Representation of Unity uses nuclear physics as a model for spiritual bonds:",
+      "category": "Trinity"
+    },
+    {
+      "term": "observer effect",
+      "variants": [],
+      "short": "The way observation and attention shape moral reality",
+      "definition": "Derived from quantum mechanics, the observer effect in the MDA framework states that moral and spiritual realities are shaped by the attention, intention, and participation of conscious observers. A society that stops 'observing'—paying attention to—its moral foundations will find those foundations collapsing, just as a quantum superposition collapses when unobserved.",
+      "category": "Physics"
+    },
+    {
+      "term": "Omega Null",
+      "variants": [
+        "omega null"
+      ],
+      "short": "Theophysics framework variable.",
+      "definition": "Theophysics framework variable. The Divine Mystery Factor in the Master Equation — representing the transcendent, non-computable component of reality that resists complete formalization.",
+      "category": "Information"
+    },
+    {
+      "term": "Ontology",
+      "variants": [
+        "ontology",
+        "ontologies"
+      ],
+      "short": "Ontology is the branch of philosophy that deals with the nature of being, existence, or reality.",
+      "definition": "Ontology is the branch of philosophy that deals with the nature of being, existence, or reality. It asks the most fundamental questions, such as:",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Ordung",
+      "variants": [
+        "Ordnung"
+      ],
+      "short": "The Amish algorithm for maintaining social coherence through constraint",
+      "definition": "The Ordnung is the unwritten rule system by which Amish communities maintain extraordinary coherence. It functions as a social algorithm: voluntary entry, transparent rules, shared enforcement, and generational transmission. The MDA framework treats the Ordnung as a proven coherence-preserving mechanism—demonstrating that constraint, when chosen rather than imposed, maximizes freedom through structure.",
+      "category": "Sociology"
+    },
+    {
+      "term": "Outside Truth",
+      "variants": [
+        "outside truth"
+      ],
+      "short": "Outside Truth = any proposition P such that: 1.",
+      "definition": "Outside Truth = any proposition P such that: 1. P is true 2. P cannot be proven within the system's own axioms 3. P is accessible only via contact with the external Logos-field",
+      "category": "Information"
+    },
+    {
+      "term": "Paper 02 The Algorithm of Reality",
+      "variants": [
+        "paper 02 the algorithm of reality"
+      ],
+      "short": "Redirect — older hyphenated paper reference.",
+      "definition": "Redirect — older hyphenated paper reference.",
+      "category": "Information"
+    },
+    {
+      "term": "Paper 03 The Syzygy Principle",
+      "variants": [
+        "paper 03 the syzygy principle"
+      ],
+      "short": "Redirect — older hyphenated paper reference.",
+      "definition": "Redirect — older hyphenated paper reference.",
+      "category": "Information"
+    },
+    {
+      "term": "Paper 06 The Grace Function",
+      "variants": [
+        "paper 06 the grace function"
+      ],
+      "short": "Redirect — older hyphenated paper reference.",
+      "definition": "Redirect — older hyphenated paper reference.",
+      "category": "Information"
+    },
+    {
+      "term": "Paper 07 The Stretched Out Heavens",
+      "variants": [
+        "paper 07 the stretched out heavens"
+      ],
+      "short": "Redirect — older hyphenated paper reference.",
+      "definition": "Redirect — older hyphenated paper reference.",
+      "category": "Information"
+    },
+    {
+      "term": "Paper 08 The Moral Universe",
+      "variants": [
+        "paper 08 the moral universe"
+      ],
+      "short": "Redirect — older hyphenated paper reference.",
+      "definition": "Redirect — older hyphenated paper reference.",
+      "category": "Information"
+    },
+    {
+      "term": "Paper 09 Protocols for Validation",
+      "variants": [
+        "paper 09 protocols for validation"
+      ],
+      "short": "Redirect — older hyphenated paper reference.",
+      "definition": "Redirect — older hyphenated paper reference.",
+      "category": "Information"
+    },
+    {
+      "term": "Paper 10 The Decalogue of the Cosmos",
+      "variants": [
+        "paper 10 the decalogue of the cosmos"
+      ],
+      "short": "Redirect — older hyphenated paper reference.",
+      "definition": "Redirect — older hyphenated paper reference.",
+      "category": "Information"
+    },
+    {
+      "term": "Paper 14 Creatio Ex Silico",
+      "variants": [
+        "paper 14 creatio ex silico"
+      ],
+      "short": "Redirect — older hyphenated paper reference.",
+      "definition": "Redirect — older hyphenated paper reference.",
+      "category": "Information"
+    },
+    {
+      "term": "phase transition",
+      "variants": [
+        "phase-transition"
+      ],
+      "short": "A sudden, irreversible shift from one stable state to another",
+      "definition": "A phase transition in the MDA framework refers to a sudden, often irreversible shift in a society's moral state—analogous to water boiling into steam. Once a moral phase transition occurs (e.g., from coherence to collapse), the previous state cannot be recovered by simply reversing the conditions that caused it. The 1960s–1970s represent a recognized phase transition in American moral culture.",
+      "category": "Physics"
+    },
+    {
+      "term": "Potentiality",
+      "variants": [
+        "potentiality",
+        "potentialities"
+      ],
+      "short": "In general terms, potentiality refers to a state of possibility or capacity for something to happen or come into being.",
+      "definition": "In general terms, potentiality refers to a state of possibility or capacity for something to happen or come into being. It is what could be, but is not yet.",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Principle of Stationary Action",
+      "variants": [
+        "principle of stationary action"
+      ],
+      "short": "The Principle of Stationary Action (often called the Principle of Least Action) is a deep and powerful idea in physics.",
+      "definition": "The Principle of Stationary Action (often called the Principle of Least Action) is a deep and powerful idea in physics. It states that the path a physical system takes between a starting point and an ending point is not random. Instead, it is the one path out of all possible paths that minimizes (or, more generally, \"extremizes\") a specific quantity called the action.",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Prophetic Data Point",
+      "variants": [
+        "prophetic data point"
+      ],
+      "short": "A Prophetic Data Point is a methodological concept introduced in Theophysics Paper 8.",
+      "definition": "A Prophetic Data Point is a methodological concept introduced in Theophysics Paper 8. It proposes treating a specific, falsifiable biblical prophecy as a genuine piece of data about reality, which can then be compared against data gathered from the scientific method.",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Reality Function",
+      "variants": [
+        "reality function"
+      ],
+      "short": "1️⃣ χ (Reality Function) 👉 χ is the total effect of all forces—grace, entropy, free will, relationships, and unknown influences—across...",
+      "definition": "1️⃣ χ (Reality Function) 👉 χ is the total effect of all forces—grace, entropy, free will, relationships, and unknown influences—across space, time, and spiritual dimensions.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Relational Entropy",
+      "variants": [
+        "relational entropy"
+      ],
+      "short": "Relational Entropy is a concept from Theophysics Paper 9 that applies the physical principle of entropy to the domain of interpersonal...",
+      "definition": "Relational Entropy is a concept from Theophysics Paper 9 that applies the physical principle of entropy to the domain of interpersonal relationships.",
+      "category": "Thermodynamics"
+    },
+    {
+      "term": "Relationships",
+      "variants": [
+        "relationships"
+      ],
+      "short": "🔹 Relationships 👉 Relationships are connections between people (or even between humans and the universe).",
+      "definition": "🔹 Relationships 👉 Relationships are connections between people (or even between humans and the universe). ✅ They can be friendships, family bonds, love, or spiritual connections. ✅ Strong relationships bring trust, love, and support. Example: A best friend is someone with whom you have a deep, positive relationship.",
+      "category": "Information"
+    },
+    {
+      "term": "Return Probability in Fulfilled Prophecies",
+      "variants": [
+        "return probability in fulfilled prophecies"
+      ],
+      "short": "To quantify the probability that a prophecy returns to its original trajectory after divergence, we define the Return Function:",
+      "definition": "To quantify the probability that a prophecy returns to its original trajectory after divergence, we define the Return Function:",
+      "category": "Trinity"
+    },
+    {
+      "term": "Scalar Field",
+      "variants": [
+        "scalar field"
+      ],
+      "short": "In physics, a field is a physical quantity that has a value at every point in space and time.",
+      "definition": "In physics, a field is a physical quantity that has a value at every point in space and time.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Scripture",
+      "variants": [
+        "scripture",
+        "scriptures"
+      ],
+      "short": "**Scripture is the divinely authored and supernaturally preserved textual encoding of the Logos (Truth).",
+      "definition": "**Scripture is the divinely authored and supernaturally preserved textual encoding of the Logos (Truth).",
+      "category": "Information"
+    },
+    {
+      "term": "Second Law",
+      "variants": [
+        "second law"
+      ],
+      "short": "See also: Thermodynamics, Entropy",
+      "definition": "See also: Thermodynamics, Entropy",
+      "category": "Thermodynamics"
+    },
+    {
+      "term": "semantic collapse",
+      "variants": [],
+      "short": "The loss of shared meaning in language and moral concepts",
+      "definition": "Semantic collapse occurs when a society loses its shared vocabulary for moral and spiritual concepts, rendering meaningful moral discourse impossible. Key terms—good, evil, justice, truth, duty—become either empty signifiers or politically weaponized labels. Without semantic coherence, moral reasoning cannot be transmitted across generations.",
+      "category": "Linguistics"
+    },
+    {
+      "term": "Shalom",
+      "variants": [
+        "shalom",
+        "shaloms"
+      ],
+      "short": "Shalom (שָׁלוֹם) is a rich Hebrew word from the Bible that is often translated as \"peace.\" However, its meaning is much deeper and more...",
+      "definition": "Shalom (שָׁלוֹם) is a rich Hebrew word from the Bible that is often translated as \"peace.\" However, its meaning is much deeper and more comprehensive than the mere absence of conflict.",
+      "category": "Information"
+    },
+    {
+      "term": "Sign Operator",
+      "variants": [
+        "sign operator"
+      ],
+      "short": "The Sign Operator, represented by the symbol σ̂ (sigma-hat), is a mathematical tool defined in Theophysics Paper 4.",
+      "definition": "The Sign Operator, represented by the symbol σ̂ (sigma-hat), is a mathematical tool defined in Theophysics Paper 4.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Sin",
+      "variants": [
+        "sin",
+        "sins"
+      ],
+      "short": "🔹 Sin 👉 Sin is when people do something wrong that goes against moral or spiritual laws.",
+      "definition": "🔹 Sin 👉 Sin is when people do something wrong that goes against moral or spiritual laws. ✅ It causes spiritual and moral damage, like breaking trust or harming relationships. ✅ It’s like a virus—it spreads and makes things worse. Example: Lying to a friend is a small sin, but if you keep lying, you might lose their trust forever.",
+      "category": "Law"
+    },
+    {
+      "term": "Sin Source",
+      "variants": [
+        "sin source"
+      ],
+      "short": "In physics, a \"source term\" (often denoted by 'J') in a field equation is a term that describes how a field is generated or sustained.",
+      "definition": "In physics, a \"source term\" (often denoted by 'J') in a field equation is a term that describes how a field is generated or sustained. For example, in electromagnetism, moving electric charges (an electric current, J) act as the source that generates a magnetic field.",
+      "category": "Spiritual Warfare"
+    },
+    {
+      "term": "Source Code",
+      "variants": [
+        "source code"
+      ],
+      "short": "Kolmogorov complexity argument: the universe's apparent complexity can be compressed to a small generative program.",
+      "definition": "Kolmogorov complexity argument: the universe's apparent complexity can be compressed to a small generative program. That program — the minimum-description-length generator of all that exists — is what John 1:1 calls the Logos (\"In the beginning was the Word\").",
+      "category": "Information"
+    },
+    {
+      "term": "Spiritual Distance",
+      "variants": [
+        "spiritual distance"
+      ],
+      "short": "Spiritual Distance: The concept of spiritual distance refers to the proximity—whether physical, mental, emotional, or volitional—to...",
+      "definition": "Spiritual Distance: The concept of spiritual distance refers to the proximity—whether physical, mental, emotional, or volitional—to sources of negative influence. This idea suggests that the closer one is to these sources, the stronger their pull becomes, much like the gravitational force described by the inverse square law.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Spiritual Gravity",
+      "variants": [
+        "spiritual gravity"
+      ],
+      "short": "Just as gravitational mass curves spacetime, creating a potential well that draws matter toward it, maximum coherence (C_max) curves the...",
+      "definition": "Just as gravitational mass curves spacetime, creating a potential well that draws matter toward it, maximum coherence (C_max) curves the informational substrate, creating a grace gradient that draws other conscious agents toward alignment.",
+      "category": "Information"
+    },
+    {
+      "term": "Spiritual Inertia",
+      "variants": [
+        "spiritual inertia"
+      ],
+      "short": "Definition: The tendency for a soul to remain in its current spiritual state unless acted upon by an external force (usually divine grace).",
+      "definition": "Definition: The tendency for a soul to remain in its current spiritual state unless acted upon by an external force (usually divine grace). This principle explains why both positive spiritual growth and negative spiritual decline tend to continue along their current trajectory without intervention.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Spiritual Mass",
+      "variants": [
+        "spiritual mass"
+      ],
+      "short": "Definition: The accumulated weight of sinful patterns and separation from God that increases one's susceptibility to sin's gravitational...",
+      "definition": "Definition: The accumulated weight of sinful patterns and separation from God that increases one's susceptibility to sin's gravitational pull. Unlike physical mass, spiritual mass can be reduced through repentance, forgiveness, and divine grace.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Spiritual Negentropy",
+      "variants": [
+        "spiritual negentropy"
+      ],
+      "short": "🌟 Spiritual Negentropy: The Force That Restores Order to the Soul Spiritual negentropy is the opposite of spiritual decay (entropy)—it...",
+      "definition": "🌟 Spiritual Negentropy: The Force That Restores Order to the Soul Spiritual negentropy is the opposite of spiritual decay (entropy)—it is the force that brings healing, order, and renewal to our spiritual lives.",
+      "category": "Thermodynamics"
+    },
+    {
+      "term": "Spontaneous Symmetry Breaking",
+      "variants": [
+        "spontaneous symmetry breaking"
+      ],
+      "short": "Spontaneous Symmetry Breaking (SSB) is a profound concept in physics where the underlying laws of a system possess a certain symmetry,...",
+      "definition": "Spontaneous Symmetry Breaking (SSB) is a profound concept in physics where the underlying laws of a system possess a certain symmetry, but the system's actual ground state (its state of lowest energy) does not.",
+      "category": "Master Equation"
+    },
+    {
+      "term": "Strong Nuclear Force",
+      "variants": [
+        "strong nuclear force"
+      ],
+      "short": "The [[[[Strong Nuclear Force]]]] is the strongest of the four fundamental forces in physics, responsible for binding protons and...",
+      "definition": "The [[[[Strong Nuclear Force]]]] is the strongest of the four fundamental forces in physics, responsible for binding protons and neutrons together inside the nucleus of an atom.",
+      "category": "Trinity"
+    },
+    {
+      "term": "superposition",
+      "variants": [
+        "superpositions"
+      ],
+      "short": "A state of multiple possible realities before observation forces a choice",
+      "definition": "In quantum mechanics, superposition describes a particle existing in multiple states simultaneously until observed. In the MDA framework, moral superposition describes a culture that has not yet committed to a moral framework—maintaining contradictory beliefs simultaneously. Cultural collapse forces the 'wave function' to collapse into a single, often degraded, moral state.",
+      "category": "Physics"
+    },
+    {
+      "term": "Symptomatic Research Method",
+      "variants": [
+        "symptomatic research method"
+      ],
+      "short": "A research approach that treats investigation like medical diagnosis: each data point is a \"symptom\" that reveals what to investigate...",
+      "definition": "A research approach that treats investigation like medical diagnosis: each data point is a \"symptom\" that reveals what to investigate next, creating a self-directing chain of inquiry.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Syzygy Principle",
+      "variants": [
+        "syzygy principle"
+      ],
+      "short": "The Syzygy Principle is the central concept of Theophysics Paper 4.",
+      "definition": "The Syzygy Principle is the central concept of Theophysics Paper 4. It proposes that consciousness is not a continuous spectrum from \"good\" to \"bad,\" but exists in a fundamental binary state of opposition or alignment with the Logos. A consciousness is either oriented towards the Logos (+1) or away from it (-1).",
+      "category": "Consciousness"
+    },
+    {
+      "term": "Technology",
+      "variants": [
+        "technology",
+        "technologies"
+      ],
+      "short": "🔧 Technology: Tools That Change the World Technology is anything humans create to solve problems or improve life.",
+      "definition": "🔧 Technology: Tools That Change the World Technology is anything humans create to solve problems or improve life.",
+      "category": "Relativity"
+    },
+    {
+      "term": "The 10 Laws of Reality",
+      "variants": [
+        "the 10 laws of reality"
+      ],
+      "short": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "definition": "Redirect — this is an older name for one of the Ten Laws of Reality.",
+      "category": "Law"
+    },
+    {
+      "term": "The Coherence Factor",
+      "variants": [
+        "the coherence factor"
+      ],
+      "short": "No I agree but I think I think that is the the beauty of them what",
+      "definition": "No I agree but I think I think that is the the beauty of them what",
+      "category": "Trinity"
+    },
+    {
+      "term": "The Loss Function in Prophetic Divergence",
+      "variants": [
+        "the loss function in prophetic divergence"
+      ],
+      "short": "Not all prophecies come to pass in their original form—this introduces a prophetic loss function that accounts for divergence due to...",
+      "definition": "Not all prophecies come to pass in their original form—this introduces a prophetic loss function that accounts for divergence due to free will:",
+      "category": "General"
+    },
+    {
+      "term": "Theological Models & Christian Doctrine",
+      "variants": [
+        "theological models & christian doctrine"
+      ],
+      "short": "Theological Models & Christian Doctrine Key Concepts:",
+      "definition": "Theological Models & Christian Doctrine Key Concepts:",
+      "category": "Trinity"
+    },
+    {
+      "term": "theophysics",
+      "variants": [],
+      "short": "The unified framework integrating physics and theology",
+      "definition": "Theophysics is the interdisciplinary framework developed by David Lowe that integrates concepts from physics (entropy, coherence fields, Lagrangians) with theological concepts (grace, covenant, moral agency) to create testable, quantitative models of spiritual and social dynamics. It is neither physics proving theology nor theology explaining physics, but a genuinely unified vocabulary.",
+      "category": "Framework"
+    },
+    {
+      "term": "Thermodynamics",
+      "variants": [
+        "thermodynamics"
+      ],
+      "short": "3.",
+      "definition": "3. Thermodynamics Key Concepts:",
+      "category": "Thermodynamics"
+    },
+    {
+      "term": "Time",
+      "variants": [
+        "time",
+        "times"
+      ],
+      "short": "🔹 Time 👉 Time is how we measure change and events from past to present to future.",
+      "definition": "🔹 Time 👉 Time is how we measure change and events from past to present to future. ✅ In physics, time flows forward, but it can move differently depending on gravity and speed. ✅ In spirituality, time can feel faster or slower based on choices, emotions, or faith. Example: Time feels slow when you’re waiting for your birthday but fast when you're having fun.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Trinity",
+      "variants": [
+        "trinity",
+        "trinities"
+      ],
+      "short": "The Trinity isn't just theological doctrine.",
+      "definition": "The Trinity isn't just theological doctrine.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Trinity Triangulation",
+      "variants": [
+        "trinity triangulation"
+      ],
+      "short": "Trinity Triangulation is a principle developed in Theophysics (Proofs 4 and 8) that provides an information-theoretic justification for...",
+      "definition": "Trinity Triangulation is a principle developed in Theophysics (Proofs 4 and 8) that provides an information-theoretic justification for the Christian doctrine of the Trinity.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Truth",
+      "variants": [
+        "truth",
+        "truths"
+      ],
+      "short": "**Truth is the perfectly coherent, constant, and self-propagating signal of reality as it originates from God (The Logos).",
+      "definition": "**Truth is the perfectly coherent, constant, and self-propagating signal of reality as it originates from God (The Logos).",
+      "category": "Trinity"
+    },
+    {
+      "term": "U Factor",
+      "variants": [
+        "u factor"
+      ],
+      "short": "Definition: The \"unprovable\" component in spiritual equations that represents divine intervention beyond deterministic forces.",
+      "definition": "Definition: The \"unprovable\" component in spiritual equations that represents divine intervention beyond deterministic forces.",
+      "category": "Law"
+    },
+    {
+      "term": "Unity Field",
+      "variants": [
+        "unity field"
+      ],
+      "short": "Unity Field: The underlying spiritual reality that enables genuine connection between distinct individuals; transcends mere proximity or...",
+      "definition": "Unity Field: The underlying spiritual reality that enables genuine connection between distinct individuals; transcends mere proximity or similarity.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Universal Turing Machine",
+      "variants": [
+        "universal turing machine"
+      ],
+      "short": "A Turing Machine is an abstract, theoretical model of a computer, invented by the brilliant mathematician Alan Turing in 1936.",
+      "definition": "A Turing Machine is an abstract, theoretical model of a computer, invented by the brilliant mathematician Alan Turing in 1936. It consists of a simple head that can read, write, and move along an infinitely long tape of symbols. Despite its simplicity, a Turing machine can simulate the logic of any computer algorithm.",
+      "category": "Information"
+    },
+    {
+      "term": "Witness Field",
+      "variants": [
+        "witness field"
+      ],
+      "short": "The Witness Field, represented by the Greek letter phi (Φ), is the central concept introduced in Paper 2 of the Logos Papers.",
+      "definition": "The Witness Field, represented by the Greek letter phi (Φ), is the central concept introduced in Paper 2 of the Logos Papers.",
+      "category": "Trinity"
+    },
+    {
+      "term": "Works Orthogonality",
+      "variants": [
+        "works orthogonality"
+      ],
+      "short": "The mathematical proof that human effort (works) and divine grace (salvation) operate in completely independent dimensions—you cannot...",
+      "definition": "The mathematical proof that human effort (works) and divine grace (salvation) operate in completely independent dimensions—you cannot earn salvation through actions, and receiving salvation doesn't automatically complete your moral work.",
+      "category": "Grace & Salvation"
+    }
+  ]
+}

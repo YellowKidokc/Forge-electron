@@ -1,0 +1,129 @@
+/* ═══════════════════════════════════════════════════════════════
+   MTL EQUATION COMPONENTS — Math Translation Layer
+   Black/gold aesthetic · Reading-level aware · Screen-reader safe
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Promoted Equation Block ── */
+.eq-showpiece {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+  border: 1px solid rgba(212, 175, 55, .15);
+  border-left: 3px solid #d4af37;
+  border-radius: 0 .5rem .5rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.eq-visual {
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  overflow-x: auto;
+  padding: .5rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #333 #0a0a0a;
+}
+.eq-visual::-webkit-scrollbar { height: 4px; }
+.eq-visual::-webkit-scrollbar-track { background: #0a0a0a; }
+.eq-visual::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+/* Easy: slightly smaller equation */
+body.level-easy .eq-visual { font-size: 1.05rem; }
+
+.eq-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .55rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #d4af37;
+  margin-top: .75rem;
+  opacity: .7;
+}
+
+/* ── MTL Callout ── */
+.mtl-callout {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  background: rgba(212, 175, 55, .04);
+  border: 1px solid rgba(212, 175, 55, .1);
+  border-radius: .4rem;
+  overflow: hidden;
+}
+
+.mtl-callout summary {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .7rem 1rem;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .6rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #d4af37;
+  list-style: none;
+  user-select: none;
+}
+.mtl-callout summary::-webkit-details-marker { display: none; }
+
+.mtl-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d4af37;
+  box-shadow: 0 0 6px rgba(212, 175, 55, .4);
+  flex-shrink: 0;
+}
+
+.mtl-label { flex: 1; }
+
+.mtl-chevron {
+  margin-left: auto;
+  transition: transform .2s;
+  font-size: .5rem;
+  color: #5a5a5a;
+}
+.mtl-callout[open] .mtl-chevron { transform: rotate(180deg); }
+
+.mtl-body {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid rgba(212, 175, 55, .08);
+}
+
+.mtl-body > div {
+  padding: .6rem 0;
+  font-size: .88rem;
+  line-height: 1.6;
+  color: #c0c0c0;
+  display: none;
+}
+.mtl-body > div + div { border-top: 1px solid rgba(212, 175, 55, .06); }
+
+/* ── Reading-Level Visibility ── */
+body.level-easy .mtl-easy    { display: block; color: #4ade80; }
+body.level-easy .mtl-standard{ display: none; }
+body.level-easy .mtl-academic{ display: none; }
+
+body.level-standard .mtl-standard { display: block; color: #e0e0e0; }
+body.level-standard .mtl-easy     { display: none; }
+body.level-standard .mtl-academic { display: none; }
+
+body.level-academic .mtl-academic { display: block; color: #a78bfa; font-style: italic; }
+body.level-academic .mtl-standard { display: none; }
+body.level-academic .mtl-easy     { display: none; }
+
+/* Easy: callouts open by default (chevron rotated) */
+body.level-easy .mtl-callout summary .mtl-chevron { transform: rotate(180deg); }
+
+/* Proof level: show academic like standard, but keep callouts closed by default */
+body.level-proof .mtl-academic { display: block; color: #a78bfa; font-style: italic; }
+body.level-proof .mtl-standard { display: none; }
+body.level-proof .mtl-easy     { display: none; }
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .eq-showpiece { padding: 1rem; margin: 1.5rem auto; }
+  .eq-visual { font-size: 1rem; }
+  .mtl-callout summary { font-size: .55rem; padding: .6rem .8rem; }
+}

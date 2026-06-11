@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  PAGE_META
+  series: MDA
+  article: MDA-proof-packet
+  title: Moral Decline of America — Series Proof Packet
+  version: 1.0
+  template: series-proof-packet
+  marked_by: opus
+  marked_date: 2026-05-24
+  purpose: Per-series evidence locker. One page per series showing the complete proof architecture.
+  consumes: .paper-snapshot.json (per-article in this series), series-grade.json
+  links_up_to: proof-explorer-index.html (aggregate)
+  links_down_to: individual article proof packets (per-article)
+  generator_notes: Every data section contains PROMPT comments. Template slots use PENDING_GENERATOR_FIELD.
+    This template is designed to be duplicated per series and filled by a Python/AI generator
+    reading .paper-snapshot.json files from the series output folder.
+    Snapshot field mappings:
+      snapshot.metadata → Series Summary section
+      snapshot.grade → Grade Badge
+      snapshot.claims → Claims Table (filter by claim_type)
+      snapshot.equations → Equations section (if math_translation complete)
+      snapshot.7qs → 7QS Summary section
+      snapshot.station_marks → Station Marks (internal audit)
+      snapshot.source_hash → Integrity verification
+-->
+<head>
+
+<!-- BEGIN:COMPONENT:head:head-series-packet -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Moral Decline of America — Series Proof Packet</title>
+<meta name="description" content="Complete proof architecture for the Moral Decline of America series: grades, claims, derivations, evidence, and falsification."/>
+<meta name="author" content="David Lowe"/>
+<link rel="canonical" href="https://proof-explorer.theophysics.pro/series/mda-proof-packet.html"/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Moral Decline of America — Series Proof Packet"/>
+<meta property="og:description" content="Grades, claims, derivations, evidence, and falsification for the Moral Decline of America series."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://proof-explorer.theophysics.pro/series/mda-proof-packet.html"/>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Moral Decline of America — Series Proof Packet",
+  "description": "Complete proof architecture for the Moral Decline of America series.",
+  "author": {"@type": "Person", "name": "David Lowe"},
+  "datePublished": "2026-05-30",
+  "dateModified": "2026-05-30"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<!-- END:COMPONENT:head:head-series-packet -->
+
+<!-- BEGIN:COMPONENT:style:style-series-packet -->
+<style>
+/* ═══════ COMPONENT:style:design-tokens ═══════ */
+:root{
+  --bg:#050505; --surface:#0a0a0a; --surface2:#111; --surface3:#1a1a1a;
+  --border:#222; --border-2:#2a2a2a; --border-hi:#3a3a3a;
+  --text:#e5e3df; --text-dim:#9a9a9a; --text-muted:#5a5a5a;
+  --gold:#d4af37; --gold-dim:rgba(212,175,55,.1); --gold-glow:rgba(212,175,55,.06);
+  --rung-easy:#4ade80; --rung-med:#fb923c; --rung-hard:#f87171;
+  --info:#38bdf8; --info-dim:rgba(56,189,248,.1);
+  --serif:'Crimson Text',Georgia,serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --display:'Oswald','Inter',sans-serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --max:1000px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a.skip-link{position:absolute;top:-40px;left:0;background:var(--gold);color:#000;padding:.5rem 1rem;z-index:100;font-size:.85rem}
+a.skip-link:focus{top:0}
+
+/* ═══════ COMPONENT:topbar:header-series-packet ═══════ */
+.sp-header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.5rem;backdrop-filter:blur(14px) saturate(140%);background:rgba(5,5,5,.7);border-bottom:1px solid transparent;transition:all .25s ease}
+.sp-header-scrolled{background:rgba(8,8,8,.92);border-bottom-color:var(--border)}
+.sp-brand{display:flex;align-items:center;gap:.6rem}
+.sp-mark{font-family:var(--serif);font-size:1.3rem;color:var(--gold);line-height:1}
+.sp-name{font-family:var(--mono);font-size:.6rem;letter-spacing:.25em;color:var(--text-muted);text-transform:uppercase}
+.sp-name span{color:var(--gold)}
+.sp-nav{display:flex;gap:.1rem;flex-wrap:wrap}
+.sp-nav a{font-family:var(--display);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.45rem .65rem;border-radius:4px;color:var(--text-dim);transition:all .15s}
+.sp-nav a:hover,.sp-nav a.active{color:var(--gold);background:var(--gold-dim)}
+.sp-back{font-family:var(--mono);font-size:.6rem;color:var(--text-muted);display:flex;align-items:center;gap:.4rem;padding:.4rem .6rem;border-radius:4px;transition:all .15s}
+.sp-back:hover{color:var(--gold);background:var(--gold-dim)}
+@media(max-width:800px){.sp-nav{display:none}}
+
+/* ═══════ COMPONENT:hero:hero-series-packet ═══════ */
+.sp-hero{position:relative;padding:7rem 1.5rem 2.5rem;overflow:hidden}
+.sp-hero::before{content:'';position:absolute;top:15%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(212,175,55,.05) 0%,transparent 65%);pointer-events:none}
+.sp-hero-inner{max-width:var(--max);margin:0 auto;position:relative}
+.sp-hero-row{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.sp-hero-text{flex:1;min-width:280px}
+.sp-hero-eyebrow{font-family:var(--mono);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+.sp-hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05;color:#fff;margin-bottom:.8rem;letter-spacing:.02em}
+.sp-hero-sub{font-family:var(--serif);font-size:1.05rem;color:var(--text-dim);line-height:1.55;font-style:italic;max-width:520px}
+
+/* Grade badge */
+.sp-grade-card{flex:0 0 auto;padding:1.5rem 2rem;background:var(--surface2);border:1px solid var(--border);border-radius:8px;text-align:center;min-width:140px}
+.sp-grade-label{font-family:var(--mono);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.4rem}
+.sp-grade-value{font-family:var(--display);font-size:3rem;color:var(--gold);line-height:1}
+.sp-grade-sub{font-family:var(--mono);font-size:.6rem;color:var(--text-dim);margin-top:.4rem}
+
+/* ═══════ COMPONENT:section:stats-ribbon ═══════ */
+.sp-stats{max-width:var(--max);margin:0 auto;padding:0 1.5rem 2.5rem}
+.sp-stats-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface2)}
+.sp-stat{padding:1.1rem .7rem;text-align:center;border-right:1px solid var(--border)}
+.sp-stat:last-child{border-right:0}
+.sp-stat-num{font-family:var(--display);font-size:1.4rem;color:var(--gold);display:block;margin-bottom:.15rem}
+.sp-stat-label{font-family:var(--mono);font-size:.52rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em}
+
+/* ═══════ COMPONENT:section:generic ═══════ */
+.sp-sec{max-width:var(--max);margin:0 auto;padding:2.5rem 1.5rem}
+.sp-sec-head{display:flex;align-items:center;gap:.8rem;margin-bottom:.5rem}
+.sp-sec-dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.sp-sec-kicker{font-family:var(--mono);font-size:.62rem;color:var(--text-muted);letter-spacing:.15em;text-transform:uppercase}
+.sp-sec h2{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.65rem);font-weight:400;color:#fff;margin-bottom:.25rem}
+.sp-sec-desc{font-size:.85rem;color:var(--text-dim);max-width:600px;margin-bottom:1.3rem;line-height:1.55}
+
+/* ═══════ COMPONENT:card:article-cards ═══════ */
+.card-grid{display:grid;gap:.6rem}
+.card-grid-1{grid-template-columns:1fr}
+.card-grid-2{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.sp-card{display:flex;flex-direction:column;padding:1rem 1.1rem;background:var(--surface2);border:1px solid var(--border);border-radius:6px;transition:all .2s}
+.sp-card:hover{border-color:var(--gold);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.sp-card-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.35rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;flex-wrap:wrap}
+.sp-card-code{color:var(--gold);background:var(--gold-dim);padding:.1rem .4rem;border-radius:3px}
+.sp-card-grade{font-family:var(--display);font-size:.85rem;color:var(--gold);margin-left:auto}
+.sp-card-status{padding:.08rem .35rem;border-radius:3px;font-size:.52rem;font-weight:600}
+.sp-card-status.pass{background:rgba(74,222,128,.12);color:#4ade80}
+.sp-card-status.warn{background:rgba(251,146,60,.12);color:#fb923c}
+.sp-card-status.fail{background:rgba(248,113,113,.12);color:#f87171}
+.sp-card-status.draft{background:var(--info-dim);color:var(--info)}
+.sp-card h3{font-family:var(--serif);font-size:.98rem;color:#fff;font-weight:400;line-height:1.25;margin-bottom:.25rem}
+.sp-card p{font-size:.8rem;color:var(--text-dim);flex:1}
+.sp-card-foot{font-family:var(--mono);font-size:.55rem;color:var(--text-muted);margin-top:.5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+
+/* ═══════ COMPONENT:section:tables ═══════ */
+.sp-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sp-table{width:100%;border-collapse:collapse;font-size:.83rem;min-width:550px}
+.sp-table th{text-align:left;padding:.6rem .7rem;font-family:var(--mono);font-size:.55rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid var(--border);font-weight:500}
+.sp-table td{padding:.55rem .7rem;border-bottom:1px solid var(--border-2);color:var(--text)}
+.sp-table tr:hover td{background:var(--surface2)}
+.sp-table td:first-child{font-family:var(--mono);font-size:.72rem;color:var(--gold)}
+.pe-status{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:.35rem}
+.status-pass{background:var(--rung-easy)}
+.status-warn{background:var(--rung-med)}
+.status-fail{background:var(--rung-hard)}
+
+/* ═══════ COMPONENT:section:claim-strength ═══════ */
+.strength-bar{display:flex;gap:2px;height:6px;border-radius:3px;overflow:hidden;margin-top:.5rem}
+.strength-seg{height:100%}
+.strength-seg.strong{background:var(--rung-easy);flex:var(--strong-pct)}
+.strength-seg.partial{background:var(--rung-med);flex:var(--partial-pct)}
+.strength-seg.weak{background:var(--rung-hard);flex:var(--weak-pct)}
+
+/* ═══════ COMPONENT:section:7qs-summary ═══════ */
+.q7-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.5rem}
+.q7-item{padding:.8rem;background:var(--surface2);border:1px solid var(--border);border-radius:5px;border-left:3px solid var(--gold)}
+.q7-item-label{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.q7-item-text{font-size:.82rem;color:var(--text-dim);line-height:1.45}
+
+/* ═══════ COMPONENT:section:coverage-matrix ═══════ */
+.coverage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:.3rem}
+.coverage-cell{padding:.6rem .4rem;background:var(--surface2);border:1px solid var(--border);border-radius:4px;text-align:center;font-family:var(--mono);font-size:.6rem}
+.coverage-cell.covered{border-color:rgba(74,222,128,.3);background:rgba(74,222,128,.06)}
+.coverage-cell.partial{border-color:rgba(251,146,60,.3);background:rgba(251,146,60,.06)}
+.coverage-cell.uncovered{border-color:var(--border);opacity:.5}
+.coverage-cell-law{color:var(--gold);font-size:.55rem;display:block;margin-bottom:.15rem}
+.coverage-cell-name{color:var(--text-dim);font-size:.52rem}
+
+/* ═══════ COMPONENT:footer:footer-series-packet ═══════ */
+.sp-footer{max-width:var(--max);margin:2.5rem auto 0;padding:2.5rem 1.5rem;text-align:center;border-top:1px solid var(--border)}
+.sp-footer .feq{font-family:var(--mono);font-size:.72rem;color:var(--gold);opacity:.5;margin-bottom:.6rem}
+.sp-footer p{color:var(--text-muted);font-size:.75rem;margin:.25rem 0}
+
+@media(max-width:640px){
+  .sp-hero-row{flex-direction:column}
+  .sp-grade-card{align-self:flex-start}
+  .card-grid-2{grid-template-columns:1fr}
+  .q7-grid{grid-template-columns:1fr}
+  .coverage-grid{grid-template-columns:repeat(5,1fr)}
+  .sp-stats-inner{grid-template-columns:repeat(3,1fr)}
+  .sp-stat{border-bottom:1px solid var(--border)}
+}
+</style>
+<!-- END:COMPONENT:style:style-series-packet -->
+
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- BEGIN:COMPONENT:topbar:header-series-packet -->
+<header class="sp-header" id="sp-header" data-component="topbar" data-name="header-series-packet">
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="./index.html" class="sp-back"><i class="fas fa-arrow-left"></i> Proof Explorer</a>
+    <span class="sp-brand">
+      <span class="sp-mark">χ</span>
+      <span class="sp-name"><span>MDA</span> // Proof Packet</span>
+    </span>
+  </div>
+  <nav class="sp-nav" aria-label="Proof packet navigation">
+    <a href="#summary">Summary</a>
+    <a href="#articles">Articles</a>
+    <a href="#claims">Claims</a>
+    <a href="#7qs">7QS</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#falsification">Falsification</a>
+    <a href="#companions">Companions</a>
+  </nav>
+</header>
+<!-- END:COMPONENT:topbar:header-series-packet -->
+
+<!-- BEGIN:COMPONENT:hero:hero-series-packet -->
+<!--
+  PROMPT:generator: Fill from series-grade.json or aggregate snapshot metadata.
+  - SERIES_CODE: e.g. "GTQ"
+  - SERIES_TITLE: e.g. "Genesis to Quantum"
+  - SERIES_DESCRIPTION: 2-sentence series summary
+  - SERIES_GRADE: overall letter grade (A+, A, A-, B+, etc.) or "Pending"
+  - GRADE_CONFIDENCE: percentage or qualifier
+  - ARTICLE_COUNT, CLAIM_COUNT, EQUATION_COUNT from aggregated snapshots
+-->
+<section class="sp-hero" data-component="hero" data-name="hero-series-packet">
+  <div class="sp-hero-inner">
+    <div class="sp-hero-row">
+      <div class="sp-hero-text">
+        <div class="sp-hero-eyebrow">Series Proof Packet</div>
+        <h1 id="main-content">Moral Decline of America</h1>
+        <p class="sp-hero-sub">Series-level proof packet for the Moral Decline of America corpus, linking the live article set, local grader outputs, math translation outputs, 7QS claim gates, evidence ledgers, and companion markdown files.</p>
+      </div>
+      <div class="sp-grade-card">
+        <div class="sp-grade-label">Series Grade</div>
+        <div class="sp-grade-value">Local NLP</div>
+        <div class="sp-grade-sub">61 HTML / 63 MD companions detected</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END:COMPONENT:hero:hero-series-packet -->
+
+<!-- BEGIN:COMPONENT:section:stats-ribbon -->
+<!--
+  PROMPT:generator: Aggregate stats from all .paper-snapshot.json files in this series.
+  - articles: count of snapshot files
+  - claims: SUM of claims arrays (filtered to approved_claim + load_bearing)
+  - equations: SUM of equations arrays (deduplicated)
+  - kill_tests: count from falsification registry for this series
+  - derivations: count of unique derivation chains
+  - coverage: percentage of 10 Laws touched by this series
+-->
+<section class="sp-stats" data-component="section" data-name="stats-ribbon">
+  <div class="sp-stats-inner">
+    <div class="sp-stat"><span class="sp-stat-num">61</span><span class="sp-stat-label">Articles</span></div>
+    <div class="sp-stat"><span class="sp-stat-num">5/442</span><span class="sp-stat-label">Claims</span></div>
+    <div class="sp-stat"><span class="sp-stat-num">160</span><span class="sp-stat-label">Equations</span></div>
+    <div class="sp-stat"><span class="sp-stat-num">3</span><span class="sp-stat-label">Kill Tests</span></div>
+    <div class="sp-stat"><span class="sp-stat-num">10/10</span><span class="sp-stat-label">Law Coverage</span></div>
+  </div>
+</section>
+<!-- END:COMPONENT:section:stats-ribbon -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION: SERIES SUMMARY
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- BEGIN:COMPONENT:section:series-summary -->
+<!--
+  PROMPT:generator: Write or inject the series-level summary.
+  This is the "does the whole series hold together?" overview.
+  Include:
+  - 3-5 sentence series thesis
+  - Strongest claims (top 5 by derivation_depth or grade)
+  - Weakest claims (bottom 3)
+  - Unresolved claims
+  - Contradiction flags (if any)
+  - Coverage gaps (which Laws are NOT touched)
+  Pull from: series-grade.json summary fields, or generate from aggregated snapshots.
+-->
+<section class="sp-sec" id="summary" data-component="section" data-name="series-summary">
+  <div class="sp-sec-head">
+    <span class="sp-sec-dot"></span>
+    <span class="sp-sec-kicker">Summary</span>
+  </div>
+  <h2>Series Overview</h2>
+  <p class="sp-sec-desc">The MDA series argues that American moral and social coherence can be tracked as a multi-domain decline rather than a single-cause cultural complaint. This packet separates live article routing, raw extraction, proof-layer claims, personal/testimonial material, and falsification conditions so the proof layer can stay honest.</p>
+
+  <!-- Claim strength bar -->
+  <!--
+    PROMPT:generator: Calculate percentages from claim statuses.
+    --strong-pct = count(substantiated) / total_claims
+    --partial-pct = count(partial) / total_claims
+    --weak-pct = count(failed + under_review) / total_claims
+  -->
+  <div style="max-width:400px;margin-bottom:1.5rem">
+    <div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.55rem;color:var(--text-muted);margin-bottom:.3rem">
+      <span>Substantiated</span><span>Partial</span><span>Unresolved</span>
+    </div>
+    <div class="strength-bar" style="--strong-pct:65;--partial-pct:25;--weak-pct:10">
+      <div class="strength-seg strong"></div>
+      <div class="strength-seg partial"></div>
+      <div class="strength-seg weak"></div>
+    </div>
+  </div>
+
+  <!-- Top claims callout -->
+  <!--
+    PROMPT:generator: List top 5 load-bearing claims.
+    For each: claim_text, grade (green/amber/red), source_article.
+  -->
+  <div class="card-grid card-grid-1" style="max-width:700px">
+    <div class="sp-card" style="border-left:3px solid var(--rung-easy)">
+      <div class="sp-card-row"><span class="sp-card-code">CLAIM</span><span class="sp-card-status pass">Evidence/Proof</span></div>
+      <h3>This paper can be destroyed by any of the following: | # | Kill Condition | Status | | --- | --- | --- | | 1 | Find a major domain showing *increasing* coherence 1965–2025 without external constraint intervention | Not yet found | | 2 | Demonstrate the curve convergence is statistical artifact (selection bias, normalization error) | Replication invited | | 3 | Produce an alternative model that predicts cross-domain synchronization with fewer assumptions | Not yet proposed | | 4 | Show the inflection point is an artifact of data availability, not real behavioral change | Addressed via pre-1945 data | | 5 | Replicate with independent datasets and find no convergence | Replication invited | Explicit Invitation: If you can satisfy any kill condition, this paper is falsified.</h3>
+      <div class="sp-card-foot"><span>Source: MDA-004-facts-framework</span><span>7QS: 6/6</span><span>Level: Empirical Support</span></div>
+    </div>
+    <div class="sp-card" style="border-left:3px solid var(--rung-easy)">
+      <div class="sp-card-row"><span class="sp-card-code">CLAIM</span><span class="sp-card-status pass">Evidence/Proof</span></div>
+      <h3>If a competing model explains the same data with equal or greater predictive accuracy, fewer parameters, and a different causal mechanism, our model should be replaced. **Status: Not challenged.</h3>
+      <div class="sp-card-foot"><span>Source: MDA-054-way-back</span><span>7QS: 5/6</span><span>Level: Empirical Support</span></div>
+    </div>
+    <div class="sp-card" style="border-left:3px solid var(--rung-easy)">
+      <div class="sp-card-row"><span class="sp-card-code">CLAIM</span><span class="sp-card-status pass">Evidence/Proof</span></div>
+      <h3>If a competing model explains the same data with equal or greater predictive accuracy, fewer parameters, and a different causal mechanism, our model should be replaced.</h3>
+      <div class="sp-card-foot"><span>Source: MDA-902-appendix-trans-domain-analysis</span><span>7QS: 5/6</span><span>Level: Empirical Support</span></div>
+    </div>
+    <div class="sp-card" style="border-left:3px solid var(--rung-easy)">
+      <div class="sp-card-row"><span class="sp-card-code">CLAIM</span><span class="sp-card-status pass">Framework/Formal</span></div>
+      <h3>Structural factors that enable this: * Patriarchal authority structures * Theology of forgiveness that pressures victims to reconcile * Cultural reluctance to involve “English” law enforcement * Limited access to outside support services * No reliable prevalence data because reporting rates are extremely low **No system built on human authority is immune to the abuse of that authority.** The Amish binding variable (external authority/Ordnung) constrains entropy — but when the authority itself becomes the source of harm, the system’s own design impedes correction.</h3>
+      <div class="sp-card-foot"><span>Source: MDA-045-amish-control-group-THE-DATA</span><span>7QS: 5/6</span><span>Level: Structural Correspondence</span></div>
+    </div>
+    <div class="sp-card" style="border-left:3px solid var(--rung-med)">
+      <div class="sp-card-row"><span class="sp-card-code">CLAIM</span><span class="sp-card-status warn">Framework/Formal</span></div>
+      <h3>When a mathematical model, a three-thousand-year-old text, and modern epidemiological data all independently point at the same region of the number line, you are not looking at coincidence.</h3>
+      <div class="sp-card-foot"><span>Source: MDA-906-appendix-93-year-floor</span><span>7QS: 4/6</span><span>Level: Formal Model</span></div>
+    </div>
+
+  </div>
+</section>
+<!-- END:COMPONENT:section:series-summary -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION: ARTICLE PACKETS
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- BEGIN:COMPONENT:section:articles -->
+<!--
+  PROMPT:generator: List every article in the series with its individual proof packet link.
+  For each article: article_code, title, grade, claim_count, status, link to article packet HTML.
+  Sort by article number ascending.
+  Pull from: individual .paper-snapshot.json files.
+-->
+<section class="sp-sec" id="articles" data-component="section" data-name="articles">
+  <div class="sp-sec-head">
+    <span class="sp-sec-dot"></span>
+    <span class="sp-sec-kicker">Articles</span>
+  </div>
+  <h2>Articles in This Series</h2>
+  <p class="sp-sec-desc">Each article has its own proof packet with grade, claims, 7QS, math translation, and evidence.</p>
+
+  <div class="card-grid card-grid-2">
+    <a href="../../03-moral-decline/MDA-001-story-introduction.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-001</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>An American Story in Six Generations</h3>
+      <p>1.1 read; CHI 3.46; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 30 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-001-story-introduction.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-002-samuel-1900.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-002</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Baseline (1900)</h3>
+      <p>0.4 read; CHI 4.21; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 12 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-002-samuel-1900.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-003-measuring-moral-health.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-003</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>What If We Could Measure Moral Health?</h3>
+      <p>1.1 read; CHI 9.77; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 23 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 1 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-003-measuring-moral-health.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-004-facts-framework.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-004</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">C (Moderate)</span>
+      </div>
+      <h3>THE COHERENCE DECAY OF AMERICAN SOCIETY</h3>
+      <p>3.7 read; CHI 6.02; CKG B — Strong. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 70 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 8 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-004-facts-framework.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-005-empirical-evidence.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-005</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>The Empirical Evidence</h3>
+      <p>1.6 read; CHI 3.5; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 34 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 4 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-005-empirical-evidence.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-006-research-method.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-006</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>Research Method</h3>
+      <p>1.5 read; CHI 2.89; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 45 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-006-research-method.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-007-nine-domains.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-007</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Nine Domains</h3>
+      <p>1.5 read; CHI 6.62; CKG D — Developing. This HTML lives in the main 03-moral-decline folder, not the draft architecture folder.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 34 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 0 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-007-nine-domains.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-008-henry-1926.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-008</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Builder (1926)</h3>
+      <p>4.4 read; CHI 1.84; CKG F — Needs Work. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 151 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-008-henry-1926.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-009-the-1900-baseline.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-009</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The 1900 Baseline</h3>
+      <p>1.7 read; CHI 4.49; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 22 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 14 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-009-the-1900-baseline.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-010-pre-modern-baseline.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-010</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>The Pre-Modern Baseline</h3>
+      <p>5.4 read; CHI 3.11; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 120 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 1 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-010-pre-modern-baseline.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-011-collective-security-1930.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-011</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">A (Publication Grade)</span>
+      </div>
+      <h3>The Age of Collective Security</h3>
+      <p>2.5 read; CHI 2.72; CKG A — Publication Grade. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 50 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-011-collective-security-1930.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-012-william-1950.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-012</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>Peak Coherence (1950)</h3>
+      <p>4.4 read; CHI 0.97; CKG F — Needs Work. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 145 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 2 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-012-william-1950.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-013-peak-coherence-1940.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-013</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Crucible of Consensus</h3>
+      <p>3.1 read; CHI 4.25; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 71 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-013-peak-coherence-1940.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-014-fissure-1950.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-014</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>The Fissure in Conformity</h3>
+      <p>2.5 read; CHI 3.8; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 66 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-014-fissure-1950.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-015-long-decline.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-015</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Long Decline</h3>
+      <p>1.4 read; CHI 7.79; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 13 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 3 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-015-long-decline.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-016-thomas-1974.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-016</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Breaking (1974)</h3>
+      <p>4.2 read; CHI 0.82; CKG F — Needs Work. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 122 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-016-thomas-1974.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-017-unraveling-1960.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-017</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">A (Publication Grade)</span>
+      </div>
+      <h3>The Unraveling</h3>
+      <p>2.3 read; CHI 1.76; CKG A — Publication Grade. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 49 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-017-unraveling-1960.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-018-great-decoupling-1968.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-018</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>The Great Decoupling</h3>
+      <p>3.8 read; CHI 1.64; CKG F — Needs Work. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 100 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-018-great-decoupling-1968.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-019-current-state-2024.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-019</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Current State, 2024–2025</h3>
+      <p>3.1 read; CHI 2.08; CKG F — Needs Work. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 85 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 6 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-019-current-state-2024.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-020-phase-transition.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-020</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Phase Transition</h3>
+      <p>1.4 read; CHI 7.64; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 21 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 3 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-020-phase-transition.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-021-anatomy-of-phase-transition.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-021</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>Peak Signal</h3>
+      <p>2.0 read; CHI 10; CKG B — Strong. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 47 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-021-anatomy-of-phase-transition.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-022-cascade.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-022</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Cascade</h3>
+      <p>1.5 read; CHI 7.24; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 21 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 5 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-022-cascade.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-023-coherence-cascade.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-023</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Coherence Cascade</h3>
+      <p>0.5 read; CHI 6.51; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 9 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 2 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-023-coherence-cascade.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-024-semantic-collapse.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-024</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Semantic Precursor How Language Fails First</h3>
+      <p>1.2 read; CHI 2.01; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 30 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-024-semantic-collapse.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-025-cognitive-decline.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-025</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Cognitive Decline The Great SAT Score Turnover</h3>
+      <p>1.1 read; CHI 3.74; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 25 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-025-cognitive-decline.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-026-spiritual-collapse.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-026</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Spiritual &amp; Psychological Collapse</h3>
+      <p>1.1 read; CHI 3.81; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 26 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-026-spiritual-collapse.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-027-signal-went-dark.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-027</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Signal Went Dark Institutional Truth Collapse</h3>
+      <p>2.1 read; CHI 8.1; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 46 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 1 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-027-signal-went-dark.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-028-phantom-money.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-028</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>Phantom Money, Phantom Morals</h3>
+      <p>2.0 read; CHI 7.51; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 41 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 12 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-028-phantom-money.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-029-observer-collapsed.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-029</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Observer Collapsed</h3>
+      <p>2.1 read; CHI 10; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 44 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 1 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-029-observer-collapsed.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-030-trinity-mechanism.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-030</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>The Trinity-Wave Collapse Mechanism</h3>
+      <p>2.2 read; CHI 10; CKG B — Strong. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 67 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 16 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-030-trinity-mechanism.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-031-jacob-1998.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-031</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Aftermath (1998)</h3>
+      <p>3.6 read; CHI 1.38; CKG F — Needs Work. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 109 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-031-jacob-1998.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-032-why-bad-is-easier.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-032</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>Why the Bad Is Easier Than the Good</h3>
+      <p>1.2 read; CHI 6.53; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 38 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-032-why-bad-is-easier.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-033-entropic-society.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-033</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">B (Strong)</span>
+      </div>
+      <h3>The Entropic Society</h3>
+      <p>6.5 read; CHI 5.39; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 108 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-033-entropic-society.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-034-technology-entropy.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-034</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">A (Publication Grade)</span>
+      </div>
+      <h3>THE ENTROPIC SOCIETY</h3>
+      <p>3.3 read; CHI 4.91; CKG A — Publication Grade. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 52 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-034-technology-entropy.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-035-great-reconfiguration.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-035</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">B (Strong)</span>
+      </div>
+      <h3>The Great Reconfiguration</h3>
+      <p>6.2 read; CHI 1.17; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 104 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-035-great-reconfiguration.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-036-regulatory-impulse-1900.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-036</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">A (Publication Grade)</span>
+      </div>
+      <h3>The Regulatory Impulse</h3>
+      <p>6.9 read; CHI 1.87; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 169 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 2 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-036-regulatory-impulse-1900.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-037-biaxiosum-audit.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-037</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>The Biaxiosum Audit</h3>
+      <p>1.5 read; CHI 5.61; CKG A — Publication Grade. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 32 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-037-biaxiosum-audit.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-038-coherence-metric.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-038</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">C (Moderate)</span>
+      </div>
+      <h3>The Coherence Metric</h3>
+      <p>2.8 read; CHI 10; CKG A — Publication Grade. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 59 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 5 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-038-coherence-metric.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-039-physics-of-coherence.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-039</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Physics of Coherence</h3>
+      <p>0.5 read; CHI 10; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 13 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 4 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-039-physics-of-coherence.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-040-statistical-synthesis.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-040</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Moral Decay of America</h3>
+      <p>2.5 read; CHI 1.95; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 71 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 2 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-040-statistical-synthesis.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-041-statistical-spine.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-041</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>THE STATISTICAL SPINE</h3>
+      <p>0.9 read; CHI 4.62; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 14 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 6 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-041-statistical-spine.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-042-amish-exception-THE-CLAIM.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-042</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Amish Exception</h3>
+      <p>1.5 read; CHI 10; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 22 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 3 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-042-amish-exception-THE-CLAIM.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-043-amish-proof-THE-PROOF.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-043</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>The Amish Proof A Control Group for Coherence</h3>
+      <p>3.4 read; CHI 5.28; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 64 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 1 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-043-amish-proof-THE-PROOF.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-044-amish-control-study-THE-METHOD.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-044</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Control Study</h3>
+      <p>2.0 read; CHI 3.8; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 42 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 2 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-044-amish-control-study-THE-METHOD.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-045-amish-control-group-THE-DATA.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-045</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">C (Moderate)</span>
+      </div>
+      <h3>The Amish Anomaly</h3>
+      <p>4.6 read; CHI 3.78; CKG B — Strong. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 113 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 2 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-045-amish-control-group-THE-DATA.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-046-amish-demographics-THE-NUMBERS.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-046</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>Demographics &amp; Growth</h3>
+      <p>3.3 read; CHI 1.15; CKG F — Needs Work. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 90 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 8 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-046-amish-demographics-THE-NUMBERS.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-047-amish-tech-filter-THE-FILTER.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-047</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Technological Filter</h3>
+      <p>3.0 read; CHI 4.47; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 77 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-047-amish-tech-filter-THE-FILTER.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-048-ordnung-algorithm-THE-MECHANISM.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-048</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">A (Publication Grade)</span>
+      </div>
+      <h3>The Ordnung as System Algorithm</h3>
+      <p>6.1 read; CHI 4.6; CKG A — Publication Grade. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 200 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 2 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-048-ordnung-algorithm-THE-MECHANISM.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-049-coherence-factory-THE-SYNTHESIS.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-049</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Coherence Factory</h3>
+      <p>2.4 read; CHI 4.38; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 70 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-049-coherence-factory-THE-SYNTHESIS.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-050-jacob-2025.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-050</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Choice (2025)</h3>
+      <p>5.2 read; CHI 1.15; CKG F — Needs Work. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 147 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-050-jacob-2025.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-051-korea-experiment.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-051</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Korea Experiment</h3>
+      <p>1.4 read; CHI 6.85; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 23 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 10 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-051-korea-experiment.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-052-individual-recovery.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-052</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>Individual Recovery</h3>
+      <p>1.5 read; CHI 6.97; CKG D — Developing. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 27 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 1 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-052-individual-recovery.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-053-the-question.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-053</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Question</h3>
+      <p>1.6 read; CHI 8.81; CKG B — Strong. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 36 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 7 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-053-the-question.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-054-way-back.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-054</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>The Way Back Recovery Physics</h3>
+      <p>4.0 read; CHI 7.27; CKG B — Strong. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 107 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 2 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-054-way-back.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-900-appendix-original-introduction.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-900</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>The Equation Nobody Wanted</h3>
+      <p>1.8 read; CHI 10; CKG A — Publication Grade. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 43 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-900-appendix-original-introduction.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-901-appendix-america-index.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-901</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>The Moral Decline of America</h3>
+      <p>0.6 read; CHI 7.14; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 11 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-901-appendix-america-index.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-902-appendix-trans-domain-analysis.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-902</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>THE MORAL DECLINE OF AMERICA</h3>
+      <p>5.6 read; CHI 4.06; CKG B — Strong. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 107 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 19 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-902-appendix-trans-domain-analysis.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-903-appendix-series-home.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-903</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">D (Light)</span>
+      </div>
+      <h3>Is America in Moral Decline? The Physics of Cultural Decoherence</h3>
+      <p>1.4 read; CHI 10; CKG B — Strong. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 32 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-903-appendix-series-home.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-904-appendix-sample.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-904</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>The Moral Decline of America</h3>
+      <p>0.5 read; CHI 9.87; CKG C — Moderate. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 4 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-904-appendix-sample.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-905-appendix-timeline.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-905</span>
+        <span class="sp-card-status pass">Scored</span>
+        <span class="sp-card-grade">A (Publication Grade)</span>
+      </div>
+      <h3>THE AMERICAN MORAL COMPASS</h3>
+      <p>3.3 read; CHI 2.33; CKG A — Publication Grade. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 56 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i>  equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-905-appendix-timeline.html">scorecard</a></span>
+      </div>
+    </a>
+    <a href="../../03-moral-decline/MDA-906-appendix-93-year-floor.html" class="sp-card">
+      <div class="sp-card-row">
+        <span class="sp-card-code">MDA-906</span>
+        <span class="sp-card-status warn">Needs citations</span>
+        <span class="sp-card-grade">F (Needs Citations)</span>
+      </div>
+      <h3>THE 93-YEAR FLOOR</h3>
+      <p>2.9 read; CHI 6.27; CKG B — Strong. Links to the current article and scorecard/proof surfaces.</p>
+      <div class="sp-card-foot">
+        <span><i class="fas fa-check-circle"></i> 77 raw claims</span>
+        <span><i class="fas fa-square-root-alt"></i> 5 equations</span>
+        <span><i class="fas fa-chart-line"></i> <a href="./mda-scorecards/PI_MDA-906-appendix-93-year-floor.html">scorecard</a></span>
+      </div>
+    </a>
+
+  </div>
+</section>
+<!-- END:COMPONENT:section:articles -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION: CLAIMS TABLE (aggregated across series)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- BEGIN:COMPONENT:section:claims-table -->
+<!--
+  PROMPT:generator: Aggregate all claims from all article snapshots in this series.
+  For each claim: claim_text, evidence, status, domain, source_article, claim_type.
+  Filter: show approved_claim and load_bearing. Mark over-extracted claims separately.
+  Sort: domain, then status (substantiated first).
+  Pull from: .paper-snapshot.json claims arrays.
+-->
+<section class="sp-sec" id="claims" data-component="section" data-name="claims-table">
+  <div class="sp-sec-head">
+    <span class="sp-sec-dot"></span>
+    <span class="sp-sec-kicker">Claims</span>
+  </div>
+  <h2>Master Claim Map</h2>
+  <p class="sp-sec-desc">Every claim across all articles in the series. Approved claims are primary; auto-extracted claims marked separately.</p>
+
+  <div class="sp-table-wrap">
+  <table class="sp-table">
+    <thead>
+      <tr><th>Claim</th><th>Evidence</th><th>Status</th><th>Source</th><th>Type</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>This paper can be destroyed by any of the following: | # | Kill Condition | Status | | --- | --- | --- | | 1 | Find a major domain showing *increasing* coherence 1965–2025 without external constraint intervention | Not yet found | | 2 | Demonstrate the curve convergence is statistical artifact (selection bias, normalization error) | Replication invited | | 3 | Produce an alternative model that predicts cross-domain synchronization with fewer assumptions | Not yet proposed | | 4 | Show the inflection point is an artifact of data availability, not real behavioral change | Addressed via pre-1945 data | | 5 | Replicate with independent datasets and find no convergence | Replication invited | Explicit Invitation: If you can satisfy any kill condition, this paper is falsified.</td>
+        <td>Detected terms: model, coherence</td>
+        <td><span class="pe-status status-pass"></span>7QS 6/6</td>
+        <td>MDA-004-facts-framework</td>
+        <td>Evidence/Proof / Empirical Support</td>
+      </tr>
+      <tr>
+        <td>If a competing model explains the same data with equal or greater predictive accuracy, fewer parameters, and a different causal mechanism, our model should be replaced. **Status: Not challenged.</td>
+        <td>Detected terms: model</td>
+        <td><span class="pe-status status-pass"></span>7QS 5/6</td>
+        <td>MDA-054-way-back</td>
+        <td>Evidence/Proof / Empirical Support</td>
+      </tr>
+      <tr>
+        <td>If a competing model explains the same data with equal or greater predictive accuracy, fewer parameters, and a different causal mechanism, our model should be replaced.</td>
+        <td>Detected terms: model</td>
+        <td><span class="pe-status status-pass"></span>7QS 5/6</td>
+        <td>MDA-902-appendix-trans-domain-analysis</td>
+        <td>Evidence/Proof / Empirical Support</td>
+      </tr>
+      <tr>
+        <td>Structural factors that enable this: * Patriarchal authority structures * Theology of forgiveness that pressures victims to reconcile * Cultural reluctance to involve “English” law enforcement * Limited access to outside support services * No reliable prevalence data because reporting rates are extremely low **No system built on human authority is immune to the abuse of that authority.** The Amish binding variable (external authority/Ordnung) constrains entropy — but when the authority itself becomes the source of harm, the system’s own design impedes correction.</td>
+        <td>Detected terms: entropy</td>
+        <td><span class="pe-status status-pass"></span>7QS 5/6</td>
+        <td>MDA-045-amish-control-group-THE-DATA</td>
+        <td>Framework/Formal / Structural Correspondence</td>
+      </tr>
+      <tr>
+        <td>When a mathematical model, a three-thousand-year-old text, and modern epidemiological data all independently point at the same region of the number line, you are not looking at coincidence.</td>
+        <td>Detected terms: model</td>
+        <td><span class="pe-status status-warn"></span>7QS 4/6</td>
+        <td>MDA-906-appendix-93-year-floor</td>
+        <td>Framework/Formal / Formal Model</td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+</section>
+<!-- END:COMPONENT:section:claims-table -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION: 7QS SUMMARY
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- BEGIN:COMPONENT:section:7qs-summary -->
+<!--
+  PROMPT:generator: Build 7QS summary for the series.
+  Run the 7-Question Scientific Method against the series' core thesis.
+  Q0: Posture — what is the epistemic starting point?
+  Q1: What exists? (ontological claim)
+  Q2: What can we know? (epistemological scope)
+  Q3: How does it work? (mechanism)
+  Q4: What evidence? (empirical basis)
+  Q5: What follows? (implications)
+  Q6: What breaks it? (falsification)
+  Q7: What remains? (irreducible residue)
+  Pull from: .paper-snapshot.json 7qs field, or generate from series thesis.
+  If 7qs is placeholder-only (from Lane B), mark as "7QS: Pending full analysis".
+-->
+<section class="sp-sec" id="7qs" data-component="section" data-name="7qs-summary">
+  <div class="sp-sec-head">
+    <span class="sp-sec-dot"></span>
+    <span class="sp-sec-kicker">7QS</span>
+  </div>
+  <h2>Seven-Question Classification</h2>
+  <p class="sp-sec-desc">The 7Q Engine applied to the series thesis. Forward classification: what does the series claim at each level?</p>
+
+  <div class="q7-grid">
+    <!-- TEMPLATE:SLOT:7q-item — repeat for Q0 through Q7 -->
+    <div class="q7-item" style="border-left-color:var(--text-muted)">
+      <div class="q7-item-label">Q0 · Posture</div>
+      <div class="q7-item-text">Posture: human-led, evidence-seeking, with personal/testimonial motive separated from proof claims.</div>
+    </div>
+    <div class="q7-item">
+      <div class="q7-item-label">Q1 · Existence</div>
+      <div class="q7-item-text">Object: measurable change in American social/moral coherence across 1900-2025.</div>
+    </div>
+    <div class="q7-item">
+      <div class="q7-item-label">Q2 · Knowledge</div>
+      <div class="q7-item-text">Scope: MDA series claims are bounded to observed institutional, family, economic, technological, semantic, and religious indicators.</div>
+    </div>
+    <div class="q7-item">
+      <div class="q7-item-label">Q3 · Mechanism</div>
+      <div class="q7-item-text">Mechanism: coherence loss, feedback-loop collapse, semantic thinning, and domain-coupled social phase transition.</div>
+    </div>
+    <div class="q7-item">
+      <div class="q7-item-label">Q4 · Evidence</div>
+      <div class="q7-item-text">Evidence: grader/NLP outputs, markdown companions, source ledgers, timeline workbooks, citations, and article-level scorecards.</div>
+    </div>
+    <div class="q7-item">
+      <div class="q7-item-label">Q5 · Implications</div>
+      <div class="q7-item-text">Implications: proof layer should expose claims, citations, equations, and kill conditions without forcing every narrative sentence into proof status.</div>
+    </div>
+    <div class="q7-item">
+      <div class="q7-item-label">Q6 · Falsification</div>
+      <div class="q7-item-text">Falsification: competing model with stronger predictive accuracy, fewer parameters, different mechanism, or domain-level countertrend breaks the claim.</div>
+    </div>
+    <div class="q7-item" style="border-left-color:var(--rung-hard)">
+      <div class="q7-item-label">Q7 · Residue</div>
+      <div class="q7-item-text">Residue: theological interpretation and personal calling remain labeled, not smuggled in as empirical proof.</div>
+    </div>
+    <!-- END:TEMPLATE:SLOT:7q-item -->
+  </div>
+</section>
+<!-- END:COMPONENT:section:7qs-summary -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION: LAW/AXIOM COVERAGE
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- BEGIN:COMPONENT:section:coverage-matrix -->
+<!--
+  PROMPT:generator: Show which of the 10 Laws this series touches.
+  For each Law: law_number, law_name, coverage_status (covered/partial/uncovered).
+  Covered = at least one article has a substantiated claim mapping to this Law.
+  Partial = at least one article references this Law but no substantiated claim.
+  Uncovered = no article references this Law.
+  Pull from: law mappings in .paper-snapshot.json or series-grade.json.
+-->
+<section class="sp-sec" id="coverage" data-component="section" data-name="coverage-matrix">
+  <div class="sp-sec-head">
+    <span class="sp-sec-dot"></span>
+    <span class="sp-sec-kicker">Coverage</span>
+  </div>
+  <h2>Law &amp; Axiom Coverage</h2>
+  <p class="sp-sec-desc">Which of the 10 Universal Laws does this series touch? Green = substantiated mapping. Orange = referenced. Grey = not covered.</p>
+
+  <div class="coverage-grid">
+    <div class="coverage-cell partial">
+      <span class="coverage-cell-law">Law 1</span>
+      <span class="coverage-cell-name">Gravitation / Sin-Grace</span>
+    </div>
+    <div class="coverage-cell partial">
+      <span class="coverage-cell-law">Law 2</span>
+      <span class="coverage-cell-name">Motion / Will</span>
+    </div>
+    <div class="coverage-cell partial">
+      <span class="coverage-cell-law">Law 3</span>
+      <span class="coverage-cell-name">Electromagnetism / Truth</span>
+    </div>
+    <div class="coverage-cell covered">
+      <span class="coverage-cell-law">Law 4</span>
+      <span class="coverage-cell-name">Strong Force / Fruits</span>
+    </div>
+    <div class="coverage-cell covered">
+      <span class="coverage-cell-law">Law 5</span>
+      <span class="coverage-cell-name">Thermodynamics / Judgment</span>
+    </div>
+    <div class="coverage-cell covered">
+      <span class="coverage-cell-law">Law 6</span>
+      <span class="coverage-cell-name">Information / Logos</span>
+    </div>
+    <div class="coverage-cell partial">
+      <span class="coverage-cell-law">Law 7</span>
+      <span class="coverage-cell-name">Quantum / Faith</span>
+    </div>
+    <div class="coverage-cell partial">
+      <span class="coverage-cell-law">Law 8</span>
+      <span class="coverage-cell-name">Relativity / Frame</span>
+    </div>
+    <div class="coverage-cell covered">
+      <span class="coverage-cell-law">Law 9</span>
+      <span class="coverage-cell-name">Moral Conservation</span>
+    </div>
+    <div class="coverage-cell covered">
+      <span class="coverage-cell-law">Law 10</span>
+      <span class="coverage-cell-name">Coherence / Christ</span>
+    </div>
+
+  </div>
+</section>
+<!-- END:COMPONENT:section:coverage-matrix -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION: EVIDENCE
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- BEGIN:COMPONENT:section:evidence -->
+<!--
+  PROMPT:generator: List evidence items specific to this series.
+  For each: source, protocol, result, sigma, article_ref.
+  Pull from: .paper-snapshot.json evidence arrays filtered to this series.
+-->
+<section class="sp-sec" id="evidence" data-component="section" data-name="evidence">
+  <div class="sp-sec-head">
+    <span class="sp-sec-dot"></span>
+    <span class="sp-sec-kicker">Evidence</span>
+  </div>
+  <h2>Supporting Evidence</h2>
+  <p class="sp-sec-desc">Evidence items cited across articles in this series.</p>
+
+  <div class="sp-table-wrap">
+  <table class="sp-table">
+    <thead>
+      <tr><th>Source</th><th>Result</th><th>Sigma</th><th>Article</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Math translation full61</td><td>61 final-ready bundles; 160 equations extracted/translatable.</td><td>Local deterministic</td><td>MDA series</td></tr>
+      <tr><td>Paper grader claim audit</td><td>442 raw candidates reduced to 5 promoted 7QS proof-layer candidates.</td><td>7QS gate</td><td>Claim map</td></tr>
+      <tr><td>HTML article set</td><td>60 live article HTML pages detected in production architecture draft.</td><td>Routed</td><td>Article grid</td></tr>
+      <tr><td>Markdown companions</td><td>63 old routed MDA markdown companion files detected and ledgered below.</td><td>63-file set</td><td>Companion ledger</td></tr>
+
+    </tbody>
+  </table>
+  </div>
+</section>
+<!-- END:COMPONENT:section:evidence -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION: FALSIFICATION
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- BEGIN:COMPONENT:section:falsification -->
+<!--
+  PROMPT:generator: List kill conditions relevant to this series.
+  For each: kill_id, title, description, status, evidence.
+  Pull from: series-grade.json kill_conditions or falsification registry.
+-->
+<section class="sp-sec" id="falsification" data-component="section" data-name="falsification">
+  <div class="sp-sec-head">
+    <span class="sp-sec-dot"></span>
+    <span class="sp-sec-kicker">Kill Conditions</span>
+  </div>
+  <h2>Falsification Tests</h2>
+  <p class="sp-sec-desc">What would break this series' argument? These are the live kill conditions.</p>
+
+  <div class="card-grid card-grid-2">
+    <div class="sp-card" style="border-left:3px solid var(--rung-med)">
+      <div class="sp-card-row"><span class="sp-card-code">KILL-01</span><span class="sp-card-status warn">Active</span></div>
+      <h3>Countertrend Break</h3><p>A major claimed domain shows increasing coherence during the same period while the framework predicts collapse.</p><div class="sp-card-foot">Requires domain-level evidence and date-bound source trail.</div>
+    </div>
+    <div class="sp-card" style="border-left:3px solid var(--rung-med)">
+      <div class="sp-card-row"><span class="sp-card-code">KILL-02</span><span class="sp-card-status warn">Active</span></div>
+      <h3>Better Competing Model</h3><p>A competing model explains the same data with higher predictive accuracy, fewer parameters, and a different causal mechanism.</p><div class="sp-card-foot">This is the strongest publication-facing falsification condition.</div>
+    </div>
+    <div class="sp-card" style="border-left:3px solid var(--rung-med)">
+      <div class="sp-card-row"><span class="sp-card-code">KILL-03</span><span class="sp-card-status warn">Active</span></div>
+      <h3>Personal Claim Leakage</h3><p>A personal/testimonial statement is presented as framework proof rather than motive, witness, or interpretive context.</p><div class="sp-card-foot">This packet explicitly labels that boundary.</div>
+    </div>
+
+  </div>
+</section>
+<!-- END:COMPONENT:section:falsification -->
+
+
+<section class="sp-sec" id="companions" data-component="section" data-name="markdown-companion-ledger">
+  <div class="sp-sec-head"><span class="sp-sec-dot"></span><span class="sp-sec-kicker">Companions</span></div>
+  <h2>63 Markdown Companion Ledger</h2>
+  <p class="sp-sec-desc">This is the old routed companion set. It is shown separately from the 61 live HTML articles because the seven appendix companions appear twice in the old routing: once under appendix and once under sources.</p>
+  <div class="sp-table-wrap"><table class="sp-table"><thead><tr><th>Code</th><th>Path</th><th>Status</th><th>Use</th></tr></thead><tbody>
+      <tr><td>MDA-001-story-introduction</td><td><a href="../../03-moral-decline/MDA-001-story-introduction.md">../story/MDA-001-story-introduction.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-002-samuel-1900</td><td><a href="../../03-moral-decline/MDA-002-samuel-1900.md">../story/MDA-002-samuel-1900.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-003-measuring-moral-health</td><td><a href="../../03-moral-decline/MDA-003-measuring-moral-health.md">../method/MDA-003-measuring-moral-health.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-004-facts-framework</td><td><a href="../../03-moral-decline/MDA-004-facts-framework.md">../method/MDA-004-facts-framework.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-005-empirical-evidence</td><td><a href="../../03-moral-decline/MDA-005-empirical-evidence.md">../evidence/MDA-005-empirical-evidence.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-006-research-method</td><td><a href="../../03-moral-decline/MDA-006-research-method.md">../method/MDA-006-research-method.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-007-nine-domains</td><td><a href="../../03-moral-decline/MDA-007-nine-domains.md">../method/MDA-007-nine-domains.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-008-henry-1926</td><td><a href="../../03-moral-decline/MDA-008-henry-1926.md">../story/MDA-008-henry-1926.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-009-the-1900-baseline</td><td><a href="../../03-moral-decline/MDA-009-the-1900-baseline.md">../evidence/MDA-009-the-1900-baseline.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-010-pre-modern-baseline</td><td><a href="../../03-moral-decline/MDA-010-pre-modern-baseline.md">../evidence/MDA-010-pre-modern-baseline.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-011-collective-security-1930</td><td><a href="../../03-moral-decline/MDA-011-collective-security-1930.md">../story/MDA-011-collective-security-1930.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-012-william-1950</td><td><a href="../../03-moral-decline/MDA-012-william-1950.md">../story/MDA-012-william-1950.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-013-peak-coherence-1940</td><td><a href="../../03-moral-decline/MDA-013-peak-coherence-1940.md">../evidence/MDA-013-peak-coherence-1940.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-014-fissure-1950</td><td><a href="../../03-moral-decline/MDA-014-fissure-1950.md">../evidence/MDA-014-fissure-1950.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-015-long-decline</td><td><a href="../../03-moral-decline/MDA-015-long-decline.md">../evidence/MDA-015-long-decline.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-016-thomas-1974</td><td><a href="../../03-moral-decline/MDA-016-thomas-1974.md">../story/MDA-016-thomas-1974.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-017-unraveling-1960</td><td><a href="../../03-moral-decline/MDA-017-unraveling-1960.md">../evidence/MDA-017-unraveling-1960.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-018-great-decoupling-1968</td><td><a href="../../03-moral-decline/MDA-018-great-decoupling-1968.md">../evidence/MDA-018-great-decoupling-1968.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-019-current-state-2024</td><td><a href="../../03-moral-decline/MDA-019-current-state-2024.md">../evidence/MDA-019-current-state-2024.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-020-phase-transition</td><td><a href="../../03-moral-decline/MDA-020-phase-transition.md">../evidence/MDA-020-phase-transition.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-021-anatomy-of-phase-transition</td><td><a href="../../03-moral-decline/MDA-021-anatomy-of-phase-transition.md">../evidence/MDA-021-anatomy-of-phase-transition.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-022-cascade</td><td><a href="../../03-moral-decline/MDA-022-cascade.md">../evidence/MDA-022-cascade.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-023-coherence-cascade</td><td><a href="../../03-moral-decline/MDA-023-coherence-cascade.md">../evidence/MDA-023-coherence-cascade.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-024-semantic-collapse</td><td><a href="../../03-moral-decline/MDA-024-semantic-collapse.md">../evidence/MDA-024-semantic-collapse.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-025-cognitive-decline</td><td><a href="../../03-moral-decline/MDA-025-cognitive-decline.md">../evidence/MDA-025-cognitive-decline.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-026-spiritual-collapse</td><td><a href="../../03-moral-decline/MDA-026-spiritual-collapse.md">../evidence/MDA-026-spiritual-collapse.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-027-signal-went-dark</td><td><a href="../../03-moral-decline/MDA-027-signal-went-dark.md">../evidence/MDA-027-signal-went-dark.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-028-phantom-money</td><td><a href="../../03-moral-decline/MDA-028-phantom-money.md">../evidence/MDA-028-phantom-money.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-029-observer-collapsed</td><td><a href="../../03-moral-decline/MDA-029-observer-collapsed.md">../evidence/MDA-029-observer-collapsed.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-030-trinity-mechanism</td><td><a href="../../03-moral-decline/MDA-030-trinity-mechanism.md">../evidence/MDA-030-trinity-mechanism.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-031-jacob-1998</td><td><a href="../../03-moral-decline/MDA-031-jacob-1998.md">../story/MDA-031-jacob-1998.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-032-why-bad-is-easier</td><td><a href="../../03-moral-decline/MDA-032-why-bad-is-easier.md">../synthesis/MDA-032-why-bad-is-easier.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-033-entropic-society</td><td><a href="../../03-moral-decline/MDA-033-entropic-society.md">../evidence/MDA-033-entropic-society.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-034-technology-entropy</td><td><a href="../../03-moral-decline/MDA-034-technology-entropy.md">../evidence/MDA-034-technology-entropy.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-035-great-reconfiguration</td><td><a href="../../03-moral-decline/MDA-035-great-reconfiguration.md">../evidence/MDA-035-great-reconfiguration.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-036-regulatory-impulse-1900</td><td><a href="../../03-moral-decline/MDA-036-regulatory-impulse-1900.md">../evidence/MDA-036-regulatory-impulse-1900.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-042-amish-exception-THE-CLAIM</td><td><a href="../../03-moral-decline/MDA-042-amish-exception-THE-CLAIM.md">../case-studies/MDA-042-amish-exception-THE-CLAIM.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-043-amish-proof-THE-PROOF</td><td><a href="../../03-moral-decline/MDA-043-amish-proof-THE-PROOF.md">../case-studies/MDA-043-amish-proof-THE-PROOF.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-044-amish-control-study-THE-METHOD</td><td><a href="../../03-moral-decline/MDA-044-amish-control-study-THE-METHOD.md">../case-studies/MDA-044-amish-control-study-THE-METHOD.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-045-amish-control-group-THE-DATA</td><td><a href="../../03-moral-decline/MDA-045-amish-control-group-THE-DATA.md">../case-studies/MDA-045-amish-control-group-THE-DATA.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-046-amish-demographics-THE-NUMBERS</td><td><a href="../../03-moral-decline/MDA-046-amish-demographics-THE-NUMBERS.md">../case-studies/MDA-046-amish-demographics-THE-NUMBERS.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-047-amish-tech-filter-THE-FILTER</td><td><a href="../../03-moral-decline/MDA-047-amish-tech-filter-THE-FILTER.md">../case-studies/MDA-047-amish-tech-filter-THE-FILTER.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-048-ordnung-algorithm-THE-MECHANISM</td><td><a href="../../03-moral-decline/MDA-048-ordnung-algorithm-THE-MECHANISM.md">../case-studies/MDA-048-ordnung-algorithm-THE-MECHANISM.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-049-coherence-factory-THE-SYNTHESIS</td><td><a href="../../03-moral-decline/MDA-049-coherence-factory-THE-SYNTHESIS.md">../case-studies/MDA-049-coherence-factory-THE-SYNTHESIS.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-050-jacob-2025</td><td><a href="../../03-moral-decline/MDA-050-jacob-2025.md">../story/MDA-050-jacob-2025.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-051-korea-experiment</td><td><a href="../../03-moral-decline/MDA-051-korea-experiment.md">../case-studies/MDA-051-korea-experiment.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-052-individual-recovery</td><td><a href="../../03-moral-decline/MDA-052-individual-recovery.md">../synthesis/MDA-052-individual-recovery.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-053-the-question</td><td><a href="../../03-moral-decline/MDA-053-the-question.md">../synthesis/MDA-053-the-question.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-054-way-back</td><td><a href="../../03-moral-decline/MDA-054-way-back.md">../synthesis/MDA-054-way-back.md</a></td><td>unique</td><td>markdown companion</td></tr>
+      <tr><td>MDA-900-appendix-original-introduction</td><td><a href="../../03-moral-decline/MDA-900-appendix-original-introduction.md">../appendix/MDA-900-appendix-original-introduction.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-900-appendix-original-introduction</td><td><a href="../../03-moral-decline/MDA-900-appendix-original-introduction.md">../sources/MDA-900-appendix-original-introduction.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-901-appendix-america-index</td><td><a href="../../03-moral-decline/MDA-901-appendix-america-index.md">../appendix/MDA-901-appendix-america-index.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-901-appendix-america-index</td><td><a href="../../03-moral-decline/MDA-901-appendix-america-index.md">../sources/MDA-901-appendix-america-index.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-902-appendix-trans-domain-analysis</td><td><a href="../../03-moral-decline/MDA-902-appendix-trans-domain-analysis.md">../appendix/MDA-902-appendix-trans-domain-analysis.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-902-appendix-trans-domain-analysis</td><td><a href="../../03-moral-decline/MDA-902-appendix-trans-domain-analysis.md">../sources/MDA-902-appendix-trans-domain-analysis.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-903-appendix-series-home</td><td><a href="../../03-moral-decline/MDA-903-appendix-series-home.md">../appendix/MDA-903-appendix-series-home.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-903-appendix-series-home</td><td><a href="../../03-moral-decline/MDA-903-appendix-series-home.md">../sources/MDA-903-appendix-series-home.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-904-appendix-sample</td><td><a href="../../03-moral-decline/MDA-904-appendix-sample.md">../appendix/MDA-904-appendix-sample.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-904-appendix-sample</td><td><a href="../../03-moral-decline/MDA-904-appendix-sample.md">../sources/MDA-904-appendix-sample.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-905-appendix-timeline</td><td><a href="../../03-moral-decline/MDA-905-appendix-timeline.md">../appendix/MDA-905-appendix-timeline.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-905-appendix-timeline</td><td><a href="../../03-moral-decline/MDA-905-appendix-timeline.md">../sources/MDA-905-appendix-timeline.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-906-appendix-93-year-floor</td><td><a href="../../03-moral-decline/MDA-906-appendix-93-year-floor.md">../appendix/MDA-906-appendix-93-year-floor.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+      <tr><td>MDA-906-appendix-93-year-floor</td><td><a href="../../03-moral-decline/MDA-906-appendix-93-year-floor.md">../sources/MDA-906-appendix-93-year-floor.md</a></td><td>duplicate appendix/source</td><td>markdown companion</td></tr>
+  </tbody></table></div>
+</section>
+
+<!-- BEGIN:COMPONENT:footer:footer-series-packet -->
+<footer class="sp-footer" data-component="footer" data-name="footer-series-packet">
+  <div class="feq">χ = f(G, M, E, S, T, K, R, Q, F, C)</div>
+  <p>David Lowe · POF 2828 · <span style="color:var(--gold)">15 + 15 = 100</span></p>
+  <p style="margin-top:.4rem;font-size:.68rem;color:var(--text-muted)">
+    Series proof packet generated from .paper-snapshot.json outputs. 
+    <a href="../index.html" style="color:var(--gold);text-decoration:underline">← Back to Proof Explorer</a>
+  </p>
+</footer>
+<!-- END:COMPONENT:footer:footer-series-packet -->
+
+<!-- BEGIN:COMPONENT:script:script-series-packet -->
+<script>
+/* ═══════ COMPONENT:script:scroll-header ═══════ */
+const header = document.getElementById('sp-header');
+window.addEventListener('scroll',()=>{
+  header.classList.toggle('sp-header-scrolled', window.scrollY > 60);
+});
+
+/* ═══════ COMPONENT:script:smooth-nav ═══════ */
+document.querySelectorAll('.sp-nav a[href^="#"]').forEach(link=>{
+  link.addEventListener('click', e=>{
+    const target = document.querySelector(link.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+      document.querySelectorAll('.sp-nav a').forEach(a=>a.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+});
+
+/* ═══════ COMPONENT:script:intersection-observer ═══════ */
+const sections = document.querySelectorAll('.sp-sec[id]');
+const navLinks = document.querySelectorAll('.sp-nav a[href^="#"]');
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      navLinks.forEach(a=>a.classList.remove('active'));
+      const active = document.querySelector(`.sp-nav a[href="#${entry.target.id}"]`);
+      if(active) active.classList.add('active');
+    }
+  });
+},{threshold:0.3, rootMargin:'-70px 0px 0px 0px'});
+sections.forEach(s=>obs.observe(s));
+</script>
+<!-- END:COMPONENT:script:script-series-packet -->
+
+<!-- GENERATED_FROM: \\dlowenas\HPWorkstation\Desktop\Master HTMl\K-Production-Ready\03-moral-decline\_MDA_PRODUCTION_ARCHITECTURE_DRAFT_20260525-101649\series-proof-packet-template.html | generated_at: 2026-05-30T06:59:22 | source_counts: 61 HTML, 63 MD, 442 raw claims, 5 promoted claims -->
+</body>
+</html>

@@ -1,0 +1,2677 @@
+<!DOCTYPE html>
+
+<!--
+  PAGE_META
+  series: mda
+  article: mda-statistical-synthesis
+  title: Moral Decline by the Numbers
+  section: method-and-metrics
+  status: production
+  template: statistical-dashboard-v1
+  version: 2026-05-31
+  page_type: dashboard
+  marked_by: codex
+  marked_date: 2026-05-31
+  source: MDA-040-statistical-synthesis.html
+  domains: F, T, S, C, M, E, P, Σ, I
+  primary_domain: Σ
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moral Decline by the Numbers | Moral Decline of America</title>
+<meta content="Synthesizes the statistical evidence for moral decline across generations, domains, and measured cultural indicators." name="description"/>
+<link href="https://faiththruphysics.com/moral-decline/02-method-and-metrics/MDA-040-statistical-synthesis.html" rel="canonical"/>
+<meta content="Moral Decline by the Numbers | Moral Decline of America" property="og:title"/>
+<meta content="Synthesizes the statistical evidence for moral decline across generations, domains, and measured cultural indicators." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://faiththruphysics.com/moral-decline/02-method-and-metrics/MDA-040-statistical-synthesis.html" property="og:url"/>
+<meta content="https://faiththruphysics.com/images/moral-decline-og.png" property="og:image"/>
+<meta content="Faith Through Physics" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Moral Decline by the Numbers | Moral Decline of America" name="twitter:title"/>
+<meta content="Synthesizes the statistical evidence for moral decline across generations, domains, and measured cultural indicators." name="twitter:description"/>
+<meta content="https://faiththruphysics.com/images/moral-decline-og.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;family=Oswald:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<style>
+.serif{font-family:'Crimson Text',serif;}
+.display{font-family:'Oswald',sans-serif;}
+.mono{font-family:'JetBrains Mono',monospace;}
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Georgia', serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-bottom: 2px solid #333;
+        }
+        header h1 {
+            font-size: 2.8em;
+            color: #d4af37;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        header .subtitle {
+            font-size: 1.3em;
+            color: #888;
+            font-style: italic;
+        }
+
+        .intro {
+            background: #222;
+            padding: 40px;
+            margin: 40px 0;
+            border-left: 4px solid #d4af37;
+            font-size: 1.1em;
+        }
+        .intro p { margin-bottom: 20px; }
+
+        .generation-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 40px 0;
+        }
+        .generation-nav a {
+            background: #333;
+            color: #d4af37;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .generation-nav a:hover {
+            background: #d4af37;
+            color: #1a1a1a;
+        }
+
+        .generation {
+            margin: 60px 0;
+            padding: 40px;
+            background: #222;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+        .generation h2 {
+            font-size: 2em;
+            color: #d4af37;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+        .generation .era {
+            color: #888;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .narrative {
+            background: #2a2a2a;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-size: 1.05em;
+        }
+        .narrative p { margin-bottom: 15px; }
+        .narrative p:last-child { margin-bottom: 0; }
+
+        .domain-section {
+            margin: 40px 0;
+        }
+        .domain-section h3 {
+            font-size: 1.5em;
+            color: #88c0d0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .domain-section h3::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 3px;
+            background: #88c0d0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #444;
+        }
+        .stat-card .value {
+            font-size: 2em;
+            color: #d4af37;
+            font-weight: bold;
+        }
+        .stat-card .label {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .stat-card .change {
+            font-size: 0.85em;
+            margin-top: 8px;
+            padding: 4px 8px;
+            border-radius: 3px;
+        }
+        .stat-card .change.up { background: #2d4a3e; color: #5fba7d; }
+        .stat-card .change.down { background: #4a2d2d; color: #ba5f5f; }
+        .stat-card .change.neutral { background: #3a3a3a; color: #888; }
+
+        .chart-container {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        .comparison-table th {
+            background: #2a2a2a;
+            color: #d4af37;
+        }
+        .comparison-table tr:hover {
+            background: #2a2a2a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            border-top: 1px solid #333;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8em; }
+            .generation { padding: 20px; }
+            .narrative { padding: 20px; }
+        }
+    </style>
+<script data-website-id="2f2e3a0f-e8e5-4900-a1e0-1b33592403ee" defer="" src="https://analytics.faiththruphysics.com/script.js"></script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+.mda-proof-panel{max-width:56rem;margin:1.5rem auto 3rem;padding:0 1.5rem;}
+.mda-proof-panel-inner{border:1px solid rgba(212,175,55,.28);background:rgba(10,10,10,.78);padding:1.25rem;border-radius:6px;}
+.mda-proof-eyebrow{font-family:Inter,system-ui,sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#d4af37;margin-bottom:.45rem;}
+.mda-proof-panel h2{font-family:Oswald,Impact,sans-serif;font-size:1.25rem;letter-spacing:.04em;text-transform:uppercase;color:#f8fafc;margin:0 0 1rem;}
+.mda-proof-claim{border-top:1px solid rgba(255,255,255,.08);padding-top:1rem;margin-top:1rem;}
+.mda-proof-claim:first-of-type{border-top:0;padding-top:0;margin-top:0;}
+.mda-proof-claim-kicker{font-family:Inter,system-ui,sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#f59e0b;margin-bottom:.35rem;}
+.mda-proof-claim p{font-family:Crimson Text,Georgia,serif;font-size:1.05rem;line-height:1.7;color:#e5e7eb;margin:0;}
+</style>
+<link href="/subdomains/shared/css/mtl-equation.css" rel="stylesheet"/>
+</link></link><style id="mda-citation-styles">
+.source-badge{font-family:monospace;font-size:.55rem;font-weight:700;cursor:pointer;
+  margin-left:2px;line-height:1;vertical-align:super;text-decoration:none}
+.source-badge.exact{color:#22c55e}
+.source-badge.close{color:#f59e0b}
+.source-badge.unsupported{color:#dc2626}
+.source-badge.contradicted{color:#dc2626;text-decoration:line-through}
+.has-source{border-bottom:1px dotted rgba(212,175,55,.4);padding:0 1px;cursor:default}
+.has-source:hover{border-bottom-style:solid}
+.has-source.missing{border-bottom-color:rgba(220,38,38,.4)}
+.tp-sources{max-width:56rem;margin:2rem auto 0;padding:0 1.5rem}
+.tp-sources-inner{background:#0a0a0a;border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;padding:1.4rem 1.5rem}
+.tp-sources-head{display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+.tp-sources-badge{display:flex;align-items:center;gap:.6rem}
+.tp-sources-badge i{color:#d4af37;font-size:1rem}
+.tp-sources-badge>span{font-family:Oswald,sans-serif;font-size:.7rem;letter-spacing:.15em;
+  text-transform:uppercase;color:#d4af37}
+.tp-sources-count{font-family:monospace;font-size:.55rem;color:#6b7280;margin-left:.4rem}
+.tp-sources-toggle{font-family:monospace;font-size:.6rem;color:#6b7280;padding:.3rem .5rem;
+  border:1px solid rgba(255,255,255,.08);border-radius:4px;background:transparent;cursor:pointer}
+.tp-sources-body{display:none;border-top:1px solid rgba(255,255,255,.08);
+  padding-top:1rem;margin-top:1rem}
+.tp-sources-body.open{display:block}
+.tp-sources-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.8rem}
+.tp-source-item{display:flex;gap:.8rem;padding:.6rem .8rem;background:#050505;
+  border:1px solid rgba(255,255,255,.06);border-radius:5px}
+.tp-source-item.exact{border-left:3px solid #22c55e}
+.tp-source-item.close{border-left:3px solid #f59e0b}
+.tp-source-num{font-family:monospace;font-size:.65rem;color:#6b7280;min-width:2rem;flex-shrink:0}
+.tp-source-content{flex:1;min-width:0}
+.tp-source-text{font-size:.8rem;color:#f1f5f9;margin-bottom:.3rem}
+.tp-source-provenance{font-family:monospace;font-size:.55rem;color:#6b7280}
+.tp-source-provenance span{margin-right:.6rem}
+.tp-source-original{margin-top:.3rem}
+.tp-source-original a{color:#d4af37;font-size:.75rem;word-break:break-all}
+</style>
+  <link rel="stylesheet" href="/shared/css/glossary-layer.css">
+</head>
+<body>
+<!-- MDA UNIFIED TOP BAR v1 -->
+<style>
+.mda-topbar{
+  position:fixed;top:0;left:0;right:0;z-index:9999;
+  background:#0a0a0a;border-bottom:1px solid #222;
+  height:42px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 1rem;font-family:'Inter',system-ui,sans-serif;font-size:0.75rem;
+  letter-spacing:0.04em;
+}
+.mda-topbar a,.mda-topbar span{text-decoration:none;transition:color 0.2s;}
+.mda-tb-home{color:#9ca3af;display:flex;align-items:center;gap:0.35rem;}
+.mda-tb-home:hover{color:#f59e0b;}
+.mda-tb-series{color:#dc2626;font-weight:600;display:flex;align-items:center;gap:0.35rem;}
+.mda-tb-series:hover{color:#f87171;}
+.mda-tb-link{color:#6b7280;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;}
+.mda-tb-link:hover{color:#dc2626;}
+.mda-tb-dim{color:#333;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;cursor:default;}
+.mda-tb-center{display:flex;align-items:center;gap:0.5rem;}
+.mda-tb-tabs{display:flex;align-items:center;gap:0;margin:0 0.75rem;}
+.mda-tb-tab{
+  padding:0.3rem 0.7rem;border:1px solid #333;color:#777;
+  font-family:'JetBrains Mono',monospace;font-size:0.6rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;
+  background:transparent;transition:all 0.2s;line-height:1;
+}
+.mda-tb-tab:first-child{border-radius:4px 0 0 4px;}
+.mda-tb-tab:last-child{border-radius:0 4px 4px 0;}
+.mda-tb-tab+.mda-tb-tab{border-left:0;}
+.mda-tb-tab:hover{color:#fff;border-color:#555;background:rgba(255,255,255,0.04);}
+.mda-tb-tab.active{color:#f59e0b;border-color:#f59e0b;background:rgba(245,158,11,0.08);}
+body{padding-top:42px !important;}
+</style>
+<div class="mda-topbar" id="mda-topbar">
+<!-- Gradient line -->
+<div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#991b1b,#dc2626,#f59e0b,#dc2626,#991b1b);"></div>
+<!-- Left: Home -->
+<a class="mda-tb-home" href="https://faiththruphysics.com"><i class="fas fa-home" style="font-size:0.65rem;"></i> Home</a>
+<!-- Center: Prev | Tabs | Next -->
+<div class="mda-tb-center">
+<a class="mda-tb-link" href="MDA-039-physics-of-coherence.html" title="Previous article">← Prev</a>
+<div class="mda-tb-tabs" role="tablist">
+<button class="mda-tb-tab" data-reader-mode="easy" type="button">Easy</button>
+<button class="mda-tb-tab active" data-reader-mode="standard" type="button">Standard</button>
+<button class="mda-tb-tab" data-reader-mode="academic" type="button">Academic</button>
+<button class="mda-tb-tab" data-reader-mode="proof" type="button">Proof</button>
+</div>
+<a class="mda-tb-link" href="MDA-041-statistical-spine.html" title="Next article">Next →</a>
+</div>
+<!-- Right: Series Home -->
+<a class="mda-tb-series" href="../00-entry-and-series-map/index.html"><i class="fas fa-list" style="font-size:0.6rem;"></i> Series</a>
+</div>
+<!-- END MDA UNIFIED TOP BAR v1 -->
+<!-- BEGIN:COMPONENT:reader-mode:proof-panel -->
+<section class="mda-proof-panel" data-reader-panel="proof" style="display:none;">
+<div class="mda-proof-panel-inner">
+<div class="mda-proof-eyebrow">Proof Pressure Layer</div>
+<h2>Vetted Claims for MDA-040-statistical-synthesis</h2>
+<article class="mda-proof-claim">
+<div class="mda-proof-claim-kicker">No promoted claim</div>
+<p><span class="has-source" data-source-id="src_001">No claim from this article survived the deterministic Axiom + 7Q gate strongly enough for the proof layer yet.<sup class="source-badge exact" data-src="src_001">[1]</sup></span></p>
+
+<!-- ═══════ SOURCES PANEL ═══════ -->
+<section class="tp-sources" id="sources-panel">
+<div class="tp-sources-inner">
+<div class="tp-sources-head" onclick="toggleSources()">
+<div class="tp-sources-badge">
+<i class="fas fa-book-open"></i>
+<span>Sources</span>
+<span class="tp-sources-count">(159 references)</span>
+</div>
+<button class="tp-sources-toggle" id="sources-btn">Show</button>
+</div>
+<div class="tp-sources-body" id="sources-body">
+<ol class="tp-sources-list">
+<li class="tp-source-item exact" data-source-id="src_001">
+<div class="tp-source-num">[1]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">No claim from this article survived the deterministic Axiom + 7Q gate strongly enough for the proof layer yet.</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_DASHBOARDS_AND_MANIFEST_COMBINED.xlsx</span><span class="tp-source-sheet">Combined_One_Page</span><span class="tp-source-cell">JM3596</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source_File: MoralDecline_Research_Inventory.xlsx; Source_Type: workbook; Source_Sheet: Outside Canonical (2); Source_Ro</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_005">
+<div class="tp-source-num">[5]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">The Arc of Decline: 125 Years in Charts Visualizing the transformation from 1900 to 2025</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_ALL_EXCEL_COMBINED.xlsx</span><span class="tp-source-sheet">Combined_All_Data</span><span class="tp-source-cell">EY2902</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source_File: Moral_Chronology.xlsx; Source_Sheet: 1974-2025 Family_Structure; Source_Row: 20; Data_Source: Moral 2.txt</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_010">
+<div class="tp-source-num">[10]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">7 Divorce Rate (per 1,000)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">C4,A4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census; NOTES: Peak ~1980; collapse of marriage rate</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_011">
+<div class="tp-source-num">[11]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Divorce Rate (per 1,000)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_012">
+<div class="tp-source-num">[12]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">5 Children per Woman</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">E5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_013">
+<div class="tp-source-num">[13]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">26/22 Marriage Age (M/F)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">I9,H9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Census Bureau Historical Tables; Current Population Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_014">
+<div class="tp-source-num">[14]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">~0% Cohabitation</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">C8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_015">
+<div class="tp-source-num">[15]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">~95% Church Attendance</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Coherence_Index</span><span class="tp-source-cell">C3</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">NOTES: Peak church attendance year</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_016">
+<div class="tp-source-num">[16]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">47 Life Expectancy</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_TIMELINE_MASTER_RESEARCH_INTEGRATED.xlsx</span><span class="tp-source-sheet">Bifurcation_Indicators</span><span class="tp-source-cell">C2</span></div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_017">
+<div class="tp-source-num">[17]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">60% Rural Population</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">S10</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Gallup; NOTES: Christian ID collapse</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_018">
+<div class="tp-source-num">[18]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">41% Agricultural Workers</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">A2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census/Pew; NOTES: Tripled 1960-2020</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_019">
+<div class="tp-source-num">[19]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">\&lt;1% Households with Phone</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">J8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_020">
+<div class="tp-source-num">[20]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">\&lt;3% Households with Electricity</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">K26</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Composite; NOTES: Ubiquitous by 2000</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_022">
+<div class="tp-source-num">[22]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">0 Hours Media/Day</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">Dashboard</span><span class="tp-source-cell">E11</span></div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_025">
+<div class="tp-source-num">[25]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">6 Divorce Rate (per 1,000)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_026">
+<div class="tp-source-num">[26]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Divorce Rate (per 1,000) +129% from 1900</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_027">
+<div class="tp-source-num">[27]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+129% from 1900</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">F9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 19</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_028">
+<div class="tp-source-num">[28]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+129% from 1900 2.6</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_TIMELINE_MASTER_RESEARCH_INTEGRATED.xlsx</span><span class="tp-source-sheet">Bifurcation_Indicators</span><span class="tp-source-cell">C6</span></div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_029">
+<div class="tp-source-num">[29]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">6 Children per Woman</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">B5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_030">
+<div class="tp-source-num">[30]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-26% from 1900 24/21</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">D47,M47</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 22</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_031">
+<div class="tp-source-num">[31]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-26% from 1900</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">M4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 26</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_032">
+<div class="tp-source-num">[32]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">24/21 Marriage Age (M/F)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">H9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Census Bureau Historical Tables; Current Population Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_033">
+<div class="tp-source-num">[33]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">~90% Church Attendance (Rural)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Coherence_Index</span><span class="tp-source-cell">B3</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">NOTES: Peak church attendance year</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_034">
+<div class="tp-source-num">[34]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">56 Life Expectancy</div>
+<div class="tp-source-provenance"><span class="tp-source-file">AUTHORITY_TRUST_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Authority &amp; Trust 1967-2012</span><span class="tp-source-cell">E9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Gallup Confidence in Institutions; ANES (1973-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_035">
+<div class="tp-source-num">[35]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+9 years 117M</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">M18</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: FBI; NOTES: 1974 peak of post-war era</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_037">
+<div class="tp-source-num">[37]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+54% from 1900 35%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">AUTHORITY_TRUST_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Authority &amp; Trust 1967-2012</span><span class="tp-source-cell">B6,F6</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Gallup Confidence in Institutions; ANES (1968-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_039">
+<div class="tp-source-num">[39]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">35% Urban Growth</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">O8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_040">
+<div class="tp-source-num">[40]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">35% Households with Phone</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">O8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_041">
+<div class="tp-source-num">[41]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From \&lt;1% 35%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">J8,O8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_042">
+<div class="tp-source-num">[42]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">35% Households with Radio</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">O8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_043">
+<div class="tp-source-num">[43]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 0% 20M</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">N2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census/Pew; NOTES: Tripled 1960-2020</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_044">
+<div class="tp-source-num">[44]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">20M Automobiles</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">N2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census/Pew; NOTES: Tripled 1960-2020</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_045">
+<div class="tp-source-num">[45]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 8,000 ~1</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">J8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_046">
+<div class="tp-source-num">[46]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">~1 Hours Media/Day</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">Dashboard</span><span class="tp-source-cell">H29</span></div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_050">
+<div class="tp-source-num">[50]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Church attendance hit 55% weekly - the highest in American history.</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_DOMAIN_MASTER_CANONICAL_1967-2012.xlsx</span><span class="tp-source-sheet">Master_By_Year</span><span class="tp-source-cell">H2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">AUTHORITY_TRUST_Trust_Government_Always_Most_SourceCitation: American National Election Studies (ANES) Trust Series; U o</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_051">
+<div class="tp-source-num">[51]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Television had arrived - 9% of households in 1950, 87% by 1960, the fastest adoption of any technology in history.</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_DASHBOARDS_AND_MANIFEST_COMBINED.xlsx</span><span class="tp-source-sheet">Combined_One_Page</span><span class="tp-source-cell">HX1955</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source_File: MORAL_AMERICA_ANALYSIS.xlsm; Source_Type: workbook; Source_Sheet: Forms; Source_Row: 130</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_052">
+<div class="tp-source-num">[52]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">6 Divorce Rate (per 1,000)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">B5,A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_053">
+<div class="tp-source-num">[53]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Divorce Rate (per 1,000) +271% from 1900</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_055">
+<div class="tp-source-num">[55]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+271% from 1900 3.0</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">K26</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Composite; NOTES: Ubiquitous by 2000</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_056">
+<div class="tp-source-num">[56]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">0 Children per Woman</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">C5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_058">
+<div class="tp-source-num">[58]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-14% from 1900 23/20</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">G47</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 22</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_059">
+<div class="tp-source-num">[59]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">23/20 Marriage Age (M/F)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">B8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Census Bureau Historical Tables; American Community Survey (1970-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_060">
+<div class="tp-source-num">[60]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">55% Homeownership</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">N13</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Pew/NES; NOTES: Catastrophic 18pt drop 1970-1974</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_061">
+<div class="tp-source-num">[61]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">55% Weekly Church Attendance</div>
+<div class="tp-source-provenance"><span class="tp-source-file">RELIGION_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Religion 1967-2012</span><span class="tp-source-cell">F5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Gallup Catholic Attendance Series; NORC GSS (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_062">
+<div class="tp-source-num">[62]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">2% "No Religion"</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">I12</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Pew; NOTES: 15x increase</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_063">
+<div class="tp-source-num">[63]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">77% Trust in Government</div>
+<div class="tp-source-provenance"><span class="tp-source-file">AUTHORITY_TRUST_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Authority &amp; Trust 1967-2012</span><span class="tp-source-cell">I9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Gallup Confidence in Institutions; ANES (1973-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_066">
+<div class="tp-source-num">[66]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Median Income (2024\$) 30% above 1940</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">F47</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 22</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_067">
+<div class="tp-source-num">[67]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">30% above 1940 ### Technology &amp; Connection</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">F47</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 22</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_068">
+<div class="tp-source-num">[68]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">62% Households with Phone</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">T7</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census; NOTES: Marriage alternative emerged</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_069">
+<div class="tp-source-num">[69]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">9% Households with TV</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">M18</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: FBI; NOTES: 1974 peak of post-war era</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_070">
+<div class="tp-source-num">[70]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">5 TV Hours/Day (if owned)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MEDIA_CULTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Media &amp; Culture 1967-2012</span><span class="tp-source-cell">I6</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Nielsen Television Index; Census Bureau (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_071">
+<div class="tp-source-num">[71]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">1 Screens per Home</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">J8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_074">
+<div class="tp-source-num">[74]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Trust in government collapsed from 77% to 36% in a decade.</div>
+<div class="tp-source-provenance"><span class="tp-source-file">AUTHORITY_TRUST_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Trust-Eroding Events</span><span class="tp-source-cell">D11</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source: White House records</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_075">
+<div class="tp-source-num">[75]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">California passed no-fault divorce in 1969.</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Key_Events_1965-1974</span><span class="tp-source-cell">A12:G12</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: CA Legislature</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_076">
+<div class="tp-source-num">[76]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">6 Divorce Rate (per 1,000)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_077">
+<div class="tp-source-num">[77]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Divorce Rate (per 1,000) +557% from 1900</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_080">
+<div class="tp-source-num">[80]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">8 Children per Woman</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_ALL_EXCEL_COMBINED.xlsx</span><span class="tp-source-sheet">Combined_All_Data</span><span class="tp-source-cell">DY2179</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source_File: MORAL_AMERICA_MASTER.xlsx; Source_Sheet: Family_Structure; Source_Row: 5; Source: Census Bureau</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_081">
+<div class="tp-source-num">[81]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-49% from 1900 1.1%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">P8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_082">
+<div class="tp-source-num">[82]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-49% from 1900</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">P8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_084">
+<div class="tp-source-num">[84]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">39% Mothers Working</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">A2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census/Pew; NOTES: Tripled 1960-2020</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_087">
+<div class="tp-source-num">[87]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">40% Weekly Church Attendance</div>
+<div class="tp-source-provenance"><span class="tp-source-file">RELIGION_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Religion 1967-2012</span><span class="tp-source-cell">H4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Gallup Religion Polls; ANES (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_088">
+<div class="tp-source-num">[88]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-27% from Peak</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_TIMELINE_MASTER_RESEARCH_INTEGRATED.xlsx</span><span class="tp-source-sheet">Master_Timeline_Research</span><span class="tp-source-cell">C25</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: ARDA; Denominational yearbooks (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_089">
+<div class="tp-source-num">[89]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-27% from Peak 36%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">Q9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Gallup; NOTES: Peak 1958; steady decline</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_090">
+<div class="tp-source-num">[90]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">36% Trust in Government</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_MASTER_2.xlsx</span><span class="tp-source-sheet">Authority_Trust</span><span class="tp-source-cell">G4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source: Pew/NES</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_091">
+<div class="tp-source-num">[91]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-53% from Peak 461</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_TIMELINE_MASTER_RESEARCH_INTEGRATED.xlsx</span><span class="tp-source-sheet">Bifurcation_Indicators</span><span class="tp-source-cell">D4</span></div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_092">
+<div class="tp-source-num">[92]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-53% from Peak</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_TIMELINE_MASTER_RESEARCH_INTEGRATED.xlsx</span><span class="tp-source-sheet">Bifurcation_Indicators</span><span class="tp-source-cell">D4</span></div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_093">
+<div class="tp-source-num">[93]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">461 Violent Crime (per 100k)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">CRIME_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Crime 1967-2012</span><span class="tp-source-cell">A4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: FBI Uniform Crime Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_094">
+<div class="tp-source-num">[94]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Violent Crime (per 100k) +187% from 1960</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">A17</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: FBI UCR; NOTES: Peak early 1990s</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_095">
+<div class="tp-source-num">[95]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Violent Crime (per 100k)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">CRIME_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Crime 1967-2012</span><span class="tp-source-cell">A4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: FBI Uniform Crime Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_096">
+<div class="tp-source-num">[96]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+187% from 1960</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_DOMAIN_MASTER_CANONICAL_1967-2012.xlsx</span><span class="tp-source-sheet">Master_By_Year</span><span class="tp-source-cell">N2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">AUTHORITY_TRUST_Trust_Government_Always_Most_SourceCitation: American National Election Studies (ANES) Trust Series; U o</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_097">
+<div class="tp-source-num">[97]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+187% from 1960 9.8</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">M54</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 10</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_098">
+<div class="tp-source-num">[98]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">8 Murder Rate (per 100k)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">CRIME_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Crime 1967-2012</span><span class="tp-source-cell">H5,A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: FBI UCR Homicide Series (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_099">
+<div class="tp-source-num">[99]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Murder Rate (per 100k)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">CRIME_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Crime 1967-2012</span><span class="tp-source-cell">A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: FBI UCR Homicide Series (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_100">
+<div class="tp-source-num">[100]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Murder Rate (per 100k) +93% from 1960</div>
+<div class="tp-source-provenance"><span class="tp-source-file">CRIME_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Crime 1967-2012</span><span class="tp-source-cell">A7,B7</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: BJS Incarceration Trends; ARDA (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_101">
+<div class="tp-source-num">[101]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+93% from 1960 ### Economic Reality</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Coherence_Index</span><span class="tp-source-cell">C4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">NOTES: Last 'innocent' year</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_102">
+<div class="tp-source-num">[102]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+93% from 1960</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Coherence_Index</span><span class="tp-source-cell">C4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">NOTES: Last 'innocent' year</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_103">
+<div class="tp-source-num">[103]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">11% Inflation Rate</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">D4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics System; CDC Marriage/Divorce Reports (2021)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_104">
+<div class="tp-source-num">[104]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">3% Savings Rate</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">G21</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: BLS; NOTES: Delayed gratification collapse</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_105">
+<div class="tp-source-num">[105]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">\$197B Consumer Credit</div>
+<div class="tp-source-provenance"><span class="tp-source-file">CRIME_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Crime 1967-2012</span><span class="tp-source-cell">B8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: BJS Historical Incarceration Data (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_106">
+<div class="tp-source-num">[106]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">6% Unemployment</div>
+<div class="tp-source-provenance"><span class="tp-source-file">ECONOMY_MONEY_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Economy &amp; Money 1967-2012</span><span class="tp-source-cell">G8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: BLS Current Population Survey; Unemployment Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_107">
+<div class="tp-source-num">[107]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">6+ TV Hours/Day</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_DOMAIN_MASTER_CANONICAL_1967-2012.xlsx</span><span class="tp-source-sheet">Mapping_Layer</span><span class="tp-source-cell">D50</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source_File: MEDIA_CULTURE_RESEARCH_1967-2012.xlsx; Source_Sheet: Media &amp; Culture 1967-2012; Source_Row: 6; Source_Citat</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_108">
+<div class="tp-source-num">[108]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">50% Homes with Color TV</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">P8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_109">
+<div class="tp-source-num">[109]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 0% in 1960</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_DOMAIN_MASTER_CANONICAL_1967-2012.xlsx</span><span class="tp-source-sheet">Master_By_Year</span><span class="tp-source-cell">EA2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">AUTHORITY_TRUST_Trust_Government_Always_Most_SourceCitation: American National Election Studies (ANES) Trust Series; U o</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_110">
+<div class="tp-source-num">[110]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 0% in 1960 98%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">A26</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Composite; NOTES: Ubiquitous by 2000</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_111">
+<div class="tp-source-num">[111]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">98% Homes with TV</div>
+<div class="tp-source-provenance"><span class="tp-source-file">CRIME_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Crime 1967-2012</span><span class="tp-source-cell">D7</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: BJS Incarceration Trends; ARDA (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_113">
+<div class="tp-source-num">[113]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Unemployment at 4.5%.</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_DOMAIN_MASTER_CANONICAL_1967-2012.xlsx</span><span class="tp-source-sheet">Master_By_Year</span><span class="tp-source-cell">AS2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">AUTHORITY_TRUST_Trust_Government_Always_Most_SourceCitation: American National Election Studies (ANES) Trust Series; U o</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_115">
+<div class="tp-source-num">[115]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">0 Divorce Rate (per 1,000)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">G5,A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_116">
+<div class="tp-source-num">[116]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Divorce Rate (per 1,000) +471% from 1900</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">A5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_117">
+<div class="tp-source-num">[117]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+471% from 1900 2.0</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">K8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_119">
+<div class="tp-source-num">[119]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">0 Children per Woman</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">K8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_121">
+<div class="tp-source-num">[121]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-43% from 1900 27/25</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">D47</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 22</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_122">
+<div class="tp-source-num">[122]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">27/25 Marriage Age (M/F)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">I9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Census Bureau Historical Tables; Current Population Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_123">
+<div class="tp-source-num">[123]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">5M Cohabiting Couples</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">R18</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: FBI; NOTES: 1974 peak of post-war era</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_124">
+<div class="tp-source-num">[124]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">10x from 1970</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_ALL_EXCEL_COMBINED.xlsx</span><span class="tp-source-sheet">Combined_All_Data</span><span class="tp-source-cell">DJ2135</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source_File: MORAL_AMERICA_CONSOLIDATED.xlsx; Source_Sheet: Domain_Analysis; Source_Row: 7</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_125">
+<div class="tp-source-num">[125]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">10x from 1970 33%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">R6</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census; NOTES: Explosion post-1970</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_126">
+<div class="tp-source-num">[126]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">33% Non-Marital Births</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">Q2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census/Pew; NOTES: Tripled 1960-2020</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_127">
+<div class="tp-source-num">[127]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 5% in 1960 25M</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">D47</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 22</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_128">
+<div class="tp-source-num">[128]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 5% in 1960</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_TIMELINE_MASTER_RESEARCH_INTEGRATED.xlsx</span><span class="tp-source-sheet">Analysis_Summary</span><span class="tp-source-cell">E6</span></div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_129">
+<div class="tp-source-num">[129]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">25M Adults Living Alone</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">N8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_130">
+<div class="tp-source-num">[130]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 4M in 1950</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">L26</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Composite; NOTES: Ubiquitous by 2000</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_131">
+<div class="tp-source-num">[131]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 4M in 1950 ### Society &amp; Faith</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">L26</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Composite; NOTES: Ubiquitous by 2000</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_132">
+<div class="tp-source-num">[132]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">35% Weekly Church Attendance</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">Q9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Gallup; NOTES: Peak 1958; steady decline</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_133">
+<div class="tp-source-num">[133]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-36% from Peak</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">Q9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Gallup; NOTES: Peak 1958; steady decline</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_134">
+<div class="tp-source-num">[134]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-36% from Peak 14%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">Q9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Gallup; NOTES: Peak 1958; steady decline</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_135">
+<div class="tp-source-num">[135]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">14% "No Religion"</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">R12</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Pew; NOTES: 15x increase</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_136">
+<div class="tp-source-num">[136]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 2% in 1950</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">K8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_137">
+<div class="tp-source-num">[137]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 2% in 1950 566</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">K8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_138">
+<div class="tp-source-num">[138]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">566 Violent Crime (per 100k)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">CRIME_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Crime 1967-2012</span><span class="tp-source-cell">A4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: FBI Uniform Crime Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_139">
+<div class="tp-source-num">[139]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Violent Crime (per 100k) +252% from 1960</div>
+<div class="tp-source-provenance"><span class="tp-source-file">CRIME_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Crime 1967-2012</span><span class="tp-source-cell">A4,B4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: FBI Uniform Crime Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_140">
+<div class="tp-source-num">[140]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+252% from 1960 \$70K</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">Q7</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census; NOTES: Marriage alternative emerged</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_141">
+<div class="tp-source-num">[141]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">+252% from 1960</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_DOMAIN_MASTER_CANONICAL_1967-2012.xlsx</span><span class="tp-source-sheet">Master_By_Year</span><span class="tp-source-cell">J2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">AUTHORITY_TRUST_Trust_Government_Always_Most_SourceCitation: American National Election Studies (ANES) Trust Series; U o</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_142">
+<div class="tp-source-num">[142]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">\$70K Median Income (2024\$)</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">R10</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Gallup; NOTES: Christian ID collapse</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_144">
+<div class="tp-source-num">[144]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">5% Savings Rate</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">I4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics System; CDC Marriage/Divorce Reports (2021)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_145">
+<div class="tp-source-num">[145]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-51% from 1974 \$1.37T</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">M13</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Pew/NES; NOTES: Catastrophic 18pt drop 1970-1974</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_146">
+<div class="tp-source-num">[146]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-51% from 1974</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">M13</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Pew/NES; NOTES: Catastrophic 18pt drop 1970-1974</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_147">
+<div class="tp-source-num">[147]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">\$1.37T Consumer Credit</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">G23</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: BLS; NOTES: Nixon Shock aftermath</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_148">
+<div class="tp-source-num">[148]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">7x from 1974 \$5.6T</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">I18,R18</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: FBI; NOTES: 1974 peak of post-war era</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_149">
+<div class="tp-source-num">[149]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">7x from 1974</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_ANALYSIS.xlsm</span><span class="tp-source-sheet">Summary</span><span class="tp-source-cell">A304</span></div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_150">
+<div class="tp-source-num">[150]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">\$5.6T Federal Debt</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_DOMAIN_MASTER_CANONICAL_1967-2012.xlsx</span><span class="tp-source-sheet">Master_By_Year</span><span class="tp-source-cell">U7</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">AUTHORITY_TRUST_Trust_Government_Always_Most_SourceCitation: American National Election Studies (ANES) Trust Series; U o</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_151">
+<div class="tp-source-num">[151]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">12x from 1974 0.43</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">M20</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: CDC; NOTES: 1970s surge; 2020s crisis</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_152">
+<div class="tp-source-num">[152]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">12x from 1974</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_ANALYSIS.xlsm</span><span class="tp-source-sheet">Summary</span><span class="tp-source-cell">A309</span></div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_154">
+<div class="tp-source-num">[154]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">4 TVs per Household</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">T4</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census; NOTES: Peak ~1980; collapse of marriage rate</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_155">
+<div class="tp-source-num">[155]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">26% Internet Access</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">N8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_156">
+<div class="tp-source-num">[156]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">20% Cell Phone Penetration</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">N2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census/Pew; NOTES: Tripled 1960-2020</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_157">
+<div class="tp-source-num">[157]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">50+ Cable Channels</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">P8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_160">
+<div class="tp-source-num">[160]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Birth rates have collapsed to 1.6 children per woman - the lowest in American history.</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MDA_ALL_EXCEL_COMBINED.xlsx</span><span class="tp-source-sheet">Combined_All_Data</span><span class="tp-source-cell">Q2327</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source_File: Moral_Chronology.xlsx; Source_Sheet: 1900-1967 Family_Structure; Source_Row: 43; Data_Source: Moral.txt</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_162">
+<div class="tp-source-num">[162]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-54% from 1900 \| HISTORIC LOW</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_TIMELINE_MASTER_RESEARCH_INTEGRATED.xlsx</span><span class="tp-source-sheet">Bifurcation_Indicators</span><span class="tp-source-cell">D4</span></div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_163">
+<div class="tp-source-num">[163]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-54% from 1900 \| HISTORIC LOW 37M</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_TIMELINE_MASTER_RESEARCH_INTEGRATED.xlsx</span><span class="tp-source-sheet">Bifurcation_Indicators</span><span class="tp-source-cell">D4</span></div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_164">
+<div class="tp-source-num">[164]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">37M Adults Living Alone</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">O13</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Pew/NES; NOTES: Catastrophic 18pt drop 1970-1974</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_165">
+<div class="tp-source-num">[165]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 4M in 1950 65%+</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">L26</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Composite; NOTES: Ubiquitous by 2000</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_166">
+<div class="tp-source-num">[166]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">65%+ Couples Met Online</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">S7</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census; NOTES: Marriage alternative emerged</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_167">
+<div class="tp-source-num">[167]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 0% in 1990</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">L54</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 10</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_168">
+<div class="tp-source-num">[168]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 0% in 1990 27%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">mda_evidence_workbook_inventory</span><span class="tp-source-cell">L54</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">citationish_rows: 10</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_169">
+<div class="tp-source-num">[169]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">27% Young Men Sexless</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">I11</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Pew; NOTES: 48% decline</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_170">
+<div class="tp-source-num">[170]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 8% in 2008</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_ANALYSIS.xlsm</span><span class="tp-source-sheet">Summary</span><span class="tp-source-cell">A713</span></div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_171">
+<div class="tp-source-num">[171]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 8% in 2008 ### Society &amp; Faith</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">N3</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: CDC; NOTES: 6x increase 1965-1990</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_172">
+<div class="tp-source-num">[172]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">30% Weekly Church Attendance</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">S9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Gallup; NOTES: Peak 1958; steady decline</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_173">
+<div class="tp-source-num">[173]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-45% from Peak 28%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">I9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Gallup; NOTES: Peak 1958; steady decline</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_174">
+<div class="tp-source-num">[174]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-45% from Peak</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">I9</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Gallup; NOTES: Peak 1958; steady decline</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_175">
+<div class="tp-source-num">[175]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">28% "No Religion"</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">T12</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Pew; NOTES: 15x increase</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_176">
+<div class="tp-source-num">[176]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 2% in 1950 12%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">K8</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Legal Records; NOTES: CA first 1969; universal by 1985</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_177">
+<div class="tp-source-num">[177]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">12% No Close Friends</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">M20</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: CDC; NOTES: 1970s surge; 2020s crisis</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_178">
+<div class="tp-source-num">[178]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 3% in 1990</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_ANALYSIS.xlsm</span><span class="tp-source-sheet">Summary</span><span class="tp-source-cell">A492</span></div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_179">
+<div class="tp-source-num">[179]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">From 3% in 1990 \&lt;20%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">H3</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: CDC; NOTES: 6x increase 1965-1990</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_180">
+<div class="tp-source-num">[180]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">\&lt;20% Trust in Government</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">T13</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Pew/NES; NOTES: Catastrophic 18pt drop 1970-1974</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_181">
+<div class="tp-source-num">[181]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-74% from Peak ### Technology Saturation</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">P7</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census; NOTES: Marriage alternative emerged</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_182">
+<div class="tp-source-num">[182]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">-74% from Peak</div>
+<div class="tp-source-provenance"><span class="tp-source-file">COHERENCE_CASCADE_DASHBOARD.xlsx</span><span class="tp-source-sheet">Cascade_Dashboard</span><span class="tp-source-cell">C7</span></div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_183">
+<div class="tp-source-num">[183]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">5 Screen Hours/Day</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">I18</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: FBI; NOTES: 1974 peak of post-war era</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_184">
+<div class="tp-source-num">[184]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">30M+ AI Companion Users</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Core_Metrics</span><span class="tp-source-cell">A2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">SOURCE: Census/Pew; NOTES: Tripled 1960-2020</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_185">
+<div class="tp-source-num">[185]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">97% Smartphone Ownership</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Threshold_Analysis</span><span class="tp-source-cell">D9</span></div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_186">
+<div class="tp-source-num">[186]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">The Cumulative Trajectory: 1900 to 2025 Metric \| 1900 \| 1950 \| 2025 \| Change\ | Divorce Rate (per 1,000) \| 0.7 \| 2.6 \| 2.3\* \| +229%</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_CONSOLIDATED.xlsx</span><span class="tp-source-sheet">Data_Gaps</span><span class="tp-source-cell">A2</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">POTENTIAL SOURCE: Census Bureau; Census</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_187">
+<div class="tp-source-num">[187]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Metric \| 1900 \| 1950 \| 2025 \| Change\ Divorce Rate (per 1,000) \| 0.7 \| 2.6 \| 2.3\* \| +229% (but fewer marry)\ | Fertility Rate \| 3.</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">A5,B5,E5,C5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_188">
+<div class="tp-source-num">[188]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Metric \| 1900 \| 1950 \| 2025 \| Change\ Divorce Rate (per 1,000) \| 0.7 \| 2.6 \| 2.3\* \| +229% (but fewer marry)\ Fertility Rate \| 3.5 </div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">A5,B5,E5,C5,G5,H5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item exact" data-source-id="src_189">
+<div class="tp-source-num">[189]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Divorce Rate (per 1,000) \| 0.7 \| 2.6 \| 2.3\* \| +229% (but fewer marry)\ Fertility Rate \| 3.5 \| 3.0 \| 1.6 \| -54%\ | Church Attendance</div>
+<div class="tp-source-provenance"><span class="tp-source-file">FAMILY_STRUCTURE_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Family Structure 1967-2012</span><span class="tp-source-cell">A5,B5,E5,C5</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: NCHS Vital Statistics; CDC Divorce Reports (1967-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_190">
+<div class="tp-source-num">[190]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Fertility Rate \| 3.5 \| 3.0 \| 1.6 \| -54%\ Church Attendance \| ~95% \| 55% \| 30% \| -68%\ | "No Religion" \| ~1% \| 2% \| 28% \| +2700%\</div>
+<div class="tp-source-provenance"><span class="tp-source-file">AUTHORITY_TRUST_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Authority &amp; Trust 1967-2012</span><span class="tp-source-cell">B7</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Gallup Confidence in Institutions; GSS (1973-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_191">
+<div class="tp-source-num">[191]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Church Attendance \| ~95% \| 55% \| 30% \| -68%\ "No Religion" \| ~1% \| 2% \| 28% \| +2700%\ | Trust in Government \| N/A \| 77% \| \&lt;20% \</div>
+<div class="tp-source-provenance"><span class="tp-source-file">AUTHORITY_TRUST_RESEARCH_1967-2012.xlsx</span><span class="tp-source-sheet">Authority &amp; Trust 1967-2012</span><span class="tp-source-cell">B7</span></div>
+<div class="tp-source-original" style="font-size:.7rem;color:#9ca3af">Source Citation: Gallup Confidence in Institutions; GSS (1973-2012)</div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_192">
+<div class="tp-source-num">[192]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">"No Religion" \| ~1% \| 2% \| 28% \| +2700%\ Trust in Government \| N/A \| 77% \| \&lt;20% \| -74%\ | Adults Living Alone \| ~1M \| 4M \| 37M \</div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_MASTER_2.xlsx</span><span class="tp-source-sheet">Overview</span><span class="tp-source-cell">A25</span></div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_193">
+<div class="tp-source-num">[193]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Trust in Government \| N/A \| 77% \| \&lt;20% \| -74%\ Adults Living Alone \| ~1M \| 4M \| 37M \| +3600%\ | Media Hours/Day \| 0 \| 4.5 \| 7.5 </div>
+<div class="tp-source-provenance"><span class="tp-source-file">MORAL_AMERICA_MASTER_2.xlsx</span><span class="tp-source-sheet">Overview</span><span class="tp-source-cell">A25</span></div>
+</div>
+</li>
+<li class="tp-source-item close" data-source-id="src_194">
+<div class="tp-source-num">[194]</div>
+<div class="tp-source-content">
+<div class="tp-source-text">Adults Living Alone \| ~1M \| 4M \| 37M \| +3600%\ Media Hours/Day \| 0 \| 4.5 \| 7.5 \| From Silence to Saturation</div>
+<div class="tp-source-provenance"><span class="tp-source-file">Moral_Timeline_Workbook.xlsx</span><span class="tp-source-sheet">Dashboard</span><span class="tp-source-cell">B41</span></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</section></article>
+</div>
+</section>
+<!-- END:COMPONENT:reader-mode:proof-panel -->
+<header>
+<h1>Moral Decline by the Numbers</h1>
+<div class="subtitle">A Statistical Synthesis Across Five Generations (1900-2025)</div>
+</header>
+<!-- BEGIN:COMPONENT:audio:tp-read-aloud (injected 2026-06-03 Opus) -->
+<style>
+/* --- AUDIO PLAYER v2 (pill) --- */
+.tp-player-block{max-width:720px;margin:0 auto 1.5rem;}
+.tp-read-aloud{display:flex;align-items:center;gap:.65rem;padding:.65rem .9rem;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.15);border-radius:.5rem;margin-bottom:.65rem;}
+.tp-read-aloud .tp-dot{width:7px;height:7px;border-radius:50%;background:var(--highlight,#d4af37);box-shadow:0 0 6px rgba(212,175,55,.4);flex-shrink:0;}
+.tp-read-aloud .tp-label{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--highlight,#d4af37);white-space:nowrap;min-width:62px;}
+.tp-read-aloud .tp-play{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--highlight,#d4af37);background:transparent;color:var(--highlight,#d4af37);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.6rem;transition:all .2s;}
+.tp-read-aloud .tp-play:hover{background:rgba(212,175,55,.12);box-shadow:0 0 12px rgba(212,175,55,.2);}
+.tp-track{flex:1;height:4px;background:rgba(255,255,255,.06);border-radius:2px;cursor:pointer;position:relative;min-width:0;}
+.tp-track:hover{height:6px;}
+.tp-fill{height:100%;border-radius:2px;width:0%;transition:width .1s linear;}
+.tp-read-aloud .tp-fill{background:linear-gradient(90deg,var(--highlight,#d4af37),#e8c84a);}
+.tp-time{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:#555;min-width:32px;text-align:right;flex-shrink:0;}
+.tp-mute{background:none;border:none;color:#555;cursor:pointer;font-size:.7rem;padding:2px;flex-shrink:0;transition:color .2s;}
+.tp-mute:hover{color:#e0e0e0;}
+@media(max-width:560px){.tp-read-aloud .tp-label{min-width:50px;font-size:.5rem;}}
+
+/* TP-PLAYER-V2 */
+.tp-player-block{max-width:720px;margin:0 auto 1.5rem;}
+.tp-read-aloud{display:flex;align-items:center;gap:.65rem;padding:.65rem .9rem;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.15);border-radius:.5rem;margin-bottom:.65rem;}
+.tp-read-aloud .tp-dot{width:7px;height:7px;border-radius:50%;background:var(--highlight,#d4af37);box-shadow:0 0 6px rgba(212,175,55,.4);flex-shrink:0;}
+.tp-read-aloud .tp-label{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--highlight,#d4af37);white-space:nowrap;min-width:62px;}
+.tp-read-aloud .tp-play{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--highlight,#d4af37);background:transparent;color:var(--highlight,#d4af37);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.6rem;transition:all .2s;}
+.tp-read-aloud .tp-play:hover{background:rgba(212,175,55,.12);box-shadow:0 0 12px rgba(212,175,55,.2);}
+.tp-track{flex:1;height:4px;background:rgba(255,255,255,.06);border-radius:2px;cursor:pointer;position:relative;min-width:0;}
+.tp-track:hover{height:6px;}
+.tp-fill{height:100%;border-radius:2px;width:0%;transition:width .1s linear;}
+.tp-read-aloud .tp-fill{background:linear-gradient(90deg,var(--highlight,#d4af37),#e8c84a);}
+.tp-time{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:#555;min-width:32px;text-align:right;flex-shrink:0;}
+.tp-mute{background:none;border:none;color:#555;cursor:pointer;font-size:.7rem;padding:2px;flex-shrink:0;transition:color .2s;}
+.tp-mute:hover{color:#e0e0e0;}
+.tp-pair{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+.tp-half{display:flex;align-items:center;gap:.5rem;padding:.5rem .7rem;border:1px solid #222;border-radius:.4rem;background:#111;min-width:0;}
+.tp-half .tp-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.tp-half .tp-label{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;min-width:48px;}
+.tp-half .tp-play{width:24px;height:24px;border-radius:50%;border:1.5px solid;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.55rem;transition:all .2s;}
+.tp-half .tp-play:hover{box-shadow:0 0 10px currentColor;}
+.tp-half .tp-track{height:3px;}.tp-half .tp-track:hover{height:5px;}
+.tp-half .tp-time{font-size:.55rem;min-width:28px;}
+.tp-half.tp-deep .tp-dot{background:#4a9eff;}.tp-half.tp-deep .tp-label{color:#4a9eff;}.tp-half.tp-deep .tp-play{border-color:#4a9eff;color:#4a9eff;}.tp-half.tp-deep .tp-fill{background:#4a9eff;}.tp-half.tp-deep:hover{border-color:rgba(74,158,255,.3);background:rgba(74,158,255,.08);}
+.tp-half.tp-debate .tp-dot{background:#a855f7;}.tp-half.tp-debate .tp-label{color:#a855f7;}.tp-half.tp-debate .tp-play{border-color:#a855f7;color:#a855f7;}.tp-half.tp-debate .tp-fill{background:#a855f7;}.tp-half.tp-debate:hover{border-color:rgba(168,85,247,.3);background:rgba(168,85,247,.08);}
+.tp-sticky{position:fixed;right:-260px;top:50%;transform:translateY(-50%);width:220px;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);border:1px solid #222;border-right:none;border-radius:.6rem 0 0 .6rem;padding:.75rem .8rem;z-index:9999;transition:right .35s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,.6);}
+.tp-sticky.tp-visible{right:0;}
+.tp-sticky-header{display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem;}
+.tp-sticky .tp-sticky-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.tp-sticky .tp-sticky-label{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tp-sticky .tp-sticky-close{background:none;border:none;color:#555;cursor:pointer;font-size:.65rem;padding:2px 4px;flex-shrink:0;transition:color .2s;}
+.tp-sticky .tp-sticky-close:hover{color:#e0e0e0;}
+.tp-sticky-controls{display:flex;align-items:center;gap:.5rem;}
+.tp-sticky .tp-play{width:26px;height:26px;border-radius:50%;border:1.5px solid;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.55rem;transition:all .2s;}
+.tp-sticky .tp-play:hover{box-shadow:0 0 10px currentColor;}
+.tp-sticky .tp-track{flex:1;height:3px;background:rgba(255,255,255,.06);border-radius:2px;cursor:pointer;position:relative;}
+.tp-sticky .tp-fill{height:100%;border-radius:2px;width:0%;transition:width .1s linear;}
+.tp-sticky .tp-time{font-family:'JetBrains Mono',monospace;font-size:.5rem;color:#555;min-width:28px;text-align:right;flex-shrink:0;}
+@media(max-width:560px){.tp-pair{grid-template-columns:1fr;}.tp-sticky{width:180px;padding:.6rem;}.tp-read-aloud .tp-label{min-width:50px;font-size:.5rem;}}
+</style>
+<div class="tp-player-block" style="max-width:980px;margin:1.25rem auto 1.5rem;">
+<div class="tp-read-aloud">
+<div class="tp-dot"></div>
+<span class="tp-label">Read Aloud</span>
+<audio id="mda040Audio" preload="metadata"><source src="https://pub-5b15c954dc1642f18573a365cf6dc2c5.r2.dev/audio/mda/STATISTICAL_SYNTHESIS.mp3" type="audio/mpeg"/></audio>
+<button class="tp-play" data-audio="mda040Audio" onclick="tpToggle('mda040Audio',this)"><i class="fas fa-play"></i></button>
+<div class="tp-track" onclick="tpSeek(event,'mda040Audio')"><div class="tp-fill" id="mda040Fill"></div></div>
+<span class="tp-time" id="mda040Time">0:00</span>
+<button class="tp-mute" onclick="tpMute('mda040Audio',this)"><i class="fas fa-volume-up"></i></button>
+</div>
+</div>
+<div class="tp-sticky" id="stickyPlayer">
+<div class="tp-sticky-header">
+<div class="tp-sticky-dot" id="stickyDot" style="background:#d4af37;"></div>
+<span class="tp-sticky-label" id="stickyLabel" style="color:#d4af37;">Audio</span>
+<button class="tp-sticky-close" onclick="tpCloseSticky()"><i class="fas fa-times"></i></button>
+</div>
+<div class="tp-sticky-controls">
+<button class="tp-play" id="stickyPlayBtn" onclick="tpStickyToggle()" style="border-color:#d4af37;color:#d4af37;"><i class="fas fa-play"></i></button>
+<div class="tp-track" onclick="tpStickySeek(event)"><div class="tp-fill" id="stickyFill" style="background:#d4af37;"></div></div>
+<span class="tp-time" id="stickyTime">0:00</span>
+</div>
+</div>
+<script>
+let tpCurrentId=null,tpStickyDismissed=false;
+const tpColors={};
+function tpRegister(id,color,label){tpColors[id]={color:color,label:label};}
+function tpFmt(s){if(isNaN(s)||!isFinite(s))return'0:00';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
+function tpToggle(id,btn){const a=document.getElementById(id);document.querySelectorAll('.tp-player-block audio').forEach(x=>{if(x.id!==id&&!x.paused){x.pause();tpUpdateBtns(x.id,false);}});if(a.paused){a.play();tpCurrentId=id;tpStickyDismissed=false;tpUpdateBtns(id,true);}else{a.pause();tpCurrentId=null;tpUpdateBtns(id,false);}}
+function tpUpdateBtns(id,playing){document.querySelectorAll('[data-audio="'+id+'"]').forEach(b=>{const i=b.querySelector('i');if(i)i.className='fas fa-'+(playing?'pause':'play');});if(id===tpCurrentId||!playing){const si=document.querySelector('#stickyPlayBtn i');if(si)si.className='fas fa-'+(playing?'pause':'play');}}
+function tpSeek(e,id){const a=document.getElementById(id);const r=e.currentTarget.getBoundingClientRect();const p=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));if(a.duration)a.currentTime=p*a.duration;}
+function tpMute(id,btn){const a=document.getElementById(id);a.muted=!a.muted;btn.querySelector('i').className='fas fa-volume-'+(a.muted?'mute':'up');}
+function tpWire(id){const a=document.getElementById(id);if(!a)return;a.addEventListener('timeupdate',()=>{const fill=document.getElementById(id.replace('Audio','Fill'));const time=document.getElementById(id.replace('Audio','Time'));if(fill&&a.duration)fill.style.width=(a.currentTime/a.duration*100)+'%';if(time)time.textContent=tpFmt(a.currentTime);if(id===tpCurrentId){const sf=document.getElementById('stickyFill');const st=document.getElementById('stickyTime');if(sf&&a.duration)sf.style.width=(a.currentTime/a.duration*100)+'%';if(st)st.textContent=tpFmt(a.currentTime);}});a.addEventListener('ended',()=>{tpUpdateBtns(id,false);if(tpCurrentId===id)tpCurrentId=null;});}
+(function(){const stickyEl=document.getElementById('stickyPlayer');const blocks=document.querySelectorAll('.tp-player-block');if(!stickyEl||!blocks.length)return;function updateSticky(){if(!tpCurrentId||tpStickyDismissed){stickyEl.classList.remove('tp-visible');return;}let outOfView=true;blocks.forEach(b=>{const r=b.getBoundingClientRect();if(r.bottom>0&&r.top<window.innerHeight)outOfView=false;});if(outOfView){const info=tpColors[tpCurrentId]||{color:'#d4af37',label:'Audio'};document.getElementById('stickyDot').style.background=info.color;document.getElementById('stickyLabel').style.color=info.color;document.getElementById('stickyLabel').textContent=info.label;document.getElementById('stickyPlayBtn').style.borderColor=info.color;document.getElementById('stickyPlayBtn').style.color=info.color;document.getElementById('stickyFill').style.background=info.color;stickyEl.classList.add('tp-visible');}else{stickyEl.classList.remove('tp-visible');}}window.tpStickyToggle=function(){if(!tpCurrentId)return;const a=document.getElementById(tpCurrentId);if(a.paused){a.play();tpUpdateBtns(tpCurrentId,true);}else{a.pause();tpUpdateBtns(tpCurrentId,false);}};window.tpStickySeek=function(e){if(!tpCurrentId)return;const a=document.getElementById(tpCurrentId);const r=e.currentTarget.getBoundingClientRect();const p=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));if(a.duration)a.currentTime=p*a.duration;};window.tpCloseSticky=function(){tpStickyDismissed=true;stickyEl.classList.remove('tp-visible');};window.addEventListener('scroll',updateSticky,{passive:true});setInterval(updateSticky,500);})();
+</script>
+<script>tpRegister('mda040Audio','#d4af37','Read Aloud');tpWire('mda040Audio');</script>
+<!-- END:COMPONENT:audio:tp-read-aloud -->
+<div class="container">
+<div class="intro">
+<p><span class="has-source missing" data-source-id="src_003">This synthesis traces the quantitative transformation of American society through five generations of one family: Samuel (1900), Henry (1926), William (1950), Thomas (1974), Jacob (1998), and Jacob again (2025). The<sup class="source-badge unsupported" data-src="src_003">[3?]</sup></span>data tells a story that numbers alone cannot fully capture, but which the numbers make undeniable.</p>
+<p>Each generation inherited a world shaped by the choices of those before. <span class="has-source missing" data-source-id="src_004">Each generation faced constraints their ancestors could not imagine losing, and freedoms their ancestors could not imagine wanting. The<sup class="source-badge unsupported" data-src="src_004">[4?]</sup></span>trajectory is clear. The destination is uncertain.</p>
+<p>We organize the evidence across three domains: <strong>Family</strong> (the fundamental unit of social transmission), <strong><span class="has-source missing" data-source-id="src_085"><span class="has-source" data-source-id="src_131"><span class="has-source" data-source-id="src_171">Society<sup class="source-badge exact" data-src="src_171">[171]</sup></span><sup class="source-badge close" data-src="src_131">[131]</sup></span><sup class="source-badge unsupported" data-src="src_085">[85?]</sup></span></strong> (the broader patterns of trust, faith, and community), and <strong><span class="has-source" data-source-id="src_101">Economic<sup class="source-badge close" data-src="src_101">[101]</sup></span></strong> (the material conditions that both enable and constrain human flourishing).</p>
+</div>
+<!-- MASTER CHARTS -->
+<div class="generation">
+<h2><span class="has-source" data-source-id="src_005">The Arc of Decline: 125 Years in Charts<sup class="source-badge close" data-src="src_005">[5]</sup></span></h2>
+<div class="era"><span class="has-source missing" data-source-id="src_006"><span class="has-source missing" data-source-id="src_007">Visualizing the transformation from 1900 to 2025<sup class="source-badge unsupported" data-src="src_007">[7?]</sup></span><sup class="source-badge unsupported" data-src="src_006">[6?]</sup></span></div>
+<div class="chart-container" id="chart-family-overview" style="height: 400px;"></div>
+<div class="chart-container" id="chart-society-overview" style="height: 400px;"></div>
+<div class="chart-container" id="chart-economic-overview" style="height: 400px;"></div>
+</div>
+<span class="has-source missing" data-source-id="src_008">1900: SAMUEL<sup class="source-badge unsupported" data-src="src_008">[8?]</sup></span>
+<div class="generation" id="gen-1900">
+<h2>1900: Samuel Lowe</h2>
+<div class="era">The Baseline - Before the Acceleration</div>
+<div class="narrative">
+<p>In 1900, America was a nation of small circles. <span class="has-source missing" data-source-id="src_009">Seventy-six million people scattered across 3.5 million square miles, but most would never travel more than fifty miles from their birthplace. Ther<sup class="source-badge unsupported" data-src="src_009">[9?]</sup></span>e was no radio, no telephone in rural Ohio, no moving pictures. The only voices Samuel heard were voices of people physically present. The only faces he saw were faces he could touch.</p>
+<p>This isolation was not experienced as deprivation. It was simply the shape of human life before technology collapsed distance into nothing. The world was small, but it was whole. Complete in itself. There were no images of other lives to breed dissatisfaction, no advertising to manufacture desire, no news cycle to generate fear.</p>
+<p>The constraints were absolute: you could not rush a harvest, hurry a horse, or speed a letter across the county. In this enforced patience, people learned to sit with their thoughts, to wait, to endure. Marriage was for life because divorce meant social death. Faith was universal because the church was the only social infrastructure that existed.</p>
+</div>
+<div class="domain-section">
+<h3>Family Structure</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">0.7</div>
+<div class="label"><span class="has-source" data-source-id="src_010"><span class="has-source" data-source-id="src_011"><span class="has-source" data-source-id="src_025"><span class="has-source" data-source-id="src_026"><span class="has-source" data-source-id="src_052"><span class="has-source" data-source-id="src_053"><span class="has-source" data-source-id="src_076"><span class="has-source" data-source-id="src_077"><span class="has-source" data-source-id="src_115"><span class="has-source" data-source-id="src_116"><span class="has-source" data-source-id="src_186"><span class="has-source" data-source-id="src_187"><span class="has-source" data-source-id="src_188"><span class="has-source" data-source-id="src_189">Divorce Rate (per 1,000)<sup class="source-badge exact" data-src="src_189">[189]</sup></span><sup class="source-badge exact" data-src="src_188">[188]</sup></span><sup class="source-badge exact" data-src="src_187">[187]</sup></span><sup class="source-badge close" data-src="src_186">[186]</sup></span><sup class="source-badge close" data-src="src_116">[116]</sup></span><sup class="source-badge exact" data-src="src_115">[115]</sup></span><sup class="source-badge close" data-src="src_077"><span class="has-source" data-source-id="src_190"><span class="has-source" data-source-id="src_191"><span class="has-source" data-source-id="src_192"><span class="has-source" data-source-id="src_193">[77]<sup class="source-badge close" data-src="src_193">[193]</sup></span><sup class="source-badge close" data-src="src_192">[192]</sup></span><sup class="source-badge close" data-src="src_191">[191]</sup></span><sup class="source-badge close" data-src="src_190">[190]</sup></span></sup></span><sup class="source-badge close" data-src="src_076">[76]</sup></span><sup class="source-badge close" data-src="src_053"><span class="has-source" data-source-id="src_091"><span class="has-source" data-source-id="src_092">[53]<sup class="source-badge exact" data-src="src_092">[92]</sup></span><sup class="source-badge close" data-src="src_091">[91]</sup></span></sup></span><sup class="source-badge exact" data-src="src_052">[52]</sup></span><sup class="source-badge close" data-src="src_026"><span class="has-source" data-source-id="src_030"><span class="has-source" data-source-id="src_031"><span class="has-source" data-source-id="src_155">[26]<sup class="source-badge close" data-src="src_155">[155]</sup></span><sup class="source-badge exact" data-src="src_031">[31]</sup></span><sup class="source-badge close" data-src="src_030"><span class="has-source" data-source-id="src_066"><span class="has-source" data-source-id="src_067"><span class="has-source" data-source-id="src_172">[30]<sup class="source-badge exact" data-src="src_172">[172]</sup></span><sup class="source-badge exact" data-src="src_067">[67]</sup></span><sup class="source-badge exact" data-src="src_066">[66]</sup></span></sup></span></sup></span><sup class="source-badge close" data-src="src_025"><span class="has-source" data-source-id="src_121"><span class="has-source" data-source-id="src_122">[25]<sup class="source-badge close" data-src="src_122">[122]</sup></span><sup class="source-badge close" data-src="src_121">[121]</sup></span></sup></span><sup class="source-badge exact" data-src="src_011"><span class="has-source" data-source-id="src_103">[11]<sup class="source-badge close" data-src="src_103">[103]</sup></span></sup></span><sup class="source-badge exact" data-src="src_010">[10]</sup></span></div>
+<div class="change neutral">Baseline</div>
+</div>
+<div class="stat-card">
+<div class="value">3.5</div>
+<div class="label"><span class="has-source" data-source-id="src_012"><span class="has-source" data-source-id="src_029"><span class="has-source missing" data-source-id="src_049"><span class="has-source" data-source-id="src_056"><span class="has-source" data-source-id="src_080"><span class="has-source" data-source-id="src_119"><span class="has-source" data-source-id="src_160"><span class="has-source missing" data-source-id="src_161">Children per Woman<sup class="source-badge unsupported" data-src="src_161">[161?]</sup></span><sup class="source-badge exact" data-src="src_160">[160]</sup></span><sup class="source-badge exact" data-src="src_119">[119]</sup></span><sup class="source-badge close" data-src="src_080">[80]</sup></span><sup class="source-badge close" data-src="src_056">[56]</sup></span><sup class="source-badge contradicted" data-src="src_049"><span class="has-source" data-source-id="src_081"><span class="has-source" data-source-id="src_082">[49]<sup class="source-badge close" data-src="src_082">[82]</sup></span><sup class="source-badge close" data-src="src_081">[81]</sup></span></sup></span><sup class="source-badge exact" data-src="src_029">[29]</sup></span><sup class="source-badge exact" data-src="src_012"><span class="has-source" data-source-id="src_176"><span class="has-source" data-source-id="src_177">[12]<sup class="source-badge exact" data-src="src_177">[177]</sup></span><sup class="source-badge close" data-src="src_176">[176]</sup></span></sup></span></div>
+<div class="change neutral">Baseline</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_013">26/22<sup class="source-badge close" data-src="src_013">[13]</sup></span></div>
+<div class="label"><span class="has-source" data-source-id="src_032"><span class="has-source" data-source-id="src_059">Marriage Age (M/F)<sup class="source-badge close" data-src="src_059">[59]</sup></span><sup class="source-badge close" data-src="src_032">[32]</sup></span></div>
+<div class="change neutral">Baseline</div>
+</div>
+<div class="stat-card">
+<div class="value">~0%</div>
+<div class="label"><span class="has-source" data-source-id="src_014"><span class="has-source missing" data-source-id="src_083">Cohabitation<sup class="source-badge unsupported" data-src="src_083">[83?]</sup></span><sup class="source-badge exact" data-src="src_014"><span class="has-source missing" data-source-id="src_057"><span class="has-source" data-source-id="src_058"><span class="has-source" data-source-id="src_134"><span class="has-source" data-source-id="src_135">[14]<sup class="source-badge exact" data-src="src_135">[135]</sup></span><sup class="source-badge close" data-src="src_134">[134]</sup></span><sup class="source-badge close" data-src="src_058"><span class="has-source missing" data-source-id="src_073">[58]<sup class="source-badge unsupported" data-src="src_073">[73?]</sup></span></sup></span><sup class="source-badge contradicted" data-src="src_057">[57]</sup></span></sup></span></div>
+<div class="change neutral">Baseline</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Society &amp; Faith</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_015">~95%<sup class="source-badge exact" data-src="src_015">[15]</sup></span></div>
+<div class="label"><span class="has-source" data-source-id="src_033"><span class="has-source" data-source-id="src_050"><span class="has-source" data-source-id="src_061"><span class="has-source" data-source-id="src_087"><span class="has-source" data-source-id="src_132">Church Attendance<sup class="source-badge exact" data-src="src_132">[132]</sup></span><sup class="source-badge exact" data-src="src_087">[87]</sup></span><sup class="source-badge close" data-src="src_061">[61]</sup></span><sup class="source-badge exact" data-src="src_050"><span class="has-source" data-source-id="src_108"><span class="has-source" data-source-id="src_157">[50]<sup class="source-badge exact" data-src="src_157">[157]</sup></span><sup class="source-badge exact" data-src="src_108">[108]</sup></span></sup></span><sup class="source-badge exact" data-src="src_033"><span class="has-source" data-source-id="src_125"><span class="has-source" data-source-id="src_126">[33]<sup class="source-badge exact" data-src="src_126">[126]</sup></span><sup class="source-badge close" data-src="src_125">[125]</sup></span></sup></span></div>
+<div class="change neutral">Near Universal</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_016">47<sup class="source-badge exact" data-src="src_016">[16]</sup></span></div>
+<div class="label"><span class="has-source" data-source-id="src_034">Life Expectancy<sup class="source-badge exact" data-src="src_034">[34]</sup></span></div>
+<div class="change neutral">Baseline</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_017">60%<sup class="source-badge exact" data-src="src_017">[17]</sup></span></div>
+<div class="label">Rural Population</div>
+<div class="change neutral">Baseline</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_018">41%<sup class="source-badge close" data-src="src_018">[18]</sup></span></div>
+<div class="label">Agricultural Workers</div>
+<div class="change neutral">Baseline</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Technology &amp; Connection</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">&lt;1%</div>
+<div class="label"><span class="has-source" data-source-id="src_019"><span class="has-source" data-source-id="src_040"><span class="has-source" data-source-id="src_068">Households with Phone<sup class="source-badge exact" data-src="src_068">[68]</sup></span><sup class="source-badge exact" data-src="src_040">[40]</sup></span><sup class="source-badge exact" data-src="src_019">[19]</sup></span></div>
+<div class="change neutral">Baseline</div>
+</div>
+<div class="stat-card">
+<div class="value">&lt;3%</div>
+<div class="label"><span class="has-source" data-source-id="src_020">Households with Electricity<sup class="source-badge exact" data-src="src_020"><span class="has-source" data-source-id="src_156"><span class="has-source" data-source-id="src_179"><span class="has-source" data-source-id="src_180">[20]<sup class="source-badge exact" data-src="src_180">[180]</sup></span><sup class="source-badge close" data-src="src_179">[179]</sup></span><sup class="source-badge exact" data-src="src_156">[156]</sup></span></sup></span></div>
+<div class="change neutral">Baseline</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source missing" data-source-id="src_021"><span class="has-source" data-source-id="src_045">8,000<sup class="source-badge close" data-src="src_045"><span class="has-source" data-source-id="src_173"><span class="has-source" data-source-id="src_174">[45]<sup class="source-badge exact" data-src="src_174">[174]</sup></span><sup class="source-badge close" data-src="src_173">[173]</sup></span></sup></span><sup class="source-badge unsupported" data-src="src_021">[21?]</sup></span></div>
+<div class="label">Automobiles (Total USA)</div>
+<div class="change neutral">Baseline</div>
+</div>
+<div class="stat-card">
+<div class="value">0</div>
+<div class="label"><span class="has-source" data-source-id="src_022"><span class="has-source" data-source-id="src_046"><span class="has-source" data-source-id="src_194">Hours Media/Day<sup class="source-badge close" data-src="src_194">[194]</sup></span><sup class="source-badge exact" data-src="src_046">[46]</sup></span><sup class="source-badge exact" data-src="src_022">[22]</sup></span></div>
+<div class="change neutral">Silence</div>
+</div>
+</div>
+</div>
+</div>
+<span class="has-source missing" data-source-id="src_023">1926: HENRY<sup class="source-badge unsupported" data-src="src_023">[23?]</sup></span>
+<div class="generation" id="gen-1926">
+<h2>1926: Henry Lowe</h2>
+<div class="era">The Builder - The First Intrusions</div>
+<div class="narrative">
+<p><span class="has-source missing" data-source-id="src_024">By 1926, America had swelled to 117 million people. Citi<sup class="source-badge unsupported" data-src="src_024">[24?]</sup></span>es had exploded: New York held six million, Chicago three. The Model T had put twenty million cars on American roads, collapsing what once was an expedition into a two-hour drive. Distance was beginning to die.</p>
+<p>But the more profound intrusion was invisible: radio. The Lowe family bought a Radiola in 1924, and for the first time, outside voices entered the home. A man talking in New York. An orchestra playing in Chicago. The complete isolation of Samuel's world had been breached. Other voices were possible now. Other lives. Other ways of being.</p>
+<p>The family still listened together, for an hour a night, gathered around the mahogany cabinet. It was still communal, still bounded. But the door had opened. The silence that forced families together, that left no escape from the people you lived with or the thoughts in your own head, was beginning to shrink.</p>
+</div>
+<div class="domain-section">
+<h3>Family Structure</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">1.6</div>
+<div class="label">Divorce Rate (per 1,000)</div>
+<div class="change up"><span class="has-source" data-source-id="src_027"><span class="has-source" data-source-id="src_028">+129% from 1900<sup class="source-badge close" data-src="src_028"><span class="has-source" data-source-id="src_175">[28]<sup class="source-badge exact" data-src="src_175">[175]</sup></span></sup></span><sup class="source-badge close" data-src="src_027"><span class="has-source" data-source-id="src_088"><span class="has-source" data-source-id="src_089"><span class="has-source" data-source-id="src_168"><span class="has-source" data-source-id="src_169">[27]<sup class="source-badge close" data-src="src_169">[169]</sup></span><sup class="source-badge close" data-src="src_168">[168]</sup></span><sup class="source-badge close" data-src="src_089">[89]</sup></span><sup class="source-badge close" data-src="src_088">[88]</sup></span></sup></span></div>
+</div>
+<div class="stat-card">
+<div class="value">2.6</div>
+<div class="label">Children per Woman</div>
+<div class="change down">-26% from 1900</div>
+</div>
+<div class="stat-card">
+<div class="value">24/21</div>
+<div class="label">Marriage Age (M/F)</div>
+<div class="change neutral">Stable</div>
+</div>
+<div class="stat-card">
+<div class="value">~0%</div>
+<div class="label">Cohabitation</div>
+<div class="change neutral">Still Rare</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Society &amp; Faith</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">~90%</div>
+<div class="label">Church Attendance (Rural)</div>
+<div class="change neutral">Still Universal</div>
+</div>
+<div class="stat-card">
+<div class="value">56</div>
+<div class="label">Life Expectancy</div>
+<div class="change up"><span class="has-source" data-source-id="src_035">+9 years<sup class="source-badge close" data-src="src_035"><span class="has-source" data-source-id="src_037"><span class="has-source" data-source-id="src_039"><span class="has-source" data-source-id="src_041"><span class="has-source" data-source-id="src_042">[35]<sup class="source-badge exact" data-src="src_042">[42]</sup></span><sup class="source-badge exact" data-src="src_041">[41]</sup></span><sup class="source-badge exact" data-src="src_039"><span class="has-source" data-source-id="src_084">[39]<sup class="source-badge exact" data-src="src_084">[84]</sup></span></sup></span><sup class="source-badge exact" data-src="src_037">[37]</sup></span></sup></span></div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source missing" data-source-id="src_036">117M<sup class="source-badge unsupported" data-src="src_036"><span class="has-source" data-source-id="src_074"><span class="has-source" data-source-id="src_090"><span class="has-source" data-source-id="src_133">[36?]<sup class="source-badge close" data-src="src_133">[133]</sup></span><sup class="source-badge exact" data-src="src_090">[90]</sup></span><sup class="source-badge exact" data-src="src_074"><span class="has-source" data-source-id="src_181"><span class="has-source" data-source-id="src_182">[74]<sup class="source-badge close" data-src="src_182">[182]</sup></span><sup class="source-badge close" data-src="src_181">[181]</sup></span></sup></span></sup></span></div>
+<div class="label">Population</div>
+<div class="change up"><span class="has-source missing" data-source-id="src_038"><span class="has-source" data-source-id="src_162"><span class="has-source" data-source-id="src_163">+54% from 1900<sup class="source-badge close" data-src="src_163">[163]</sup></span><sup class="source-badge close" data-src="src_162">[162]</sup></span><sup class="source-badge contradicted" data-src="src_038">[38]</sup></span></div>
+</div>
+<div class="stat-card">
+<div class="value">35%</div>
+<div class="label">Urban Growth</div>
+<div class="change up">Cities Expanding</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Technology &amp; Connection</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">35%</div>
+<div class="label">Households with Phone</div>
+<div class="change up"><span class="has-source" data-source-id="src_043"><span class="has-source missing" data-source-id="src_054"><span class="has-source" data-source-id="src_055"><span class="has-source missing" data-source-id="src_078"><span class="has-source missing" data-source-id="src_079"><span class="has-source missing" data-source-id="src_086"><span class="has-source" data-source-id="src_094"><span class="has-source" data-source-id="src_096"><span class="has-source" data-source-id="src_097"><span class="has-source" data-source-id="src_100"><span class="has-source" data-source-id="src_102"><span class="has-source" data-source-id="src_109"><span class="has-source" data-source-id="src_110"><span class="has-source" data-source-id="src_117"><span class="has-source missing" data-source-id="src_118"><span class="has-source missing" data-source-id="src_120"><span class="has-source" data-source-id="src_124"><span class="has-source" data-source-id="src_127"><span class="has-source" data-source-id="src_128"><span class="has-source" data-source-id="src_130"><span class="has-source" data-source-id="src_136"><span class="has-source" data-source-id="src_137"><span class="has-source" data-source-id="src_139"><span class="has-source" data-source-id="src_140"><span class="has-source" data-source-id="src_141"><span class="has-source" data-source-id="src_145"><span class="has-source" data-source-id="src_146"><span class="has-source" data-source-id="src_148"><span class="has-source" data-source-id="src_149"><span class="has-source" data-source-id="src_151"><span class="has-source" data-source-id="src_152"><span class="has-source" data-source-id="src_165"><span class="has-source" data-source-id="src_167"><span class="has-source" data-source-id="src_170"><span class="has-source" data-source-id="src_178">From &lt;1%<sup class="source-badge exact" data-src="src_178">[178]</sup></span><sup class="source-badge exact" data-src="src_170">[170]</sup></span><sup class="source-badge exact" data-src="src_167">[167]</sup></span><sup class="source-badge close" data-src="src_165">[165]</sup></span><sup class="source-badge exact" data-src="src_152">[152]</sup></span><sup class="source-badge close" data-src="src_151">[151]</sup></span><sup class="source-badge exact" data-src="src_149">[149]</sup></span><sup class="source-badge close" data-src="src_148">[148]</sup></span><sup class="source-badge close" data-src="src_146">[146]</sup></span><sup class="source-badge close" data-src="src_145">[145]</sup></span><sup class="source-badge close" data-src="src_141">[141]</sup></span><sup class="source-badge close" data-src="src_140">[140]</sup></span><sup class="source-badge exact" data-src="src_139">[139]</sup></span><sup class="source-badge close" data-src="src_137">[137]</sup></span><sup class="source-badge exact" data-src="src_136">[136]</sup></span><sup class="source-badge close" data-src="src_130">[130]</sup></span><sup class="source-badge exact" data-src="src_128">[128]</sup></span><sup class="source-badge close" data-src="src_127">[127]</sup></span><sup class="source-badge exact" data-src="src_124">[124]</sup></span><sup class="source-badge contradicted" data-src="src_120">[120]</sup></span><sup class="source-badge contradicted" data-src="src_118">[118]</sup></span><sup class="source-badge close" data-src="src_117">[117]</sup></span><sup class="source-badge close" data-src="src_110">[110]</sup></span><sup class="source-badge exact" data-src="src_109">[109]</sup></span><sup class="source-badge close" data-src="src_102">[102]</sup></span><sup class="source-badge exact" data-src="src_100">[100]</sup></span><sup class="source-badge close" data-src="src_097"><span class="has-source" data-source-id="src_185">[97]<sup class="source-badge close" data-src="src_185">[185]</sup></span></sup></span><sup class="source-badge close" data-src="src_096">[96]</sup></span><sup class="source-badge exact" data-src="src_094">[94]</sup></span><sup class="source-badge contradicted" data-src="src_086">[86]</sup></span><sup class="source-badge contradicted" data-src="src_079">[79]</sup></span><sup class="source-badge contradicted" data-src="src_078">[78]</sup></span><sup class="source-badge close" data-src="src_055"><span class="has-source" data-source-id="src_060">[55]<sup class="source-badge exact" data-src="src_060">[60]</sup></span></sup></span><sup class="source-badge contradicted" data-src="src_054">[54]</sup></span><sup class="source-badge close" data-src="src_043"><span class="has-source missing" data-source-id="src_153">[43]<sup class="source-badge unsupported" data-src="src_153">[153?]</sup></span></sup></span></div>
+</div>
+<div class="stat-card">
+<div class="value">35%</div>
+<div class="label">Households with Radio</div>
+<div class="change up">From 0%</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_044">20M<sup class="source-badge close" data-src="src_044">[44]</sup></span></div>
+<div class="label">Automobiles</div>
+<div class="change up">From 8,000</div>
+</div>
+<div class="stat-card">
+<div class="value">~1</div>
+<div class="label">Hours Media/Day</div>
+<div class="change up">First Intrusion</div>
+</div>
+</div>
+</div>
+</div>
+<span class="has-source missing" data-source-id="src_047">1950: WILLIAM<sup class="source-badge unsupported" data-src="src_047">[47?]</sup></span>
+<div class="generation" id="gen-1950">
+<h2>1950: William Lowe</h2>
+<div class="era">Peak Coherence - The Golden Moment</div>
+<div class="narrative">
+<p>America in 1950 had never been richer, safer, or more confident. The war was over. The Depression was memory. Half the planet's manufacturing output came from American factories. The GI Bill had sent eight million veterans to college. The suburbs were blooming - instant communities on former farmland, each house with a yard, a garage, a television antenna reaching toward the sky.</p>
+<p>This was the peak. Not of technology, not of wealth, but of coherence. Church attendance hit 55% weekly - the highest in American history. <span class="has-source missing" data-source-id="src_048">The divorce rate, while higher than 1900, had stabilized. Fami<sup class="source-badge unsupported" data-src="src_048">[48?]</sup></span>lies were marrying younger because they could afford to. The Baby Boom was underway: 3.7 children per woman by 1957. The middle class was expanding like never before.</p>
+<p><span class="has-source" data-source-id="src_051">Television had arrived - 9% of households in 1950, 87% by 1960, the fastest adoption of any technology in history. But<sup class="source-badge close" data-src="src_051">[51]</sup></span>in 1950, it still felt manageable. The family gathered together to watch. It was communal. Bounded. One screen, shared. No one knew that this was the beginning of the end.</p>
+</div>
+<div class="domain-section">
+<h3>Family Structure</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">2.6</div>
+<div class="label">Divorce Rate (per 1,000)</div>
+<div class="change up">+271% from 1900</div>
+</div>
+<div class="stat-card">
+<div class="value">3.0</div>
+<div class="label">Children per Woman</div>
+<div class="change down">-14% from 1900</div>
+</div>
+<div class="stat-card">
+<div class="value">23/20</div>
+<div class="label">Marriage Age (M/F)</div>
+<div class="change down">Younger - Optimism</div>
+</div>
+<div class="stat-card">
+<div class="value">55%</div>
+<div class="label">Homeownership</div>
+<div class="change up">American Dream</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Society &amp; Faith</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">55%</div>
+<div class="label">Weekly Church Attendance</div>
+<div class="change up">PEAK - Historical High</div>
+</div>
+<div class="stat-card">
+<div class="value">2%</div>
+<div class="label"><span class="has-source" data-source-id="src_062">"No Religion"<sup class="source-badge exact" data-src="src_062">[62]</sup></span></div>
+<div class="change neutral">Near Zero</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_063">77%<sup class="source-badge close" data-src="src_063">[63]</sup></span></div>
+<div class="label">Trust in Government</div>
+<div class="change up">Peak Trust</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source missing" data-source-id="src_064">$42K<sup class="source-badge unsupported" data-src="src_064">[64?]</sup></span></div>
+<div class="label"><span class="has-source missing" data-source-id="src_065"><span class="has-source" data-source-id="src_142"><span class="has-source missing" data-source-id="src_143">Median Income (2024$)<sup class="source-badge unsupported" data-src="src_143">[143?]</sup></span><sup class="source-badge close" data-src="src_142">[142]</sup></span><sup class="source-badge unsupported" data-src="src_065"><span class="has-source" data-source-id="src_166">[65?]<sup class="source-badge exact" data-src="src_166">[166]</sup></span></sup></span></div>
+<div class="change up">30% above 1940</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Technology &amp; Connection</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">62%</div>
+<div class="label">Households with Phone</div>
+<div class="change up">Near Universal</div>
+</div>
+<div class="stat-card">
+<div class="value">9%</div>
+<div class="label"><span class="has-source" data-source-id="src_069">Households with TV<sup class="source-badge exact" data-src="src_069">[69]</sup></span></div>
+<div class="change up">Rising Fast</div>
+</div>
+<div class="stat-card">
+<div class="value">4.5</div>
+<div class="label"><span class="has-source" data-source-id="src_070">TV Hours/Day (if owned)<sup class="source-badge exact" data-src="src_070">[70]</sup></span></div>
+<div class="change up">New Environment</div>
+</div>
+<div class="stat-card">
+<div class="value">1</div>
+<div class="label"><span class="has-source" data-source-id="src_071">Screens per Home<sup class="source-badge exact" data-src="src_071">[71]</sup></span></div>
+<div class="change neutral">Shared Experience</div>
+</div>
+</div>
+</div>
+</div>
+<span class="has-source missing" data-source-id="src_072">1974: THOMAS<sup class="source-badge unsupported" data-src="src_072">[72?]</sup></span>
+<div class="generation" id="gen-1974">
+<h2>1974: Thomas Lowe</h2>
+<div class="era">The Breaking - Everything Comes Apart</div>
+<div class="narrative">
+<p>Everything Bill took for granted had come apart. It happened fast - so fast that people living through it couldn't quite see it. Like a building that looks solid until you notice the cracks, and then you can't see anything but cracks, and then one day it's rubble.</p>
+<p>Vietnam was over - not with victory but with helicopters evacuating embassy roofs, with 58,000 American boys dead and nothing to show for it. Nixon resigned in August, the first president to do so. Watergate revealed what everyone suspected but no one wanted to know: the people in charge will lie to you. Trust in government collapsed from 77% to 36% in a decade.</p>
+<p>The sexual revolution had arrived. Ten million women on the Pill. For the first time in human history, sex was decoupled from pregnancy. The biological constraint that shaped every generation before - the simple, brutal fact that sex could mean a baby - was gone. Why marry if you don't have to? Why wait if there's no cost? <span class="has-source" data-source-id="src_075">California passed no-fault divorce in 1969. By 1<sup class="source-badge close" data-src="src_075">[75]</sup></span>974, most states had followed. You could now end a marriage because you wanted to.</p>
+</div>
+<div class="domain-section">
+<h3>Family Structure</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">4.6</div>
+<div class="label">Divorce Rate (per 1,000)</div>
+<div class="change down">+557% from 1900</div>
+</div>
+<div class="stat-card">
+<div class="value">1.8</div>
+<div class="label">Children per Woman</div>
+<div class="change down">-49% from 1900</div>
+</div>
+<div class="stat-card">
+<div class="value">1.1%</div>
+<div class="label">Cohabitation Rate</div>
+<div class="change up">Rising Fast</div>
+</div>
+<div class="stat-card">
+<div class="value">39%</div>
+<div class="label">Mothers Working</div>
+<div class="change up">+117% from 1950</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Society &amp; Faith</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">40%</div>
+<div class="label">Weekly Church Attendance</div>
+<div class="change down">-27% from Peak</div>
+</div>
+<div class="stat-card">
+<div class="value">36%</div>
+<div class="label">Trust in Government</div>
+<div class="change down">-53% from Peak</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_093">461<sup class="source-badge exact" data-src="src_093">[93]</sup></span></div>
+<div class="label"><span class="has-source" data-source-id="src_095"><span class="has-source" data-source-id="src_138">Violent Crime (per 100k)<sup class="source-badge exact" data-src="src_138">[138]</sup></span><sup class="source-badge exact" data-src="src_095">[95]</sup></span></div>
+<div class="change down">+187% from 1960</div>
+</div>
+<div class="stat-card">
+<div class="value">9.8</div>
+<div class="label"><span class="has-source" data-source-id="src_098"><span class="has-source" data-source-id="src_099">Murder Rate (per 100k)<sup class="source-badge exact" data-src="src_099">[99]</sup></span><sup class="source-badge exact" data-src="src_098"><span class="has-source" data-source-id="src_111">[98]<sup class="source-badge exact" data-src="src_111">[111]</sup></span></sup></span></div>
+<div class="change down">+93% from 1960</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Economic Reality</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">11%</div>
+<div class="label">Inflation Rate</div>
+<div class="change down">Economy Broken</div>
+</div>
+<div class="stat-card">
+<div class="value">13.3%</div>
+<div class="label"><span class="has-source" data-source-id="src_104"><span class="has-source" data-source-id="src_144">Savings Rate<sup class="source-badge close" data-src="src_144">[144]</sup></span><sup class="source-badge close" data-src="src_104">[104]</sup></span></div>
+<div class="change up">Still Saving</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_105">$197B<sup class="source-badge close" data-src="src_105">[105]</sup></span></div>
+<div class="label"><span class="has-source" data-source-id="src_147">Consumer Credit<sup class="source-badge close" data-src="src_147">[147]</sup></span></div>
+<div class="change up">Debt Rising</div>
+</div>
+<div class="stat-card">
+<div class="value">5.6%</div>
+<div class="label"><span class="has-source" data-source-id="src_106"><span class="has-source" data-source-id="src_113">Unemployment<sup class="source-badge exact" data-src="src_113">[113]</sup></span><sup class="source-badge exact" data-src="src_106">[106]</sup></span></div>
+<div class="change down">Stagflation</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Technology Saturation</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">6+</div>
+<div class="label"><span class="has-source" data-source-id="src_107">TV Hours/Day<sup class="source-badge exact" data-src="src_107">[107]</sup></span></div>
+<div class="change down">Always On</div>
+</div>
+<div class="stat-card">
+<div class="value">50%</div>
+<div class="label">Homes with Color TV</div>
+<div class="change up">From 0% in 1960</div>
+</div>
+<div class="stat-card">
+<div class="value">98%</div>
+<div class="label">Homes with TV</div>
+<div class="change up">Universal</div>
+</div>
+<div class="stat-card">
+<div class="value">Cable</div>
+<div class="label">Emerging</div>
+<div class="change up">Fragmentation Begins</div>
+</div>
+</div>
+</div>
+</div>
+<span class="has-source missing" data-source-id="src_112">1998: JACOB<sup class="source-badge unsupported" data-src="src_112">[112?]</sup></span>
+<div class="generation" id="gen-1998">
+<h2>1998: Jacob Lowe</h2>
+<div class="era">The Aftermath - Rich, Comfortable, Untethered</div>
+<div class="narrative">
+<p>America was rich, comfortable, and completely untethered. The Cold War was over. The Soviet Union had collapsed. The stock market was booming. Unemployment at 4.5%. The federal budget running a surplus. Bill Clinton was being impeached for lying about an affair, and it wouldn't meaningfully damage his approval ratings. The country had learned to separate public performance from private morality. Just another boundary erased.</p>
+<p>The internet was emerging. AOL, Yahoo, early Amazon. By 1998, 26% of households had access. <span class="has-source missing" data-source-id="src_114">By 2024, the question would be meaningless - the internet as ubiquitous as electricity. What<sup class="source-badge unsupported" data-src="src_114">[114?]</sup></span> it meant: information now infinite, any question answered instantly, any curiosity satisfied, any desire finding an outlet. And connection: you could talk to anyone, anywhere, at any time.</p>
+<p>But infinite connection was not the same as depth. Infinite information was not wisdom. The geographic constraints that defined every previous generation were dissolving - but what would replace them? Jake didn't know where he was from. Not metaphorically - literally. His parents divorced when he was five. He shuttled between states, different schools, different neighborhoods. Home was wherever the screen was glowing.</p>
+</div>
+<div class="domain-section">
+<h3>Family Structure</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">4.0</div>
+<div class="label">Divorce Rate (per 1,000)</div>
+<div class="change down">+471% from 1900</div>
+</div>
+<div class="stat-card">
+<div class="value">2.0</div>
+<div class="label">Children per Woman</div>
+<div class="change down">-43% from 1900</div>
+</div>
+<div class="stat-card">
+<div class="value">27/25</div>
+<div class="label">Marriage Age (M/F)</div>
+<div class="change up">Delayed/Skipped</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_123">5.5M<sup class="source-badge close" data-src="src_123">[123]</sup></span></div>
+<div class="label">Cohabiting Couples</div>
+<div class="change down">10x from 1970</div>
+</div>
+</div>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">33%</div>
+<div class="label">Non-Marital Births</div>
+<div class="change down">From 5% in 1960</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_129">25M<sup class="source-badge close" data-src="src_129">[129]</sup></span></div>
+<div class="label"><span class="has-source" data-source-id="src_164">Adults Living Alone<sup class="source-badge close" data-src="src_164">[164]</sup></span></div>
+<div class="change down">From 4M in 1950</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Society &amp; Faith</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">35%</div>
+<div class="label">Weekly Church Attendance</div>
+<div class="change down">-36% from Peak</div>
+</div>
+<div class="stat-card">
+<div class="value">14%</div>
+<div class="label">"No Religion"</div>
+<div class="change down">From 2% in 1950</div>
+</div>
+<div class="stat-card">
+<div class="value">566</div>
+<div class="label">Violent Crime (per 100k)</div>
+<div class="change down">+252% from 1960</div>
+</div>
+<div class="stat-card">
+<div class="value">$70K</div>
+<div class="label">Median Income (2024$)</div>
+<div class="change up">Prosperity</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Economic Reality</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">6.5%</div>
+<div class="label">Savings Rate</div>
+<div class="change down">-51% from 1974</div>
+</div>
+<div class="stat-card">
+<div class="value">$1.37T</div>
+<div class="label">Consumer Credit</div>
+<div class="change down">7x from 1974</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_150">$5.6T<sup class="source-badge exact" data-src="src_150">[150]</sup></span></div>
+<div class="label">Federal Debt</div>
+<div class="change down">12x from 1974</div>
+</div>
+<div class="stat-card">
+<div class="value">0.43</div>
+<div class="label">GINI Index</div>
+<div class="change down">Inequality Rising</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Technology Saturation</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">2.4</div>
+<div class="label"><span class="has-source" data-source-id="src_154">TVs per Household<sup class="source-badge close" data-src="src_154">[154]</sup></span></div>
+<div class="change up">Fragmented</div>
+</div>
+<div class="stat-card">
+<div class="value">26%</div>
+<div class="label">Internet Access</div>
+<div class="change up">Rising Fast</div>
+</div>
+<div class="stat-card">
+<div class="value">20%</div>
+<div class="label">Cell Phone Penetration</div>
+<div class="change up">Emerging</div>
+</div>
+<div class="stat-card">
+<div class="value">50+</div>
+<div class="label">Cable Channels</div>
+<div class="change up">Infinite Choice</div>
+</div>
+</div>
+</div>
+</div>
+<span class="has-source missing" data-source-id="src_158">2025: JACOB<sup class="source-badge unsupported" data-src="src_158">[158?]</sup></span>
+<div class="generation" id="gen-2025">
+<h2>2025: Jacob Lowe</h2>
+<div class="era">The Choice - Connected, Isolated, Searching</div>
+<div class="narrative">
+<p>The loneliness epidemic is official. The Surgeon General declared it in 2023: loneliness is as deadly as smoking fifteen cigarettes a day. Social isolation increases premature death by 26%. Americans have fewer friends than ever. Fewer marriages. Fewer children. Fewer connections of any kind. <span class="has-source missing" data-source-id="src_159">The average American spends 7.5 hours daily looking at screens - more time with screens than with humans, more than with sleep.<sup class="source-badge unsupported" data-src="src_159">[159?]</sup></span></p>
+<p>And yet everyone is connected. Everyone is online. Everyone is reachable, all the time, everywhere. Connection without commitment. Presence without depth. The infinite scroll that never satisfies. AI writes your dating messages now. AI girlfriends are a billion-dollar industry. Dating apps have cratered - not because people found love, but because they gave up.</p>
+<p>Birth rates have collapsed to 1.6 children per woman - the lowest in American history. South Korea is at 0.7. The future is not being born. Underneath it all, a quiet desperation: something is deeply wrong. This is not how life is supposed to feel. The promise of infinite connection has delivered infinite isolation.</p>
+</div>
+<div class="domain-section">
+<h3>Family Structure</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">1.6</div>
+<div class="label">Children per Woman</div>
+<div class="change down">-54% from 1900 | HISTORIC LOW</div>
+</div>
+<div class="stat-card">
+<div class="value">37M</div>
+<div class="label">Adults Living Alone</div>
+<div class="change down">From 4M in 1950</div>
+</div>
+<div class="stat-card">
+<div class="value">65%+</div>
+<div class="label">Couples Met Online</div>
+<div class="change up">From 0% in 1990</div>
+</div>
+<div class="stat-card">
+<div class="value">27%</div>
+<div class="label">Young Men Sexless</div>
+<div class="change down">From 8% in 2008</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Society &amp; Faith</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">30%</div>
+<div class="label">Weekly Church Attendance</div>
+<div class="change down">-45% from Peak</div>
+</div>
+<div class="stat-card">
+<div class="value">28%</div>
+<div class="label">"No Religion"</div>
+<div class="change down">From 2% in 1950</div>
+</div>
+<div class="stat-card">
+<div class="value">12%</div>
+<div class="label">No Close Friends</div>
+<div class="change down">From 3% in 1990</div>
+</div>
+<div class="stat-card">
+<div class="value">&lt;20%</div>
+<div class="label">Trust in Government</div>
+<div class="change down">-74% from Peak</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>Technology Saturation</h3>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="value">7.5</div>
+<div class="label"><span class="has-source" data-source-id="src_183">Screen Hours/Day<sup class="source-badge close" data-src="src_183">[183]</sup></span></div>
+<div class="change down">Total Immersion</div>
+</div>
+<div class="stat-card">
+<div class="value"><span class="has-source" data-source-id="src_184">30M+<sup class="source-badge close" data-src="src_184">[184]</sup></span></div>
+<div class="label">AI Companion Users</div>
+<div class="change down">Replacing Humans</div>
+</div>
+<div class="stat-card">
+<div class="value">97%</div>
+<div class="label">Smartphone Ownership</div>
+<div class="change up">Universal</div>
+</div>
+<div class="stat-card">
+<div class="value">Always</div>
+<div class="label">Reachable</div>
+<div class="change down">No Escape</div>
+</div>
+</div>
+</div>
+<div class="domain-section">
+<h3>The Cumulative Trajectory: 1900 to 2025</h3>
+<table class="comparison-table">
+<tr>
+<th>Metric</th>
+<th>1900</th>
+<th>1950</th>
+<th>2025</th>
+<th>Change</th>
+</tr>
+<tr>
+<td>Divorce Rate (per 1,000)</td>
+<td>0.7</td>
+<td>2.6</td>
+<td>2.3*</td>
+<td>+229% (but fewer marry)</td>
+</tr>
+<tr>
+<td>Fertility Rate</td>
+<td>3.5</td>
+<td>3.0</td>
+<td>1.6</td>
+<td>-54%</td>
+</tr>
+<tr>
+<td>Church Attendance</td>
+<td>~95%</td>
+<td>55%</td>
+<td>30%</td>
+<td>-68%</td>
+</tr>
+<tr>
+<td>"No Religion"</td>
+<td>~1%</td>
+<td>2%</td>
+<td>28%</td>
+<td>+2700%</td>
+</tr>
+<tr>
+<td>Trust in Government</td>
+<td>N/A</td>
+<td>77%</td>
+<td>&lt;20%</td>
+<td>-74%</td>
+</tr>
+<tr>
+<td>Adults Living Alone</td>
+<td>~1M</td>
+<td>4M</td>
+<td>37M</td>
+<td>+3600%</td>
+</tr>
+<tr>
+<td>Media Hours/Day</td>
+<td>0</td>
+<td>4.5</td>
+<td>7.5</td>
+<td>From Silence to Saturation</td>
+</tr>
+</table>
+<p style="color: #888; font-size: 0.9em; margin-top: 10px;">*Divorce rate appears lower but misleading - fewer people marry in the first place. The baseline has shifted.</p>
+</div>
+</div>
+</div>
+<script>
+        // Family Overview Chart
+        Highcharts.chart('chart-family-overview', {
+            chart: { backgroundColor: '#1a1a1a' },
+            title: { text: 'Family Structure: The Dissolution (1900-2025)', style: { color: '#d4af37' } },
+            subtitle: { text: 'Divorce rate, fertility, and marriage patterns across generations', style: { color: '#888' } },
+            xAxis: {
+                categories: ['1900', '1926', '1950', '1974', '1998', '2025'],
+                labels: { style: { color: '#888' } },
+                lineColor: '#444'
+            },
+            yAxis: [{
+                title: { text: 'Rate', style: { color: '#888' } },
+                labels: { style: { color: '#888' } },
+                gridLineColor: '#333'
+            }],
+            legend: { itemStyle: { color: '#888' } },
+            series: [{
+                name: 'Divorce Rate (per 1,000)',
+                data: [0.7, 1.6, 2.6, 4.6, 4.0, 2.3],
+                color: '#bf616a'
+            }, {
+                name: 'Fertility Rate',
+                data: [3.5, 2.6, 3.0, 1.8, 2.0, 1.6],
+                color: '#a3be8c'
+            }, {
+                name: 'Cohabitation %',
+                data: [0, 0, 0, 1.1, 8, 18],
+                color: '#ebcb8b'
+            }],
+            credits: { enabled: false }
+        });
+
+        // Society Overview Chart
+        Highcharts.chart('chart-society-overview', {
+            chart: { backgroundColor: '#1a1a1a' },
+            title: { text: 'Society & Faith: The Unraveling (1900-2025)', style: { color: '#d4af37' } },
+            subtitle: { text: 'Church attendance, trust, and social cohesion', style: { color: '#888' } },
+            xAxis: {
+                categories: ['1900', '1926', '1950', '1974', '1998', '2025'],
+                labels: { style: { color: '#888' } },
+                lineColor: '#444'
+            },
+            yAxis: {
+                title: { text: 'Percentage', style: { color: '#888' } },
+                labels: { style: { color: '#888' } },
+                gridLineColor: '#333',
+                max: 100
+            },
+            legend: { itemStyle: { color: '#888' } },
+            series: [{
+                name: 'Weekly Church Attendance %',
+                data: [95, 90, 55, 40, 35, 30],
+                color: '#88c0d0'
+            }, {
+                name: 'Trust in Government %',
+                data: [null, null, 77, 36, 25, 18],
+                color: '#5e81ac'
+            }, {
+                name: '"No Religion" %',
+                data: [1, 2, 2, 6, 14, 28],
+                color: '#bf616a'
+            }],
+            credits: { enabled: false }
+        });
+
+        // Economic/Technology Chart
+        Highcharts.chart('chart-economic-overview', {
+            chart: { backgroundColor: '#1a1a1a' },
+            title: { text: 'Technology & Connection: The Saturation (1900-2025)', style: { color: '#d4af37' } },
+            subtitle: { text: 'From silence to screens - media consumption and isolation', style: { color: '#888' } },
+            xAxis: {
+                categories: ['1900', '1926', '1950', '1974', '1998', '2025'],
+                labels: { style: { color: '#888' } },
+                lineColor: '#444'
+            },
+            yAxis: [{
+                title: { text: 'Hours / Millions', style: { color: '#888' } },
+                labels: { style: { color: '#888' } },
+                gridLineColor: '#333'
+            }],
+            legend: { itemStyle: { color: '#888' } },
+            series: [{
+                name: 'Media Hours/Day',
+                data: [0, 1, 4.5, 6, 6, 7.5],
+                color: '#b48ead'
+            }, {
+                name: 'Adults Living Alone (Millions)',
+                data: [1, 2, 4, 10, 25, 37],
+                color: '#bf616a'
+            }, {
+                name: 'No Close Friends % (x10)',
+                data: [null, null, null, null, 30, 120],
+                color: '#d08770'
+            }],
+            credits: { enabled: false }
+        });
+    </script>
+<script defer="" src="/glossary-linker.js"></script>
+<!-- MDA BOTTOM NAVIGATION v3 -->
+<div style="max-width:56rem;margin:0 auto;padding:2rem 1.5rem;border-top:1px solid rgba(255,255,255,0.05);">
+<!-- Row 1: Prev | Series Home | Next -->
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem;">
+<div style="flex:1;display:flex;justify-content:flex-start;"><a href="MDA-039-physics-of-coherence.html" onmouseout="this.style.color='#9ca3af'" onmouseover="this.style.color='#dc2626'" style="display:flex;align-items:center;gap:0.5rem;color:#9ca3af;text-decoration:none;font-family:'Inter',system-ui,sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s;"><i class="fas fa-arrow-left"></i> Previous</a></div>
+<div style="flex:0 0 auto;text-align:center;"><a href="../00-entry-and-series-map/index.html" onmouseout="this.style.color='#dc2626'" onmouseover="this.style.color='#f87171'" style="display:flex;align-items:center;gap:0.5rem;color:#dc2626;text-decoration:none;font-family:'Oswald',Impact,sans-serif;font-size:1rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;"><i class="fas fa-list"></i> Series Home</a></div>
+<div style="flex:1;display:flex;justify-content:flex-end;"><a href="MDA-041-statistical-spine.html" onmouseout="this.style.color='#9ca3af'" onmouseover="this.style.color='#dc2626'" style="display:flex;align-items:center;gap:0.5rem;color:#9ca3af;text-decoration:none;font-family:'Inter',system-ui,sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s;">Next <i class="fas fa-arrow-right"></i></a></div>
+</div>
+<!-- Row 2: Faith Through Physics -->
+<div style="text-align:center;margin-bottom:1rem;">
+<a href="https://faiththruphysics.com" onmouseout="this.style.borderColor='rgba(220,38,38,0.5)';this.style.background='linear-gradient(135deg,rgba(220,38,38,0.12),rgba(8,8,8,0.95))'" onmouseover="this.style.borderColor='#dc2626';this.style.background='linear-gradient(135deg,rgba(220,38,38,0.22),rgba(8,8,8,0.95))'" style="display:inline-flex;align-items:center;gap:0.6rem;color:#fff;text-decoration:none;font-family:'Oswald',Impact,sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.2s;border:2px solid rgba(220,38,38,0.5);border-radius:6px;padding:0.6rem 1.4rem;background:linear-gradient(135deg,rgba(220,38,38,0.12),rgba(8,8,8,0.95));"><i class="fas fa-atom" style="color:#dc2626;"></i> Faith Through Physics</a>
+</div>
+<!-- Position indicator -->
+<div style="text-align:center;">
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#374151;letter-spacing:0.15em;text-transform:uppercase;">MDA-039 of 53</span>
+</div>
+</div>
+<!-- END MDA BOTTOM NAVIGATION v3 -->
+<section class="ring-nav">
+<div class="ring-header">
+<h2>Related Work</h2>
+<p>Core article, supporting evidence, and broader context</p>
+</div>
+<div class="ring-tier ring-1 open">
+<div class="ring-tier-header" onclick="this.parentElement.classList.toggle('open')">
+<div class="ring-tier-dot"></div>
+<span class="ring-tier-label">Ring 1 — This Article</span>
+<span class="ring-tier-desc">The core argument</span>
+<i class="fas fa-chevron-right ring-tier-chevron"></i>
+</div>
+<div class="ring-tier-cards"><p class="ring-empty">You are here.</p></div>
+</div>
+<div class="ring-tier ring-2">
+<div class="ring-tier-header" onclick="this.parentElement.classList.toggle('open')">
+<div class="ring-tier-dot"></div>
+<span class="ring-tier-label">Ring 2 — Supporting Evidence</span>
+<span class="ring-tier-desc">Deeper dives and formal treatments</span>
+<i class="fas fa-chevron-right ring-tier-chevron"></i>
+</div>
+<div class="ring-tier-cards"><p class="ring-empty">No connections mapped yet.</p></div>
+</div>
+<div class="ring-tier ring-3">
+<div class="ring-tier-header" onclick="this.parentElement.classList.toggle('open')">
+<div class="ring-tier-dot"></div>
+<span class="ring-tier-label">Ring 3 — Broader Context</span>
+<span class="ring-tier-desc">Related topics across the framework</span>
+<i class="fas fa-chevron-right ring-tier-chevron"></i>
+</div>
+<div class="ring-tier-cards"><p class="ring-empty">No connections mapped yet.</p></div>
+</div>
+</section>
+<script defer="" src="/shared/js/mda-browser-tts.js?v=20260529"></script>
+<script>
+/* MDA Reader Mode v2 — tab switching */
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    const bar = document.querySelector('.mda-reader-mode-bar');
+    if (!bar) return;
+
+    const buttons = bar.querySelectorAll('.mda-reader-mode-btn');
+    const stateLabel = bar.querySelector('[data-reader-mode-state]');
+    const messageDiv = bar.querySelector('[data-reader-mode-message]');
+
+    const messages = {
+      easy: '<strong>Easy</strong> mode shows the plain-language bridge version.',
+      standard: '<strong>Standard</strong> is the live article.',
+      academic: '<strong>Academic</strong> shows the method, caveats, and citations layer.',
+      proof: '<strong>Proof</strong> opens the evidence and derivation layer.',
+    };
+
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const mode = btn.getAttribute('data-reader-mode');
+
+        /* Update active state */
+        buttons.forEach(function(b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        /* Update status text */
+        if (stateLabel) stateLabel.textContent = mode.charAt(0).toUpperCase() + mode.slice(1) + ' active';
+        if (messageDiv) messageDiv.innerHTML = messages[mode] || '';
+
+        /* Toggle content panels */
+        document.querySelectorAll('[data-reader-panel]').forEach(function(panel) {
+          panel.style.display = panel.getAttribute('data-reader-panel') === mode ? 'block' : 'none';
+        });
+      });
+    });
+  });
+})();
+</script>
+<!-- MDA FOOTER v1 -->
+<footer style="border-top:1px solid rgba(255,255,255,0.05);margin-top:2rem;padding:0;">
+<!-- Subdomain Nav Strip -->
+<nav style="max-width:1100px;margin:0 auto;padding:1.2rem 1rem;display:flex;justify-content:center;gap:0.2rem;flex-wrap:wrap;">
+<a href="https://faiththruphysics.com/" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(212,175,55,0.08)'" style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.6rem;border-radius:4px;text-decoration:none;transition:all 0.15s;">
+<span style="width:7px;height:7px;border-radius:50%;background:rgba(212,175,55,0.3);"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;color:#9a9a9a;">Home</span>
+</a>
+<a href="https://faiththruphysics.com/subdomains/rigor/" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(212,175,55,0.08)'" style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.6rem;border-radius:4px;text-decoration:none;transition:all 0.15s;">
+<span style="width:7px;height:7px;border-radius:50%;background:rgba(212,175,55,0.3);"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;color:#9a9a9a;">Rigor</span>
+</a>
+<a href="https://faiththruphysics.com/glossary/" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(212,175,55,0.08)'" style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.6rem;border-radius:4px;text-decoration:none;transition:all 0.15s;">
+<span style="width:7px;height:7px;border-radius:50%;background:rgba(212,175,55,0.3);"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;color:#9a9a9a;">Lexicon</span>
+</a>
+<a href="https://faiththruphysics.com/equation/" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(212,175,55,0.08)'" style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.6rem;border-radius:4px;text-decoration:none;transition:all 0.15s;">
+<span style="width:7px;height:7px;border-radius:50%;background:rgba(212,175,55,0.3);"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;color:#9a9a9a;">Equation</span>
+</a>
+<a href="https://faiththruphysics.com/proof-explorer/" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(212,175,55,0.08)'" style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.6rem;border-radius:4px;text-decoration:none;transition:all 0.15s;">
+<span style="width:7px;height:7px;border-radius:50%;background:rgba(212,175,55,0.3);"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;color:#9a9a9a;">Proof Explorer</span>
+</a>
+<a href="https://faiththruphysics.com/isomorphism/" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(212,175,55,0.08)'" style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.6rem;border-radius:4px;text-decoration:none;transition:all 0.15s;">
+<span style="width:7px;height:7px;border-radius:50%;background:rgba(212,175,55,0.3);"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;color:#9a9a9a;">Isomorphisms</span>
+</a>
+<a href="https://faiththruphysics.com/audio/" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(212,175,55,0.08)'" style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.6rem;border-radius:4px;text-decoration:none;transition:all 0.15s;">
+<span style="width:7px;height:7px;border-radius:50%;background:rgba(212,175,55,0.3);"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;color:#9a9a9a;">Audio</span>
+</a>
+<a href="https://faiththruphysics.com/podcast/" onmouseout="this.style.background='transparent'" onmouseover="this.style.background='rgba(212,175,55,0.08)'" style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.6rem;border-radius:4px;text-decoration:none;transition:all 0.15s;">
+<span style="width:7px;height:7px;border-radius:50%;background:rgba(212,175,55,0.3);"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.95rem;letter-spacing:0.1em;text-transform:uppercase;color:#9a9a9a;">Podcast</span>
+</a>
+</nav>
+<!-- Worship Line -->
+<div style="text-align:center;padding:1rem 1.5rem;max-width:42rem;margin:0 auto;">
+<p style="font-family:'Crimson Text',Georgia,serif;font-size:1.25rem;color:#555;font-style:italic;line-height:1.6;margin:0;">The numbers converge. The conclusion is inescapable.</p>
+</div>
+<!-- Credit Line -->
+<div style="text-align:center;padding:0.75rem 1rem 1.5rem;border-top:1px solid rgba(255,255,255,0.03);">
+<p style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:#444;margin:0 0 0.3rem;">
+      © 2024–2026 David Lowe &amp; Partners · Faith Through Physics
+    </p>
+<p style="font-family:'Inter',system-ui,sans-serif;font-size:0.8rem;color:#333;margin:0;">
+      Built with Claude, Jim, Codex, Kimi &amp; Cowork
+    </p>
+</div>
+</footer>
+<!-- END MDA FOOTER v1 -->
+<script>
+/* Reader mode + MTL shim for unified top bar */
+document.addEventListener('DOMContentLoaded', function() {
+  var tabs = document.querySelectorAll('.mda-tb-tab[data-reader-mode]');
+
+  function setLevel(mode) {
+    /* 1. Toggle tab active state */
+    tabs.forEach(function(t) { t.classList.remove('active'); });
+    var active = document.querySelector('.mda-tb-tab[data-reader-mode="'+mode+'"]');
+    if (active) active.classList.add('active');
+
+    /* 2. Toggle reader panels (proof explorer, etc) */
+    document.querySelectorAll('[data-reader-panel]').forEach(function(panel) {
+      panel.style.display = panel.getAttribute('data-reader-panel') === mode ? 'block' : 'none';
+    });
+
+    /* 3. Set body class for MTL CSS (Kimi display shell) */
+    document.body.classList.remove('level-easy','level-standard','level-academic','level-proof');
+    document.body.classList.add('level-' + mode);
+
+    /* 4. MTL callout behavior */
+    if (mode === 'easy') {
+      document.querySelectorAll('.mtl-callout').forEach(function(c) { c.open = true; });
+    } else {
+      document.querySelectorAll('.mtl-callout').forEach(function(c) {
+        if (!c.dataset.userToggled) c.open = false;
+      });
+    }
+  }
+
+  /* Track user toggles so level switch doesnt override */
+  document.querySelectorAll('.mtl-callout').forEach(function(c) {
+    c.addEventListener('toggle', function() { c.dataset.userToggled = 'true'; });
+  });
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      setLevel(tab.getAttribute('data-reader-mode'));
+    });
+  });
+
+  /* Initialize */
+  setLevel('standard');
+});
+</script>
+<script id="mda-citation-js">
+function toggleSources(){
+  var body=document.getElementById('sources-body');
+  var btn=document.getElementById('sources-btn');
+  var open=body.classList.toggle('open');
+  if(btn)btn.textContent=open?'Hide':'Show';
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.source-badge[data-src]').forEach(function(badge){
+    badge.addEventListener('click',function(e){
+      e.preventDefault();
+      var panel=document.getElementById('sources-body');
+      var btn=document.getElementById('sources-btn');
+      if(panel&&!panel.classList.contains('open')){
+        panel.classList.add('open');
+        if(btn)btn.textContent='Hide';
+      }
+      var target=document.querySelector('.tp-source-item[data-source-id="'+this.dataset.src+'"]');
+      if(target)target.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+});
+</script>
+  <script defer src="/shared/js/glossary-layer.js" data-glossary-json="/shared/data/glossary-terms.json"></script>
+</body>
+</html>

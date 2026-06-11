@@ -1,0 +1,143 @@
+/* ═══════════════════════════════════════════════════════════════
+   GLOSSARY LAYER — Term highlighting and tooltip styles
+   Version: 1.0.0
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Inline term highlight ── */
+.gloss-term {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted rgba(212, 175, 55, 0.35);
+  transition: all 0.15s ease;
+  color: #e8d5a3;
+}
+.gloss-term:hover {
+  border-bottom-color: #d4af37;
+  background: rgba(212, 175, 55, 0.06);
+}
+
+/* Category color accents */
+.gloss-term[data-category="Physics"] {
+  border-bottom-color: rgba(74, 158, 255, 0.35);
+  color: #a3c8e8;
+}
+.gloss-term[data-category="Physics"]:hover {
+  background: rgba(74, 158, 255, 0.06);
+  border-bottom-color: #4a9eff;
+}
+.gloss-term[data-category="Theology"] {
+  border-bottom-color: rgba(139, 127, 194, 0.35);
+  color: #c8b8e8;
+}
+.gloss-term[data-category="Theology"]:hover {
+  background: rgba(139, 127, 194, 0.06);
+  border-bottom-color: #8b7fc2;
+}
+.gloss-term[data-category="Core Metric"] {
+  border-bottom-color: rgba(220, 38, 38, 0.35);
+  color: #e8a3a3;
+}
+.gloss-term[data-category="Core Metric"]:hover {
+  background: rgba(220, 38, 38, 0.06);
+  border-bottom-color: #dc2626;
+}
+
+/* ── Tooltip ── */
+.glossary-tooltip {
+  position: absolute;
+  z-index: 10001;
+  max-width: 380px;
+  min-width: 220px;
+  background: #111;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 6px;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #d1d5db;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  overflow: hidden;
+}
+.glossary-tooltip.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Arrow */
+.glossary-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #111;
+}
+.glossary-tooltip.flipped::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: #111;
+}
+
+.glossary-tooltip-header {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #d4af37;
+  padding: 10px 12px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.glossary-tooltip-body {
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+.glossary-tooltip.expanded .glossary-tooltip-body {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.glossary-tooltip-footer {
+  padding: 4px 12px 8px;
+  font-size: 0.6rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Scrollbar in expanded tooltip */
+.glossary-tooltip.expanded .glossary-tooltip-body::-webkit-scrollbar {
+  width: 4px;
+}
+.glossary-tooltip.expanded .glossary-tooltip-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.glossary-tooltip.expanded .glossary-tooltip-body::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 2px;
+}
+
+/* ── Hide glossary terms in Easy mode ── */
+body.level-easy .gloss-term {
+  border-bottom: none;
+  color: inherit;
+}
+body.level-easy .gloss-term:hover {
+  background: transparent;
+}
+
+/* ── Mobile adjustments ── */
+@media (max-width: 560px) {
+  .glossary-tooltip {
+    max-width: 92vw;
+    left: 4vw !important;
+    right: 4vw;
+  }
+}

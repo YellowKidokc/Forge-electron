@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Faith thru Physics — Where Physics Meets Genesis</title>
+<meta name="description" content="Faith thru Physics — One equation. Every domain. Ten variables. The mathematics of coherence — from quantum mechanics to the character of God."/>
+<meta property="og:title" content="Faith thru Physics — David Lowe"/>
+<meta property="og:description" content="Where Physics Meets Genesis. The Theophysics Research Program."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://faiththruphysics.com"/>
+<meta property="og:image" content="https://faiththruphysics.com/genesis-to-quantum/images/gtq-overview.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="canonical" href="https://faiththruphysics.com/index.html">
+<script defer src="https://analytics.faiththruphysics.com/script.js" data-website-id="2f2e3a0f-e8e5-4900-a1e0-1b33592403ee"></script>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+:root{
+  --bg:#050505; --surface:#0a0a0a; --surface2:#111; --surface3:#1a1a1a;
+  --border:#222; --border-2:#2a2a2a; --border-hi:#3a3a3a;
+  --text:#e5e3df; --text-dim:#9a9a9a; --text-muted:#5a5a5a;
+  --gold:#d4af37; --gold-dim:rgba(212,175,55,.1);
+  --red:#c94040; --red-dim:rgba(201,64,64,.1);
+  --blue:#5b9bd5; --blue-dim:rgba(91,155,213,.1);
+  --teal:#3bb39a; --teal-dim:rgba(59,179,154,.1);
+  --purple:#a78bfa; --purple-dim:rgba(167,139,250,.1);
+  --green:#7fc77f;
+  --serif:'Crimson Text',Georgia,serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --display:'Oswald','Inter',sans-serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+em{font-style:italic;color:var(--gold);font-family:var(--serif);font-weight:400}
+kbd{font-family:var(--mono);font-size:.7em;background:rgba(255,255,255,.07);border:1px solid var(--border-2);padding:1px 5px;border-radius:3px;color:var(--text-dim)}
+
+/* ── Persistent header ── */
+.ph{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:1.5rem;padding:.65rem 1.25rem;backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);background:rgba(5,5,5,.55);border-bottom:1px solid transparent;transition:all .25s ease}
+.ph-scrolled,.ph-inner{background:rgba(8,8,8,.85);border-bottom-color:var(--border)}
+.ph-brand{display:flex;align-items:center;gap:.55rem}
+.ph-mark{font-family:var(--serif);font-size:1.4rem;color:var(--gold);line-height:1}
+.ph-name{font-family:var(--display);font-size:.7rem;letter-spacing:.25em;color:var(--text)}
+.ph-links{display:flex;gap:.25rem;flex:1;justify-content:center}
+.ph-links a{font-family:var(--display);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.45rem .75rem;border-radius:4px;color:var(--text-dim);transition:all .15s}
+.ph-links a:hover{color:var(--gold);background:var(--gold-dim)}
+.ph-crumb{flex:1;display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.7rem;color:var(--text-muted);overflow:hidden;white-space:nowrap}
+.ph-crumb a{color:var(--text-dim)}
+.ph-crumb a:hover{color:var(--gold)}
+.ph-here{color:var(--text)}
+.ph-sep{color:var(--text-muted);opacity:.6}
+.ph-search{display:flex;align-items:center;gap:.5rem;padding:.4rem .65rem .4rem .55rem;background:transparent;border:1px solid var(--border-2);border-radius:6px;color:var(--text-dim);font-family:var(--sans);font-size:.75rem;cursor:pointer;transition:all .15s}
+.ph-search:hover{border-color:var(--border-hi);color:var(--text);background:var(--surface)}
+.ph-search-text{margin-right:1rem}
+@media(max-width:780px){.ph-links{display:none}.ph-search-text{display:none}}
+
+/* ── Hero ── */
+.hero{position:relative;padding:7rem 1.5rem 4rem;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(212,175,55,.05) 0%,transparent 65%);pointer-events:none}
+.hero-inner{max-width:880px;margin:0 auto;position:relative}
+.hero-tag{font-family:var(--display);font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.hero-h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6.5vw,4.6rem);line-height:1.05;color:#fff;margin-bottom:1.1rem;text-wrap:balance;letter-spacing:-.01em}
+.hero-h1-grand{font-family:var(--display);font-weight:300;text-transform:uppercase;letter-spacing:.04em}
+.hero-h1-grand em{font-family:var(--serif);text-transform:none;font-weight:400;font-style:italic}
+.hero-sub{font-size:1.05rem;color:var(--text-dim);max-width:620px;margin:0 auto 1.4rem;text-wrap:pretty}
+.hero-eq{font-family:var(--serif);font-size:.95rem;color:var(--gold);opacity:.55;margin-bottom:2rem;letter-spacing:.02em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2.2rem}
+.btn{font-family:var(--sans);font-size:.82rem;font-weight:500;padding:.7rem 1.1rem;border-radius:6px;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;transition:all .15s;text-decoration:none}
+.btn-primary{background:var(--gold);color:#0a0a0a;border-color:var(--gold)}
+.btn-primary:hover{background:#e0bd49;border-color:#e0bd49;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--border-2)}
+.btn-ghost:hover{border-color:var(--border-hi);background:var(--surface)}
+.hero-meta{font-family:var(--mono);font-size:.7rem;color:var(--text-muted);display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap}
+.hero-meta b{color:var(--gold);font-weight:500}
+.hero-meta .dot{opacity:.4}
+
+/* ── Sections ── */
+.sec{max-width:var(--max);margin:0 auto;padding:4rem 1.5rem 2rem}
+.sh{margin-bottom:1.8rem}
+.sh-row{display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem}
+.sh-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.sh-kicker{font-family:var(--mono);font-size:.7rem;color:var(--text-muted);letter-spacing:.15em}
+.sh h2{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:400;color:#fff}
+.sh-desc{font-size:.92rem;color:var(--text-dim);max-width:680px;text-wrap:pretty}
+
+/* ── Start Here ── */
+.start-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.start-card{display:flex;flex-direction:column;padding:1.5rem;background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:6px;transition:all .2s;min-height:200px}
+.start-card:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 0 1px var(--gold-dim)}
+.start-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;color:var(--gold);margin-bottom:.6rem}
+.start-card h3{font-family:var(--serif);font-size:1.35rem;color:#fff;margin-bottom:.5rem;line-height:1.25}
+.start-card p{font-size:.85rem;color:var(--text-dim);flex:1;text-wrap:pretty}
+.start-meta{font-family:var(--mono);font-size:.65rem;color:var(--text-muted);margin-top:1rem;padding-top:.7rem;border-top:1px solid var(--border)}
+
+/* ── Reading Ladder (the big one) ── */
+.sec-ladder{padding-top:3rem}
+.ladder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+@media(max-width:900px){.ladder-grid{grid-template-columns:1fr}}
+.rung{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.rung-1{border-top:3px solid var(--green)}
+.rung-2{border-top:3px solid var(--gold)}
+.rung-3{border-top:3px solid var(--blue)}
+.rung-head{padding:1.4rem 1.4rem 1rem;border-bottom:1px solid var(--border);position:relative}
+.rung-tier{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--text-muted)}
+.rung-glyph{position:absolute;top:1rem;right:1.4rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;opacity:.6}
+.rung-1 .rung-glyph{color:var(--green)}
+.rung-2 .rung-glyph{color:var(--gold)}
+.rung-3 .rung-glyph{color:var(--blue)}
+.rung-head h3{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:#fff;margin:.3rem 0 .35rem}
+.rung-head p{font-size:.82rem;color:var(--text-dim);margin-bottom:.6rem}
+.rung-count{font-family:var(--mono);font-size:.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.12em}
+.rung-list{list-style:none;padding:.5rem;display:flex;flex-direction:column;gap:.15rem;flex:1}
+.rung-item{display:grid;grid-template-columns:auto 1fr auto;gap:.7rem;align-items:center;padding:.55rem .7rem;border-radius:4px;font-size:.82rem;color:var(--text);transition:all .12s}
+.rung-item:hover{background:var(--surface3)}
+.rung-code{font-family:var(--mono);font-size:.6rem;color:var(--text-muted);min-width:48px}
+.rung-title{color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rung-meta{font-family:var(--mono);font-size:.6rem;color:var(--text-muted);text-align:right}
+.rung-item.rung-gold:hover .rung-code{color:var(--gold)}
+.rung-item.rung-red:hover .rung-code{color:var(--red)}
+.rung-item.rung-teal:hover .rung-code{color:var(--teal)}
+.rung-item.rung-blue:hover .rung-code{color:var(--blue)}
+.rung-item.rung-purple:hover .rung-code{color:var(--purple)}
+.rung-more{display:block;padding:.6rem .7rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--gold);border-top:1px dashed var(--border);margin-top:.4rem}
+.rung-more:hover{background:var(--gold-dim)}
+
+/* ── Reading Order ── */
+.order-timeline{list-style:none;display:flex;flex-direction:column;position:relative;padding-left:2rem;border-left:1px dashed var(--border-2);margin-left:1rem}
+.to-item{padding:.6rem 0}
+.to-link{display:flex;align-items:baseline;gap:1rem;color:var(--text);position:relative;padding:.4rem .7rem;border-radius:4px;transition:background .15s}
+.to-link:hover{background:var(--surface2)}
+.to-act{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;color:var(--gold);min-width:5rem}
+.to-dot{position:absolute;left:-2.42rem;top:.85rem;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px var(--bg)}
+.to-title{font-family:var(--serif);font-size:1.05rem;color:#fff;flex:1}
+.to-soon{font-family:var(--mono);font-size:.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em}
+.to-item.soon{opacity:.45}
+.to-item.soon .to-dot{background:var(--text-muted)}
+
+.order-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.5rem}
+.og-item a{display:flex;gap:.8rem;padding:.7rem .85rem;border:1px solid var(--border);border-radius:5px;background:var(--surface2);transition:all .15s}
+.og-item a:hover{border-color:var(--gold);transform:translateY(-1px)}
+.og-num{font-family:var(--mono);font-size:1.4rem;color:var(--gold);opacity:.5;line-height:1;font-weight:500}
+.og-act{font-family:var(--mono);font-size:.6rem;color:var(--text-muted);letter-spacing:.12em;margin-bottom:.15rem}
+.og-title{font-family:var(--serif);font-size:.95rem;color:#fff;line-height:1.25}
+.og-title em{color:var(--text-muted);font-size:.7em;font-style:italic}
+.og-item.soon{opacity:.4}
+
+/* ── Themes ── */
+.theme-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.85rem}
+.theme-card{padding:1.1rem 1.2rem;background:var(--surface2);border:1px solid var(--border);border-radius:6px;transition:border-color .2s}
+.theme-card:hover{border-color:var(--border-hi)}
+.theme-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem}
+.theme-dot{width:7px;height:7px;border-radius:50%}
+.theme-card h3{font-family:var(--serif);font-size:1.1rem;color:#fff;font-weight:400;flex:1}
+.theme-n{font-family:var(--mono);font-size:.65rem;color:var(--text-muted)}
+.theme-desc{font-size:.78rem;color:var(--text-dim);margin-bottom:.7rem;text-wrap:pretty}
+.theme-card ul{list-style:none;display:flex;flex-direction:column;gap:.1rem;font-size:.78rem}
+.theme-card li a{display:block;padding:.3rem .4rem;border-radius:3px;color:var(--text-dim);transition:all .12s;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.theme-card li a:hover{color:var(--text);background:var(--surface3)}
+.theme-card li a span{font-family:var(--mono);font-size:.65rem;color:var(--text-muted);margin-right:.4rem}
+.theme-more{padding:.3rem .4rem;font-family:var(--mono);font-size:.65rem;color:var(--text-muted)}
+
+/* ── All Series filters + grid ── */
+.filters{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin-bottom:1.2rem;padding:.55rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
+.filter-search{display:flex;align-items:center;gap:.4rem;padding:.35rem .6rem;background:var(--surface2);border:1px solid var(--border);border-radius:5px;flex:1;min-width:180px}
+.filter-search span{color:var(--text-muted)}
+.filter-search input{flex:1;background:transparent;border:0;outline:0;color:var(--text);font-family:var(--sans);font-size:.82rem}
+.filter-search button{background:transparent;border:0;color:var(--text-muted);cursor:pointer;font-size:1rem}
+.filter-tier{display:flex;gap:.15rem;background:var(--surface2);padding:.2rem;border:1px solid var(--border);border-radius:5px}
+.filter-tier button{font-family:var(--sans);font-size:.72rem;padding:.35rem .65rem;background:transparent;border:0;color:var(--text-dim);border-radius:3px;cursor:pointer}
+.filter-tier button.on{background:var(--surface3);color:var(--text)}
+.filter-cluster{font-family:var(--sans);font-size:.78rem;padding:.45rem .55rem;background:var(--surface2);border:1px solid var(--border);border-radius:5px;color:var(--text);outline:0;cursor:pointer}
+.filter-count{font-family:var(--mono);font-size:.7rem;color:var(--text-muted);margin-left:auto;padding:0 .5rem}
+
+.all-grid{display:grid;gap:.7rem}
+.all-grid-comfortable{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.all-grid-compact{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.as-card{display:flex;flex-direction:column;padding:.95rem 1rem;background:var(--surface2);border:1px solid var(--border);border-left:2px solid var(--border);border-radius:5px;transition:all .15s;min-height:120px;position:relative}
+.as-card:hover{transform:translateY(-1px);background:var(--surface3);border-color:var(--border-hi)}
+.as-gold{border-left-color:var(--gold)} .as-gold:hover{border-color:var(--gold)}
+.as-red{border-left-color:var(--red)} .as-red:hover{border-color:var(--red)}
+.as-teal{border-left-color:var(--teal)} .as-teal:hover{border-color:var(--teal)}
+.as-blue{border-left-color:var(--blue)} .as-blue:hover{border-color:var(--blue)}
+.as-purple{border-left-color:var(--purple)} .as-purple:hover{border-color:var(--purple)}
+.as-row{display:flex;align-items:center;gap:.4rem;margin-bottom:.4rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em}
+.as-code{color:var(--text-dim)}
+.as-tier{color:var(--text-muted);padding:.05rem .35rem;border:1px solid var(--border-2);border-radius:2px}
+.as-feat{color:var(--gold);background:var(--gold-dim);padding:.05rem .35rem;border-radius:2px;text-transform:uppercase}
+.as-ext{margin-left:auto;color:var(--text-muted)}
+.as-card h3{font-family:var(--serif);font-size:1rem;color:#fff;font-weight:400;line-height:1.25;margin-bottom:.3rem}
+.as-card p{font-size:.78rem;color:var(--text-dim);flex:1;text-wrap:pretty}
+.as-foot{font-family:var(--mono);font-size:.6rem;color:var(--text-muted);margin-top:.6rem}
+.all-empty{padding:3rem;text-align:center;color:var(--text-muted);font-style:italic;grid-column:1/-1}
+
+/* ── Footer ── */
+footer{max-width:var(--max);margin:3rem auto 0;padding:3rem 1.5rem;text-align:center;border-top:1px solid var(--border)}
+footer .feq{font-family:var(--mono);font-size:.75rem;color:var(--gold);opacity:.5;margin-bottom:.7rem}
+footer p{color:var(--text-muted);font-size:.78rem;margin:.3rem 0}
+footer .vow{font-family:var(--serif);font-style:italic;color:var(--text-dim);margin-top:1rem}
+
+/* ── Command palette ── */
+.cp-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:9999;display:flex;align-items:flex-start;justify-content:center;padding-top:12vh;animation:cp-fade .15s ease}
+@keyframes cp-fade{from{opacity:0}to{opacity:1}}
+.cp-modal{width:min(620px,92vw);background:#0e0e0e;border:1px solid var(--border-hi);border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;display:flex;flex-direction:column;max-height:70vh}
+.cp-input-wrap{display:flex;align-items:center;gap:.7rem;padding:.85rem 1rem;border-bottom:1px solid var(--border)}
+.cp-search-icon{color:var(--text-muted);font-size:1.1rem}
+.cp-input{flex:1;background:transparent;border:0;outline:0;color:#fff;font-family:var(--sans);font-size:1rem}
+.cp-esc{font-family:var(--mono);font-size:.6rem;color:var(--text-muted);border:1px solid var(--border-2);padding:.15rem .35rem;border-radius:3px}
+.cp-results{overflow-y:auto;flex:1;padding:.4rem}
+.cp-empty{padding:2rem 1rem;text-align:center;color:var(--text-muted);font-size:.85rem;font-style:italic}
+.cp-row{display:flex;align-items:center;gap:.8rem;padding:.55rem .7rem;border-radius:5px;color:var(--text);transition:background .1s}
+.cp-row.sel{background:var(--surface3)}
+.cp-row:hover{background:var(--surface3)}
+.cp-badge{font-family:var(--mono);font-size:.6rem;font-weight:500;padding:.15rem .4rem;border-radius:3px;letter-spacing:.05em;flex-shrink:0;min-width:34px;text-align:center}
+.cp-row-text{flex:1;min-width:0}
+.cp-row-title{font-family:var(--serif);font-size:.95rem;color:#fff;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cp-row-sub{font-family:var(--mono);font-size:.65rem;color:var(--text-muted);margin-top:.15rem}
+.cp-arrow{color:var(--text-muted);opacity:0;transition:opacity .1s}
+.cp-row.sel .cp-arrow{opacity:1}
+.cp-foot{display:flex;gap:1rem;padding:.55rem .9rem;border-top:1px solid var(--border);font-family:var(--mono);font-size:.6rem;color:var(--text-muted)}
+.cp-foot kbd{font-family:var(--mono);font-size:.65rem;background:var(--surface2);border:1px solid var(--border-2);padding:.05rem .3rem;border-radius:2px;color:var(--text-dim);margin-right:.2rem}
+
+/* ── Master Story feature (the essential read) ── */
+.ms-feature{max-width:var(--max);margin:3rem auto 1rem;padding:0 1.5rem;position:relative}
+.ms-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:stretch;background:linear-gradient(135deg,rgba(212,175,55,.08) 0%,rgba(201,64,64,.04) 100%),var(--surface2);border:1px solid var(--gold-dim);border-radius:10px;padding:2.2rem 2rem;position:relative;overflow:hidden}
+.ms-inner::before{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.ms-inner::after{content:'';position:absolute;top:50%;right:-120px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.08) 0%,transparent 65%);transform:translateY(-50%);pointer-events:none}
+@media(max-width:780px){.ms-inner{grid-template-columns:1fr}}
+.ms-tag{font-family:var(--mono);font-size:.65rem;letter-spacing:.3em;color:var(--gold);margin-bottom:.9rem;text-shadow:0 0 18px rgba(212,175,55,.3)}
+.ms-feature h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4vw,2.8rem);color:#fff;line-height:1.1;margin-bottom:.9rem;text-wrap:balance}
+.ms-feature h2 em{color:var(--gold);font-style:italic}
+.ms-lede{font-family:var(--serif);font-size:1.15rem;color:var(--text);line-height:1.5;margin-bottom:.8rem;text-wrap:pretty}
+.ms-lede b{color:var(--gold);font-weight:600}
+.ms-body{font-size:.88rem;color:var(--text-dim);line-height:1.6;margin-bottom:1.4rem;text-wrap:pretty}
+.ms-body em{color:var(--text);font-family:var(--serif);font-style:italic;font-size:1.05em}
+.ms-cta{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1rem}
+.ms-meta{font-family:var(--mono);font-size:.7rem;color:var(--text-muted)}
+.ms-meta b{color:var(--gold);font-weight:500}
+.ms-right{display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+.ms-card{background:rgba(0,0,0,.4);border:1px solid var(--border-2);border-radius:8px;padding:1.4rem 1.5rem;width:100%;backdrop-filter:blur(6px)}
+.ms-card-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;color:var(--text-muted);margin-bottom:1rem;text-transform:uppercase}
+.ms-card-quote{font-family:var(--serif);font-size:1.05rem;color:var(--text);line-height:1.45;font-style:italic}
+.ms-card-quote em{color:var(--gold);font-style:italic;border-bottom:1px dotted var(--gold-dim);padding-bottom:1px}
+.ms-card-line{height:1px;background:linear-gradient(90deg,transparent,var(--border-hi),transparent);margin:1rem 0}
+.ms-card-foot{font-family:var(--mono);font-size:.65rem;color:var(--text-muted);margin-top:1rem;letter-spacing:.05em}
+.ph-link-star{color:var(--gold) !important;font-weight:600 !important}
+.ph-link-star:hover{background:var(--gold-dim)}
+
+/* ── Demo banner for breadcrumb mode ── */
+.demo-banner{background:linear-gradient(90deg,var(--gold-dim),transparent);border-left:3px solid var(--gold);padding:1rem 1.25rem;margin:5rem auto 0;max-width:var(--max);border-radius:4px;font-size:.82rem;color:var(--text-dim)}
+.demo-banner b{color:var(--gold);font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+
+/* ── Tweaks panel ── */
+.twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;max-height:calc(100vh - 32px);display:flex;flex-direction:column;background:rgba(250,249,247,.78);color:#29261b;-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);border:.5px solid rgba(255,255,255,.6);border-radius:14px;box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
+.twk-hd{display:flex;align-items:center;justify-content:space-between;padding:10px 8px 10px 14px;cursor:move;user-select:none}
+.twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
+.twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
+.twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
+.twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;overflow-x:hidden;min-height:0;scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
+.twk-body::-webkit-scrollbar{width:8px}
+.twk-body::-webkit-scrollbar-track{background:transparent;margin:2px}
+.twk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:4px;border:2px solid transparent;background-clip:content-box}
+.twk-body::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.25);border:2px solid transparent;background-clip:content-box}
+.twk-row{display:flex;flex-direction:column;gap:5px}
+.twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+.twk-lbl{display:flex;justify-content:space-between;align-items:baseline;color:rgba(41,38,27,.72)}
+.twk-lbl>span:first-child{font-weight:500}
+.twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
+.twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(41,38,27,.45);padding:10px 0 0}
+.twk-sect:first-child{padding-top:0}
+.twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;background:rgba(0,0,0,.06);user-select:none}
+.twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}
+.twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;overflow-wrap:anywhere}
+.twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
+.twk-toggle[data-on="1"]{background:#34c759}
+.twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+.twk-toggle[data-on="1"] i{transform:translateX(14px)}
+.twk-btn{appearance:none;height:26px;padding:0 12px;border:0;border-radius:7px;background:rgba(0,0,0,.78);color:#fff;font:inherit;font-weight:500;cursor:default}
+</style>
+</head>
+<body>
+
+<!-- Persistent Header -->
+<header class="ph" id="site-header">
+  <a href="/" class="ph-brand">
+    <span class="ph-mark">χ</span>
+    <span class="ph-name">FAITH THRU PHYSICS</span>
+  </a>
+  <nav class="ph-links" id="header-nav">
+    <a href="#master-story" class="ph-link-star">★ Master Story</a>
+    <a href="#start">Start</a>
+    <a href="#ladder">Reading Ladder</a>
+    <a href="#order">Reading Order</a>
+    <a href="#themes">By Theme</a>
+    <a href="#all">All Series</a>
+  </nav>
+  <nav class="ph-crumb" id="header-crumb" style="display:none" aria-label="Breadcrumb"></nav>
+  <button class="ph-search" id="search-trigger" title="Search (Ctrl+K or /)">
+    <span>⌕</span>
+    <span class="ph-search-text">Search</span>
+    <kbd id="search-kbd">Ctrl K</kbd>
+  </button>
+</header>
+
+<!-- Demo Breadcrumb Banner -->
+<div class="demo-banner" id="demo-banner" style="display:none">
+  <b>Demo · breadcrumb header</b>
+  This is how the header looks on inner pages: the brand mark + a “where am I” trail + the same ⌘K search.
+  Toggle “demoBreadcrumb” off in Tweaks to see the homepage header again.
+</div>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-tag">Faith thru Physics · David Lowe · POF 2828</div>
+    <h1 class="hero-h1 hero-h1-serif">Where <em>Physics</em> Meets <em>Genesis</em></h1>
+    <p class="hero-sub">One equation. Every domain. Ten variables. The mathematics of coherence — from quantum mechanics to the character of God.</p>
+    <div class="hero-eq">χ = ∭(G · M · E · S · T · K · R · Q · F · C) dx dy dt</div>
+    <div class="hero-cta">
+      <a href="#start" class="btn btn-primary">New here? Start in 5 minutes →</a>
+      <button class="btn btn-ghost" id="hero-search-btn"><span>⌕</span> Search all series</button>
+      <a href="#ladder" class="btn btn-ghost">Pick your reading level</a>
+    </div>
+    <div class="hero-meta">
+      <span><b id="hero-series-count">60</b> series indexed</span>
+      <span class="dot">·</span>
+      <span><b id="hero-acts-count">13</b> acts in the master narrative</span>
+      <span class="dot">·</span>
+      <span><b>56</b> Zenodo papers</span>
+    </div>
+  </div>
+</section>
+
+<!-- Master Story Feature -->
+<section id="master-story" class="ms-feature">
+  <div class="ms-inner">
+    <div class="ms-left">
+      <div class="ms-tag">★  THE ESSENTIAL READ  ★</div>
+      <h2>The <em>Master Story</em></h2>
+      <p class="ms-lede">Two series. One argument. <b>Every bold phrase is a page.</b> Read it through once — and you'll know where every one of the 60+ pieces fits.</p>
+      <p class="ms-body">Start with the diagnosis: <em>The Moral Decline of America</em> traces the break, measurably, across eight institutions. Then cross the bridge into <em>Genesis to Quantum</em> — the mechanics of why it happened, what fights back, and what the equation says about the way out. One narrative. Every link a door.</p>
+      <div class="ms-cta">
+        <a href="Master Story.html" class="btn btn-primary">Read the Master Story →</a>
+        <a href="Master Story.html" class="btn btn-ghost">▶ Listen — narrated by David Lowe</a>
+      </div>
+      <div class="ms-meta"><span><b>2</b> series threaded · <b>50+</b> in-line links · <b>~12 min</b> read</span></div>
+    </div>
+    <div class="ms-right" aria-hidden="true">
+      <div class="ms-card">
+        <div class="ms-card-tag">POF 2828 · The Complete Narrative</div>
+        <div class="ms-card-quote">"Something is broken. Not philosophically — <em>measurably</em>."</div>
+        <div class="ms-card-line"></div>
+        <div class="ms-card-quote">"That external source has a name. <em>And it has physics.</em>"</div>
+        <div class="ms-card-foot">↳ click any phrase to open the page</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Start Here -->
+<section id="start" class="sec">
+  <div class="sh">
+    <div class="sh-row"><span class="sh-dot" style="background:var(--gold)"></span><span class="sh-kicker">01</span><h2>Start Here</h2></div>
+    <p class="sh-desc">Three doors. Pick one. They all open the same room.</p>
+  </div>
+  <div class="start-grid">
+    <a href="one-page-stories/theophysics-the-full-explanation.html" class="start-card start-gold">
+      <div class="start-num">DOOR</div>
+      <h3>Theophysics — The Full Explanation</h3>
+      <p>Start here. The whole picture in one read.</p>
+      <div class="start-meta">7,200 words</div>
+    </a>
+    <a href="one-page-stories/everybodys-got-it-wrong.html" class="start-card start-gold">
+      <div class="start-num">LETTER</div>
+      <h3>Everybody's Got It Wrong</h3>
+      <p>The fence-builder's letter. Why the smartest got stuck.</p>
+      <div class="start-meta">Personal</div>
+    </a>
+    <a href="one-page-stories/The_Logos_Thesis_v3.html" class="start-card start-gold">
+      <div class="start-num">LOGOS-T</div>
+      <h3>The Logos Thesis</h3>
+      <p>Ten variables, one coherence field, every domain unified.</p>
+      <div class="start-meta">Full paper · MathJax</div>
+    </a>
+  </div>
+</section>
+
+<!-- Reading Ladder -->
+<section id="ladder" class="sec sec-ladder">
+  <div class="sh">
+    <div class="sh-row"><span class="sh-dot" style="background:var(--gold)"></span><span class="sh-kicker">02</span><h2>The Reading Ladder</h2></div>
+    <p class="sh-desc">60+ series — but you don't read them in order. You read them by depth. Pick the rung that matches the time and tools you have.</p>
+  </div>
+  <div class="ladder-grid" id="ladder-grid">
+    <!-- Tier 1 -->
+    <div class="rung rung-1">
+      <div class="rung-head">
+        <span class="rung-tier">TIER 1</span>
+        <span class="rung-glyph">●</span>
+        <h3>Accessible</h3>
+        <p>Plain language. No equations required.</p>
+        <span class="rung-count">10 series</span>
+      </div>
+      <ul class="rung-list" id="rung-1-list">
+        <li><a href="Master Story.html" class="rung-item rung-gold"><span class="rung-code">STORY</span><span class="rung-title">★ The Master Story</span><span class="rung-meta">~12 min · narrated</span></a></li>
+        <li><a href="one-page-stories/theophysics-the-full-explanation.html" class="rung-item rung-gold"><span class="rung-code">DOOR</span><span class="rung-title">Theophysics — The Full Explanation</span><span class="rung-meta">7,200 words</span></a></li>
+        <li><a href="one-page-stories/everybodys-got-it-wrong.html" class="rung-item rung-gold"><span class="rung-code">LETTER</span><span class="rung-title">Everybody's Got It Wrong</span><span class="rung-meta">Personal</span></a></li>
+        <li><a href="Convergence_Series/index.html" class="rung-item rung-gold"><span class="rung-code">CNS</span><span class="rung-title">The Convergence</span><span class="rung-meta">7 articles</span></a></li>
+        <li><a href="genesis-to-quantum/index.html" class="rung-item rung-red"><span class="rung-code">GTQ</span><span class="rung-title">Genesis to Quantum</span><span class="rung-meta">10 articles + 17 tangents</span></a></li>
+        <li><a href="Logos_Papers/index.html" class="rung-item rung-gold"><span class="rung-code">LGS</span><span class="rung-title">The Logos Story</span><span class="rung-meta">12 articles</span></a></li>
+      </ul>
+      <a href="#tier-1" class="rung-more" id="rung-1-more">+ 4 more in Accessible →</a>
+    </div>
+    <!-- Tier 2 -->
+    <div class="rung rung-2">
+      <div class="rung-head">
+        <span class="rung-tier">TIER 2</span>
+        <span class="rung-glyph">●●</span>
+        <h3>Technical</h3>
+        <p>Math, theory, derivations. χ-field territory.</p>
+        <span class="rung-count">28 series</span>
+      </div>
+      <ul class="rung-list" id="rung-2-list">
+        <li><a href="one-page-stories/The_Logos_Thesis_v3.html" class="rung-item rung-gold"><span class="rung-code">LOGOS-T</span><span class="rung-title">The Logos Thesis</span><span class="rung-meta">Full paper · MathJax</span></a></li>
+        <li><a href="convergence-deep/index.html" class="rung-item rung-gold"><span class="rung-code">CDT</span><span class="rung-title">Convergence — Deep Theory</span><span class="rung-meta">6 articles</span></a></li>
+        <li><a href="consciousness/index.html" class="rung-item rung-teal"><span class="rung-code">CON</span><span class="rung-title">Consciousness</span><span class="rung-meta">10 papers</span></a></li>
+        <li><a href="master-equation/index.html" class="rung-item rung-gold"><span class="rung-code">MEQ</span><span class="rung-title">The 10 Laws of Theophysics</span><span class="rung-meta">10 law pages</span></a></li>
+        <li><a href="one-page-stories/ten-laws-full-treatment.html" class="rung-item rung-gold"><span class="rung-code">TENLAWS</span><span class="rung-title">Ten Laws — Full Treatment</span><span class="rung-meta">Reference</span></a></li>
+        <li><a href="one-page-stories/no-drift-law-synthesis.html" class="rung-item rung-gold"><span class="rung-code">NODRIFT</span><span class="rung-title">The No-Drift Law Synthesis</span><span class="rung-meta">Master reference</span></a></li>
+      </ul>
+      <a href="#tier-2" class="rung-more" id="rung-2-more">+ 22 more in Technical →</a>
+    </div>
+    <!-- Tier 3 -->
+    <div class="rung rung-3">
+      <div class="rung-head">
+        <span class="rung-tier">TIER 3</span>
+        <span class="rung-glyph">●●●</span>
+        <h3>Formal</h3>
+        <p>Peer-review-ready papers. Zenodo, DOIs, citations.</p>
+        <span class="rung-count">11 series</span>
+      </div>
+      <ul class="rung-list" id="rung-3-list">
+        <li><a href="https://zenodo.org/communities/theophysics/" class="rung-item rung-blue"><span class="rung-code">FT</span><span class="rung-title">Formal Theophysics — FT-001 to FT-016</span><span class="rung-meta">16 papers · Zenodo DOIs</span></a></li>
+        <li><a href="https://zenodo.org/communities/theophysics/" class="rung-item rung-blue"><span class="rung-code">SP</span><span class="rung-title">Supplementary Papers — SP-01 to SP-17</span><span class="rung-meta">17 papers · Zenodo DOIs</span></a></li>
+        <li><a href="formal-papers/index.html" class="rung-item rung-blue"><span class="rung-code">FP</span><span class="rung-title">Algorithmic Foundations (FP)</span><span class="rung-meta">10 formal papers</span></a></li>
+        <li><a href="logos-papers/logos-01.html" class="rung-item rung-gold"><span class="rung-code">LOGOS-F</span><span class="rung-title">Logos Papers (Formal)</span><span class="rung-meta">14 papers</span></a></li>
+        <li><a href="proof-architecture/index.html" class="rung-item rung-teal"><span class="rung-code">PA</span><span class="rung-title">Proof Architecture</span><span class="rung-meta">13 pages</span></a></li>
+        <li><a href="proof-explorer/axioms-layer-0-core.html" class="rung-item rung-teal"><span class="rung-code">PE</span><span class="rung-title">Proof Explorer</span><span class="rung-meta">6 pages</span></a></li>
+      </ul>
+      <a href="#tier-3" class="rung-more" id="rung-3-more">+ 5 more in Formal →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reading Order -->
+<section id="order" class="sec">
+  <div class="sh">
+    <div class="sh-row"><span class="sh-dot" style="background:var(--gold)"></span><span class="sh-kicker">03</span><h2>The Master Narrative</h2></div>
+    <p class="sh-desc">One argument too large for one article — told across thirteen acts. The intended path, ground to Revelation.</p>
+  </div>
+  <ol class="order-timeline" id="reading-order-list">
+    <li class="to-item"><a href="/moral-decline/" class="to-link"><span class="to-act">ACT 1</span><span class="to-dot"></span><span class="to-title">The Moral Decline of America</span></a></li>
+    <li class="to-item soon"><a href="#" class="to-link"><span class="to-act">ACT 2</span><span class="to-dot"></span><span class="to-title">The Three Truths</span><span class="to-soon">coming soon</span></a></li>
+    <li class="to-item"><a href="Convergence_Series/cns-01-the-playing-field.html" class="to-link"><span class="to-act">ACT 3</span><span class="to-dot"></span><span class="to-title">The Playing Field</span></a></li>
+    <li class="to-item"><a href="Convergence_Series/cns-02-the-evidence.html" class="to-link"><span class="to-act">ACT 4</span><span class="to-dot"></span><span class="to-title">The Evidence</span></a></li>
+    <li class="to-item"><a href="convergence-deep/cdt-01-math-is-moral.html" class="to-link"><span class="to-act">ACT 5</span><span class="to-dot"></span><span class="to-title">Math Is Moral</span></a></li>
+    <li class="to-item"><a href="genesis-to-quantum/intro/gtq-01-measurement-collapsed-reality.html" class="to-link"><span class="to-act">ACT 6</span><span class="to-dot"></span><span class="to-title">The Measurement That Collapsed Reality</span></a></li>
+    <li class="to-item"><a href="genesis-to-quantum/index.html" class="to-link"><span class="to-act">ACT 7</span><span class="to-dot"></span><span class="to-title">Genesis to Quantum — Full Series</span></a></li>
+    <li class="to-item"><a href="Convergence_Series/cns-05-the-judgment-layer.html" class="to-link"><span class="to-act">ACT 8</span><span class="to-dot"></span><span class="to-title">The Judgment Layer</span></a></li>
+    <li class="to-item"><a href="Logos_Papers/index.html" class="to-link"><span class="to-act">ACT 9</span><span class="to-dot"></span><span class="to-title">The Logos Story</span></a></li>
+    <li class="to-item"><a href="one-page-stories/The_Logos_Thesis_v3.html" class="to-link"><span class="to-act">ACT 10</span><span class="to-dot"></span><span class="to-title">The Logos Papers</span></a></li>
+    <li class="to-item"><a href="be-glad-youre-a-loser/bgl-01-be-glad-youre-a-loser.html" class="to-link"><span class="to-act">ACT 11</span><span class="to-dot"></span><span class="to-title">Be Glad You're a Loser</span></a></li>
+    <li class="to-item"><a href="family-tests/we-ran-the-tests.html" class="to-link"><span class="to-act">ACT 12</span><span class="to-dot"></span><span class="to-title">We Ran the Tests</span></a></li>
+    <li class="to-item soon"><a href="#" class="to-link"><span class="to-act">ACT 13</span><span class="to-dot"></span><span class="to-title">The One Truth</span><span class="to-soon">coming soon</span></a></li>
+  </ol>
+</section>
+
+<!-- By Theme -->
+<section id="themes" class="sec">
+  <div class="sh">
+    <div class="sh-row"><span class="sh-dot" style="background:var(--purple)"></span><span class="sh-kicker">04</span><h2>Browse by Theme</h2></div>
+    <p class="sh-desc">The same series, sorted by what they're about instead of how technical they are.</p>
+  </div>
+  <div class="theme-grid">
+    <div class="theme-card">
+      <div class="theme-head"><span class="theme-dot" style="background:var(--gold)"></span><h3>Foundations</h3><span class="theme-n">8</span></div>
+      <p class="theme-desc">Where to start. The whole picture.</p>
+      <ul>
+        <li><a href="Master Story.html"><span>STORY</span> ★ The Master Story</a></li>
+        <li><a href="one-page-stories/theophysics-the-full-explanation.html"><span>DOOR</span> Theophysics — The Full Explanation</a></li>
+        <li><a href="one-page-stories/everybodys-got-it-wrong.html"><span>LETTER</span> Everybody's Got It Wrong</a></li>
+        <li><a href="Convergence_Series/index.html"><span>CNS</span> The Convergence</a></li>
+        <li><a href="genesis-to-quantum/index.html"><span>GTQ</span> Genesis to Quantum</a></li>
+        <li><a href="#" class="theme-more">+ 3 more</a></li>
+      </ul>
+    </div>
+    <div class="theme-card">
+      <div class="theme-head"><span class="theme-dot" style="background:var(--gold)"></span><h3>Architecture</h3><span class="theme-n">7</span></div>
+      <p class="theme-desc">The structural spine. Ten laws, master equation.</p>
+      <ul>
+        <li><a href="master-equation/index.html"><span>MEQ</span> The 10 Laws of Theophysics</a></li>
+        <li><a href="one-page-stories/ten-laws-full-treatment.html"><span>TENLAWS</span> Ten Laws — Full Treatment</a></li>
+        <li><a href="one-page-stories/no-drift-law-synthesis.html"><span>NODRIFT</span> The No-Drift Law Synthesis</a></li>
+        <li><a href="one-page-stories/the-floor-beneath-the-floor.html"><span>FLOOR</span> The Floor Beneath the Floor</a></li>
+        <li><a href="one-page-stories/it-from-bit-from-logos.html"><span>ITBIT</span> It from Bit from Logos</a></li>
+        <li><a href="#" class="theme-more">+ 2 more</a></li>
+      </ul>
+    </div>
+    <div class="theme-card">
+      <div class="theme-head"><span class="theme-dot" style="background:var(--teal)"></span><h3>Consciousness</h3><span class="theme-n">1</span></div>
+      <p class="theme-desc">The hard problem and the χ-field.</p>
+      <ul>
+        <li><a href="consciousness/index.html"><span>CON</span> Consciousness</a></li>
+      </ul>
+    </div>
+    <div class="theme-card">
+      <div class="theme-head"><span class="theme-dot" style="background:var(--red)"></span><h3>Portraits & Warfare</h3><span class="theme-n">5</span></div>
+      <p class="theme-desc">The character of God and the adversary, read from the same physics.</p>
+      <ul>
+        <li><a href="one-page-stories/character-of-god-from-physics.html"><span>GOD</span> Character of God — from Physics</a></li>
+        <li><a href="spiritual-warfare/sw-character-of-adversary-from-physics.html"><span>ADV</span> Character of the Adversary — from Physics</a></li>
+        <li><a href="spiritual-warfare/sw-the-attack-surface.html"><span>ATTACK</span> The Attack Surface</a></li>
+        <li><a href="one-page-stories/the-24-anti-properties.html"><span>ANTI</span> The 24 Anti-Properties</a></li>
+        <li><a href="spiritual-warfare/index.html"><span>SW</span> Spiritual Warfare</a></li>
+      </ul>
+    </div>
+    <div class="theme-card">
+      <div class="theme-head"><span class="theme-dot" style="background:var(--gold)"></span><h3>Gospel in Physics</h3><span class="theme-n">5</span></div>
+      <p class="theme-desc">Salvation derived from first principles.</p>
+      <ul>
+        <li><a href="one-page-stories/salvation-algorithm.html"><span>SALV</span> The Salvation Algorithm</a></li>
+        <li><a href="one-page-stories/salvation-phase-transition.html"><span>PHASE</span> Salvation Is a Phase Transition</a></li>
+        <li><a href="one-page-stories/why-grace-from-outside.html"><span>GRACE</span> Why Grace Has to Come from Outside</a></li>
+        <li><a href="one-page-stories/heaven-hell-attractor-states.html"><span>ATTRACT</span> Heaven and Hell as Attractor States</a></li>
+        <li><a href="be-glad-youre-a-loser/index.html"><span>BGL</span> Be Glad You're a Loser</a></li>
+      </ul>
+    </div>
+    <div class="theme-card">
+      <div class="theme-head"><span class="theme-dot" style="background:var(--red)"></span><h3>Moral Decline</h3><span class="theme-n">2</span></div>
+      <p class="theme-desc">125 years. 9 domains. One number.</p>
+      <ul>
+        <li><a href="/moral-decline/"><span>MDA</span> The Moral Decline of America</a></li>
+        <li><a href="/moral-decline/#stories"><span>MDA-S</span> The Lowe Family Stories</a></li>
+      </ul>
+    </div>
+    <div class="theme-card">
+      <div class="theme-head"><span class="theme-dot" style="background:var(--blue)"></span><h3>Evidence & Tests</h3><span class="theme-n">5</span></div>
+      <p class="theme-desc">Held to the same standards science holds itself.</p>
+      <ul>
+        <li><a href="family-tests/we-ran-the-tests.html"><span>TESTS</span> We Ran the Tests</a></li>
+        <li><a href="one-page-stories/holding-god-accountable.html"><span>HOLD</span> Holding God Accountable</a></li>
+        <li><a href="blue/gold-standard-test-battery.html"><span>GOLD</span> Gold Standard Test Battery</a></li>
+        <li><a href="/moral-decline/"><span>FACTS</span> FACTS — The Academic Case</a></li>
+        <li><a href="family-tests/index.html"><span>FT-PAPER</span> Family Tests</a></li>
+      </ul>
+    </div>
+    <div class="theme-card">
+      <div class="theme-head"><span class="theme-dot" style="background:var(--purple)"></span><h3>Reference & Deep Cuts</h3><span class="theme-n">6</span></div>
+      <p class="theme-desc">Cross-domain applications, registries, simulations.</p>
+      <ul>
+        <li><a href="cross-domain/index.html"><span>CD</span> Cross-Domain Applications</a></li>
+        <li><a href="bible-datalab/index.html"><span>BDL</span> Bible DataLab</a></li>
+        <li><a href="prophetic-synthesis/index.html"><span>PS</span> The Prophetic Synthesis</a></li>
+        <li><a href="socratic-axioms/index.html"><span>SA</span> The Socratic Axioms</a></li>
+        <li><a href="revolution-of-truth/index.html"><span>DRV</span> De Revolutionibus Veritatis</a></li>
+        <li><a href="#" class="theme-more">+ 1 more</a></li>
+      </ul>
+    </div>
+    <div class="theme-card">
+      <div class="theme-head"><span class="theme-dot" style="background:var(--blue)"></span><h3>Formal Papers</h3><span class="theme-n">3</span></div>
+      <p class="theme-desc">Peer-review-ready. Zenodo DOIs.</p>
+      <ul>
+        <li><a href="https://zenodo.org/communities/theophysics/"><span>FT</span> Formal Theophysics — FT-001 to FT-016</a></li>
+        <li><a href="https://zenodo.org/communities/theophysics/"><span>SP</span> Supplementary Papers — SP-01 to SP-17</a></li>
+        <li><a href="formal-papers/index.html"><span>FP</span> Algorithmic Foundations (FP)</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- All Series -->
+<section id="all" class="sec">
+  <div class="sh">
+    <div class="sh-row"><span class="sh-dot" style="background:var(--blue)"></span><span class="sh-kicker">05</span><h2>All Series · <span id="all-series-count">60</span></h2></div>
+    <p class="sh-desc">Every published series. Filter by tier or theme. Or just type — the search is greedy.</p>
+  </div>
+  <div class="filters">
+    <div class="filter-search">
+      <span>⌕</span>
+      <input placeholder="Filter…" id="all-search" autocomplete="off"/>
+      <button id="all-search-clear" style="display:none">×</button>
+    </div>
+    <div class="filter-tier">
+      <button class="on" data-tier="0">All Tiers</button>
+      <button data-tier="1">Accessible</button>
+      <button data-tier="2">Technical</button>
+      <button data-tier="3">Formal</button>
+    </div>
+    <select id="all-cluster" class="filter-cluster">
+      <option value="">All themes</option>
+      <option value="Foundations">Foundations</option>
+      <option value="Architecture">Architecture</option>
+      <option value="Consciousness">Consciousness</option>
+      <option value="Warfare">Portraits & Warfare</option>
+      <option value="Gospel">Gospel in Physics</option>
+      <option value="Decline">Moral Decline</option>
+      <option value="Evidence">Evidence & Tests</option>
+      <option value="Reference">Reference & Deep Cuts</option>
+      <option value="Papers">Formal Papers</option>
+    </select>
+    <span class="filter-count" id="filter-count">60 of 60</span>
+  </div>
+  <div class="all-grid all-grid-comfortable" id="all-grid">
+    <!-- Cards injected by JS -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SHARED FOOTER — Theophysics Site-Wide
+     Drop this block at the bottom of EVERY page, before </body>.
+     All paths are root-relative — works from any depth.
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- BEGIN:COMPONENT:footer:site-wide-footer -->
+<style>
+/* ═══════ Site-Wide Footer ═══════ */
+.tp-site-footer{max-width:1100px;margin:4rem auto 0;padding:0 1.5rem}
+.tp-sf-line{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.25),transparent);margin-bottom:2.5rem}
+
+/* ── Subdomain Grid ── */
+.tp-sf-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem}
+.tp-sf-dot{width:6px;height:6px;border-radius:50%;background:#d4af37}
+.tp-sf-kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.6rem;color:#5a5a5a;letter-spacing:.18em;text-transform:uppercase}
+.tp-sf-title{font-family:'Crimson Text',Georgia,serif;font-size:1.15rem;color:#fff;font-weight:400;margin-bottom:.3rem}
+.tp-sf-desc{font-size:.82rem;color:#9a9a9a;margin-bottom:1.2rem;max-width:540px}
+
+.tp-sf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.55rem;margin-bottom:2.5rem}
+.tp-sf-card{display:flex;align-items:center;gap:.7rem;padding:.75rem .9rem;background:#0a0a0a;border:1px solid #222;border-radius:5px;transition:all .18s;text-decoration:none;color:#e5e3df}
+.tp-sf-card:hover{border-color:#d4af37;background:#111;transform:translateY(-1px)}
+.tp-sf-card i{font-size:.9rem;color:#d4af37;opacity:.65;width:18px;text-align:center;flex-shrink:0}
+.tp-sf-card:hover i{opacity:1}
+.tp-sf-card-text{min-width:0}
+.tp-sf-card h4{font-family:'Inter',system-ui,sans-serif;font-size:.75rem;font-weight:500;color:#e5e3df;margin:0;line-height:1.2}
+.tp-sf-card p{font-family:'JetBrains Mono',monospace;font-size:.55rem;color:#5a5a5a;margin:.15rem 0 0;letter-spacing:.03em}
+
+/* ── Series Nav ── */
+.tp-sf-series{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-bottom:2rem;padding:1rem 0;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a}
+.tp-sf-series a{font-family:'Oswald','Inter',sans-serif;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.4rem .65rem;border-radius:4px;color:#5a5a5a;transition:all .15s;text-decoration:none}
+.tp-sf-series a:hover{color:#d4af37;background:rgba(212,175,55,.08)}
+.tp-sf-series a.tp-sf-active{color:#d4af37}
+.tp-sf-series a.tp-sf-soon{opacity:.4;cursor:default}
+
+/* ── Bottom Bar ── */
+.tp-sf-bottom{text-align:center;padding:1.5rem 0 2rem}
+.tp-sf-eq{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#d4af37;opacity:.45;margin-bottom:.6rem}
+.tp-sf-copy{color:#5a5a5a;font-size:.72rem;margin:.2rem 0}
+.tp-sf-copy a{color:#9a9a9a;text-decoration:none}
+.tp-sf-copy a:hover{color:#d4af37}
+.tp-sf-vow{font-family:'Crimson Text',serif;font-style:italic;color:#5a5a5a;font-size:.82rem;margin-top:.8rem}
+
+@media(max-width:600px){
+  .tp-sf-grid{grid-template-columns:repeat(2,1fr)}
+  .tp-sf-series{gap:.2rem}
+}
+</style>
+
+<footer class="tp-site-footer" data-component="footer" data-name="site-wide-footer">
+  <div class="tp-sf-line"></div>
+
+  <!-- Subdomain Grid -->
+  <div class="tp-sf-head">
+    <span class="tp-sf-dot"></span>
+    <span class="tp-sf-kicker">Reference &amp; Tools</span>
+  </div>
+  <div class="tp-sf-title">Faith thru Physics — Reference Tools</div>
+  <p class="tp-sf-desc">Cross-series infrastructure. Every series links here.</p>
+
+  <div class="tp-sf-grid">
+    <a href="/glossary/" class="tp-sf-card">
+      <i class="fas fa-book"></i>
+      <div class="tp-sf-card-text">
+        <h4>Glossary</h4>
+        <p>300+ terms</p>
+      </div>
+    </a>
+    <a href="/equation/" class="tp-sf-card">
+      <i class="fas fa-square-root-alt"></i>
+      <div class="tp-sf-card-text">
+        <h4>Master Equation</h4>
+        <p>10 variables</p>
+      </div>
+    </a>
+    <a href="/isomorphism/" class="tp-sf-card">
+      <i class="fas fa-exchange-alt"></i>
+      <div class="tp-sf-card-text">
+        <h4>Isomorphisms</h4>
+        <p>38 mappings</p>
+      </div>
+    </a>
+    <a href="/proof-explorer/" class="tp-sf-card">
+      <i class="fas fa-project-diagram"></i>
+      <div class="tp-sf-card-text">
+        <h4>Proof Explorer</h4>
+        <p>Claims + grades</p>
+      </div>
+    </a>
+    <a href="/media/" class="tp-sf-card">
+      <i class="fas fa-images"></i>
+      <div class="tp-sf-card-text">
+        <h4>Media Gallery</h4>
+        <p>Visuals + slides</p>
+      </div>
+    </a>
+    <a href="/podcast/" class="tp-sf-card">
+      <i class="fas fa-podcast"></i>
+      <div class="tp-sf-card-text">
+        <h4>Podcast</h4>
+        <p>Episodes + feed</p>
+      </div>
+    </a>
+    <a href="/rigor/" class="tp-sf-card">
+      <i class="fas fa-shield-alt"></i>
+      <div class="tp-sf-card-text">
+        <h4>Rigor Cards</h4>
+        <p>Bible + MDA</p>
+      </div>
+    </a>
+    <a href="/lean4/" class="tp-sf-card">
+      <i class="fas fa-code"></i>
+      <div class="tp-sf-card-text">
+        <h4>Lean 4 Proofs</h4>
+        <p>Formal verification</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Series Nav -->
+  <nav class="tp-sf-series" aria-label="All series">
+    <a href="/">Home</a>
+    <a href="/moral-decline/">MDA</a>
+    <a href="/genesis-to-quantum/" class="tp-sf-soon" title="Coming Soon">GTQ</a>
+    <a href="/logos-stories/" class="tp-sf-soon" title="Coming Soon">Logos Stories</a>
+    <a href="/logos-papers/" class="tp-sf-soon" title="Coming Soon">Logos Papers</a>
+    <a href="/convergence/" class="tp-sf-soon" title="Coming Soon">Convergence</a>
+    <a href="/consciousness/" class="tp-sf-soon" title="Coming Soon">Consciousness</a>
+    <a href="https://zenodo.org/communities/theophysics/" target="_blank" rel="noopener">Zenodo</a>
+  </nav>
+
+  <!-- Bottom Bar -->
+  <div class="tp-sf-bottom">
+    <div class="tp-sf-eq">χ = f(G, M, E, S, T, K, R, Q, F, C)</div>
+    <p class="tp-sf-copy">David Lowe · POF 2828 · <a href="https://faiththruphysics.com">Faith thru Physics</a></p>
+    <p class="tp-sf-copy" style="font-size:.65rem">All data sourced from primary datasets. Kill conditions live.</p>
+    <p class="tp-sf-vow">"The truth will defend itself. Your job is to say it clearly."</p>
+  </div>
+</footer>
+<!-- END:COMPONENT:footer:site-wide-footer -->
+
+
+<!-- Command Palette -->
+<div class="cp-backdrop" id="cp-backdrop" style="display:none">
+  <div class="cp-modal" id="cp-modal">
+    <div class="cp-input-wrap">
+      <span class="cp-search-icon">⌕</span>
+      <input class="cp-input" id="cp-input" placeholder="Search all series, papers, acts…" autocomplete="off"/>
+      <span class="cp-esc">ESC</span>
+    </div>
+    <div class="cp-results" id="cp-results"></div>
+    <div class="cp-foot">
+      <span><kbd>↑↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+      <span style="margin-left:auto" id="cp-count">0 results</span>
+    </div>
+  </div>
+</div>
+
+<!-- Tweaks Panel -->
+<div class="twk-panel" id="twk-panel" style="display:none">
+  <div class="twk-hd" id="twk-hd">
+    <b>Navigation Tweaks</b>
+    <button class="twk-x" id="twk-close">✕</button>
+  </div>
+  <div class="twk-body">
+    <div class="twk-sect">Hero</div>
+    <div class="twk-row twk-row-h"><div class="twk-lbl"><span>Title style</span></div><div class="twk-seg" id="tweak-heroStyle"><button data-val="serif" class="on">serif</button><button data-val="grand">grand</button></div></div>
+    <div class="twk-sect">Reading Order</div>
+    <div class="twk-row twk-row-h"><div class="twk-lbl"><span>Layout</span></div><div class="twk-seg" id="tweak-orderStyle"><button data-val="timeline" class="on">timeline</button><button data-val="grid">grid</button></div></div>
+    <div class="twk-sect">Reading Ladder</div>
+    <div class="twk-row twk-row-h"><div class="twk-lbl"><span>Show all series in each tier</span></div><button class="twk-toggle" id="tweak-showAll" data-on="0"><i></i></button></div>
+    <div class="twk-sect">All-Series Grid</div>
+    <div class="twk-row twk-row-h"><div class="twk-lbl"><span>Density</span></div><div class="twk-seg" id="tweak-density"><button data-val="comfortable" class="on">comfortable</button><button data-val="compact">compact</button></div></div>
+    <div class="twk-row twk-row-h"><div class="twk-lbl"><span>Show series codes</span></div><button class="twk-toggle" id="tweak-showCodes" data-on="1"><i></i></button></div>
+    <div class="twk-sect">Persistent Header</div>
+    <div class="twk-row twk-row-h"><div class="twk-lbl"><span>Preview inner-page breadcrumb</span></div><button class="twk-toggle" id="tweak-demoBreadcrumb" data-on="0"><i></i></button></div>
+  </div>
+</div>
+
+<!-- Toggle button for tweaks -->
+<button id="twk-trigger" style="position:fixed;right:16px;bottom:16px;z-index:2147483647;width:40px;height:40px;border-radius:50%;background:var(--surface3);border:1px solid var(--border-hi);color:var(--gold);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.4)">⚙</button>
+
+<script>
+
+// ── Data ────────────────────────────────────────────────────────────────────
+const SERIES_CATALOG = [
+  {code:"STORY",title:"★ The Master Story",href:"Master Story.html",tier:1,cluster:"Foundations",color:"gold",count:"~12 min · narrated",note:"Two series threaded into one. Every bold phrase is a page.",featured:true},
+  {code:"DOOR",title:"Theophysics — The Full Explanation",href:"one-page-stories/theophysics-the-full-explanation.html",tier:1,cluster:"Foundations",color:"gold",count:"7,200 words",note:"Start here. The whole picture in one read.",featured:true},
+  {code:"LETTER",title:"Everybody's Got It Wrong",href:"one-page-stories/everybodys-got-it-wrong.html",tier:1,cluster:"Foundations",color:"gold",count:"Personal",note:"The fence-builder's letter. Why the smartest got stuck.",featured:true},
+  {code:"CNS",title:"The Convergence",href:"Convergence_Series/index.html",tier:1,cluster:"Foundations",color:"gold",count:"7 articles",note:"Playing field → evidence → verdict. Accessible."},
+  {code:"GTQ",title:"Genesis to Quantum",href:"genesis-to-quantum/index.html",tier:1,cluster:"Foundations",color:"red",count:"10 articles + 17 tangents",note:"Genesis taken literally + the quantum equations.",featured:true},
+  {code:"LGS",title:"The Logos Story",href:"Logos_Papers/index.html",tier:1,cluster:"Foundations",color:"gold",count:"12 articles",note:"Universe as language. Code, observer, blueprint."},
+  {code:"BLUE",title:"Family Briefing",href:"blue/index.html",tier:1,cluster:"Foundations",color:"blue",count:"9 articles",note:"The framework explained for family."},
+  {code:"BGL",title:"Be Glad You're a Loser",href:"be-glad-youre-a-loser/index.html",tier:1,cluster:"Gospel",color:"gold",count:"2 articles",note:"The Gospel without religious language."},
+  {code:"MDA-S",title:"The Lowe Family Stories",href:"/mda/#stories",tier:1,cluster:"Decline",color:"red",count:"7 stories",note:"Six generations, 1900–2025. Narrative companion to MDA."},
+  {code:"SAME",title:"The Same Equation",href:"one-page-stories/the-same-equation.html",tier:1,cluster:"Architecture",color:"gold",count:"Visual proof",note:"Ten laws side by side. Same form. One added term."},
+  {code:"LOGOS-T",title:"The Logos Thesis",href:"one-page-stories/The_Logos_Thesis_v3.html",tier:2,cluster:"Foundations",color:"gold",count:"Full paper · MathJax",note:"Ten variables, one coherence field, every domain unified.",featured:true},
+  {code:"CDT",title:"Convergence — Deep Theory",href:"convergence-deep/index.html",tier:2,cluster:"Foundations",color:"gold",count:"6 articles",note:"The math behind the Convergence. Maxwell Moment."},
+  {code:"CON",title:"Consciousness",href:"consciousness/index.html",tier:2,cluster:"Consciousness",color:"teal",count:"10 papers",note:"The hard problem, χ-field, ontological taxonomy.",featured:true},
+  {code:"MEQ",title:"The 10 Laws of Theophysics",href:"master-equation/index.html",tier:2,cluster:"Architecture",color:"gold",count:"10 law pages",note:"Each variable, each equation, each domain mapping."},
+  {code:"TENLAWS",title:"Ten Laws — Full Treatment",href:"one-page-stories/ten-laws-full-treatment.html",tier:2,cluster:"Architecture",color:"gold",count:"Reference",note:"Every law, every equation, every substitution map."},
+  {code:"NODRIFT",title:"The No-Drift Law Synthesis",href:"one-page-stories/no-drift-law-synthesis.html",tier:2,cluster:"Architecture",color:"gold",count:"Master reference",note:"All 10 laws. Constructive + destructive regimes."},
+  {code:"FLOOR",title:"The Floor Beneath the Floor",href:"one-page-stories/the-floor-beneath-the-floor.html",tier:2,cluster:"Architecture",color:"gold",count:"Derivation",note:"Noether → symmetry → why a Trinity is required."},
+  {code:"ITBIT",title:"It from Bit from Logos",href:"one-page-stories/it-from-bit-from-logos.html",tier:2,cluster:"Architecture",color:"gold",count:"Extension",note:"Wheeler stopped one level too soon."},
+  {code:"FATHER",title:"The Father as Source Field",href:"one-page-stories/the-father-as-source-field.html",tier:2,cluster:"Architecture",color:"gold",count:"Derivation",note:"The quantum vacuum had a name before physics gave it one."},
+  {code:"GOD",title:"Character of God — from Physics",href:"one-page-stories/character-of-god-from-physics.html",tier:2,cluster:"Warfare",color:"gold",count:"24 properties · 10 forces",note:"Read, not interpreted. From the measurements."},
+  {code:"ADV",title:"Character of the Adversary — from Physics",href:"spiritual-warfare/sw-character-of-adversary-from-physics.html",tier:2,cluster:"Warfare",color:"red",count:"12 properties · 7 domains",note:"What entropy and decay reveal."},
+  {code:"ATTACK",title:"The Attack Surface",href:"spiritual-warfare/sw-the-attack-surface.html",tier:2,cluster:"Warfare",color:"red",count:"9 vectors",note:"CPT theorem mapped to the 9 Fruits + 9 attacks."},
+  {code:"ANTI",title:"The 24 Anti-Properties",href:"one-page-stories/the-24-anti-properties.html",tier:2,cluster:"Warfare",color:"red",count:"Taxonomy",note:"Every Logos property has a structural inverse."},
+  {code:"SW",title:"Spiritual Warfare",href:"spiritual-warfare/index.html",tier:2,cluster:"Warfare",color:"red",count:"7 pages",note:"The full warfare series."},
+  {code:"SALV",title:"The Salvation Algorithm",href:"one-page-stories/salvation-algorithm.html",tier:2,cluster:"Gospel",color:"gold",count:"6 steps · 43.6 bits",note:"The Gospel derived from first principles.",featured:true},
+  {code:"PHASE",title:"Salvation Is a Phase Transition",href:"one-page-stories/salvation-phase-transition.html",tier:2,cluster:"Gospel",color:"gold",count:"12 stages · 5.8σ",note:"Bose-Einstein ↔ soteriology. Stage by stage."},
+  {code:"GRACE",title:"Why Grace Has to Come from Outside",href:"one-page-stories/why-grace-from-outside.html",tier:2,cluster:"Gospel",color:"gold",count:"Proof",note:"The Second Law forbids self-salvation."},
+  {code:"ATTRACT",title:"Heaven and Hell as Attractor States",href:"one-page-stories/heaven-hell-attractor-states.html",tier:2,cluster:"Gospel",color:"gold",count:"Dynamical systems",note:"Where you've been going, not where you go."},
+  {code:"MDA",title:"The Moral Decline of America",href:"/mda/",tier:2,cluster:"Decline",color:"red",count:"10 chapters",note:"125 years. 9 domains. χ-field measured.",featured:true},
+  {code:"CD",title:"Cross-Domain Applications",href:"cross-domain/index.html",tier:2,cluster:"Reference",color:"blue",count:"12 articles",note:"The framework applied to other domains."},
+  {code:"BDL",title:"Bible DataLab",href:"bible-datalab/index.html",tier:2,cluster:"Reference",color:"purple",count:"8 studies + 3D viz",note:"Quantitative analysis of the text."},
+  {code:"PS",title:"The Prophetic Synthesis",href:"prophetic-synthesis/index.html",tier:2,cluster:"Reference",color:"purple",count:"7 articles",note:"Pattern recognition across the prophetic books."},
+  {code:"SA",title:"The Socratic Axioms",href:"socratic-axioms/index.html",tier:2,cluster:"Reference",color:"teal",count:"9 axioms",note:"First-principles foundations."},
+  {code:"DRV",title:"De Revolutionibus Veritatis",href:"revolution-of-truth/index.html",tier:2,cluster:"Reference",color:"blue",count:"6 books",note:"The book-length treatment."},
+  {code:"DP",title:"The Duality Project",href:"duality-project/index.html",tier:2,cluster:"Reference",color:"purple",count:"22 simulation logs",note:"Computational explorations."},
+  {code:"ISO",title:"Isomorphism Registry",href:"genesis-to-quantum/iso/iso-001-gravity-sin.html",tier:2,cluster:"Reference",color:"red",count:"10 mappings",note:"The structural mappings, catalogued."},
+  {code:"TBA",title:"The Bidirectional Audit",href:"the-bidirectional-audit/index.html",tier:2,cluster:"Evidence",color:"teal",count:"1 article",note:"Symmetry test on the framework itself."},
+  {code:"FT",title:"Formal Theophysics — FT-001 to FT-016",href:"https://zenodo.org/communities/theophysics/",tier:3,cluster:"Papers",color:"blue",count:"16 papers · Zenodo DOIs",note:"Truth Measurement, Math Before Matter, Trinity Requirement, Pharisee Function...",featured:true,external:true},
+  {code:"SP",title:"Supplementary Papers — SP-01 to SP-17",href:"https://zenodo.org/communities/theophysics/",tier:3,cluster:"Papers",color:"blue",count:"17 papers · Zenodo DOIs",note:"Critical analyses: Haldane, Barrick LTEE, Kimura DFE, Cambrian, RNA World.",external:true},
+  {code:"FP",title:"Algorithmic Foundations (FP)",href:"formal-papers/index.html",tier:3,cluster:"Papers",color:"blue",count:"10 formal papers",note:"The algorithmic spine, peer-review ready."},
+  {code:"LOGOS-F",title:"Logos Papers (Formal)",href:"logos-papers/logos-01.html",tier:3,cluster:"Papers",color:"gold",count:"14 papers",note:"The formal companion to the Logos Story."},
+  {code:"PA",title:"Proof Architecture",href:"proof-architecture/index.html",tier:3,cluster:"Papers",color:"teal",count:"13 pages",note:"Axiom layers, derivation graph, proof structure."},
+  {code:"PE",title:"Proof Explorer",href:"proof-explorer/axioms-layer-0-core.html",tier:3,cluster:"Papers",color:"teal",count:"6 pages",note:"Walk the proof graph interactively."},
+  {code:"TESTS",title:"We Ran the Tests",href:"family-tests/we-ran-the-tests.html",tier:3,cluster:"Evidence",color:"blue",count:"7 tests · PASS",note:"Seven tests. All passed. One corrected publicly.",featured:true},
+  {code:"HOLD",title:"Holding God Accountable",href:"one-page-stories/holding-god-accountable.html",tier:3,cluster:"Evidence",color:"blue",count:"39/50 vs 21/50",note:"Head-to-head with General Relativity."},
+  {code:"GOLD",title:"Gold Standard Test Battery",href:"blue/gold-standard-test-battery.html",tier:3,cluster:"Evidence",color:"blue",count:"Test battery",note:"What the framework must pass to be taken seriously."},
+  {code:"FACTS",title:"FACTS — The Academic Case",href:"/mda/",tier:3,cluster:"Evidence",color:"red",count:"Formal paper",note:"Abstract, methodology, statistical results."},
+  {code:"FT-PAPER",title:"Family Tests",href:"family-tests/index.html",tier:3,cluster:"Evidence",color:"blue",count:"3 articles",note:"Predictions tested against the family record."}
+];
+
+const READING_ORDER = [
+  {act:"ACT 1",title:"The Moral Decline of America",href:"/mda/"},
+  {act:"ACT 2",title:"The Three Truths",href:"#",soon:true},
+  {act:"ACT 3",title:"The Playing Field",href:"Convergence_Series/cns-01-the-playing-field.html"},
+  {act:"ACT 4",title:"The Evidence",href:"Convergence_Series/cns-02-the-evidence.html"},
+  {act:"ACT 5",title:"Math Is Moral",href:"convergence-deep/cdt-01-math-is-moral.html"},
+  {act:"ACT 6",title:"The Measurement That Collapsed Reality",href:"genesis-to-quantum/intro/gtq-01-measurement-collapsed-reality.html"},
+  {act:"ACT 7",title:"Genesis to Quantum — Full Series",href:"genesis-to-quantum/index.html"},
+  {act:"ACT 8",title:"The Judgment Layer",href:"Convergence_Series/cns-05-the-judgment-layer.html"},
+  {act:"ACT 9",title:"The Logos Story",href:"Logos_Papers/index.html"},
+  {act:"ACT 10",title:"The Logos Papers",href:"one-page-stories/The_Logos_Thesis_v3.html"},
+  {act:"ACT 11",title:"Be Glad You're a Loser",href:"be-glad-youre-a-loser/bgl-01-be-glad-youre-a-loser.html"},
+  {act:"ACT 12",title:"We Ran the Tests",href:"family-tests/we-ran-the-tests.html"},
+  {act:"ACT 13",title:"The One Truth",href:"#",soon:true}
+];
+
+const CLUSTER_META = {
+  Foundations:{label:"Foundations",color:"gold",desc:"Where to start. The whole picture."},
+  Architecture:{label:"Architecture",color:"gold",desc:"The structural spine. Ten laws, master equation."},
+  Consciousness:{label:"Consciousness",color:"teal",desc:"The hard problem and the χ-field."},
+  Warfare:{label:"Portraits & Warfare",color:"red",desc:"The character of God and the adversary, read from the same physics."},
+  Gospel:{label:"Gospel in Physics",color:"gold",desc:"Salvation derived from first principles."},
+  Decline:{label:"Moral Decline",color:"red",desc:"125 years. 9 domains. One number."},
+  Evidence:{label:"Evidence & Tests",color:"blue",desc:"Held to the same standards science holds itself."},
+  Reference:{label:"Reference & Deep Cuts",color:"purple",desc:"Cross-domain applications, registries, simulations."},
+  Papers:{label:"Formal Papers",color:"blue",desc:"Peer-review-ready. Zenodo DOIs."}
+};
+
+const TIER_META = {
+  1:{label:"Accessible",short:"Accessible",blurb:"Plain language. No equations required.",color:"#7fc77f",glyph:"●"},
+  2:{label:"Technical",short:"Technical",blurb:"Math, theory, derivations. χ-field territory.",color:"#d4af37",glyph:"●●"},
+  3:{label:"Formal",short:"Formal",blurb:"Peer-review-ready papers. Zenodo, DOIs, citations.",color:"#5b9bd5",glyph:"●●●"}
+};
+
+// ── State ───────────────────────────────────────────────────────────────────
+const TWEAK_DEFAULTS = {heroStyle:"serif",orderStyle:"timeline",density:"comfortable",showCodes:true,showAllInLadder:false,demoBreadcrumb:false};
+let tweaks = {...TWEAK_DEFAULTS};
+try{ const saved = JSON.parse(localStorage.getItem('theophysics-tweaks')||'{}'); tweaks = {...tweaks,...saved}; }catch(e){}
+
+function saveTweaks(){ try{ localStorage.setItem('theophysics-tweaks',JSON.stringify(tweaks)); }catch(e){} }
+
+// ── Header scroll ───────────────────────────────────────────────────────────
+const header = document.getElementById('site-header');
+window.addEventListener('scroll',()=>{
+  header.classList.toggle('ph-scrolled', window.scrollY > 80);
+});
+
+// ── Tweak Panel ─────────────────────────────────────────────────────────────
+const twkPanel = document.getElementById('twk-panel');
+const twkTrigger = document.getElementById('twk-trigger');
+document.getElementById('twk-close').addEventListener('click',()=>{twkPanel.style.display='none';});
+twkTrigger.addEventListener('click',()=>{twkPanel.style.display=twkPanel.style.display==='none'?'flex':'none';});
+
+// Drag tweaks panel
+let twkDrag=false,twkOffX=0,twkOffY=0;
+document.getElementById('twk-hd').addEventListener('mousedown',e=>{
+  twkDrag=true; const r=twkPanel.getBoundingClientRect(); twkOffX=e.clientX-r.left; twkOffY=e.clientY-r.top;
+});
+document.addEventListener('mousemove',e=>{
+  if(!twkDrag)return; twkPanel.style.left=(e.clientX-twkOffX)+'px'; twkPanel.style.top=(e.clientY-twkOffY)+'px'; twkPanel.style.right='auto'; twkPanel.style.bottom='auto';
+});
+document.addEventListener('mouseup',()=>twkDrag=false);
+
+function segInit(id,key,opts,cb){
+  const el=document.getElementById(id); if(!el)return;
+  const btns=el.querySelectorAll('button');
+  function update(){ btns.forEach(b=>b.classList.toggle('on',b.dataset.val===tweaks[key])); }
+  btns.forEach(b=>b.addEventListener('click',()=>{tweaks[key]=b.dataset.val;saveTweaks();update();if(cb)cb();}));
+  update();
+}
+function toggleInit(id,key,cb){
+  const el=document.getElementById(id); if(!el)return;
+  function update(){ el.dataset.on=tweaks[key]?'1':'0'; }
+  el.addEventListener('click',()=>{tweaks[key]=!tweaks[key];saveTweaks();update();if(cb)cb();});
+  update();
+}
+
+segInit('tweak-heroStyle','heroStyle',['serif','grand'],()=>{
+  document.querySelector('.hero-h1').className='hero-h1 hero-h1-'+tweaks.heroStyle;
+});
+segInit('tweak-orderStyle','orderStyle',['timeline','grid'],renderReadingOrder);
+segInit('tweak-density','density',['comfortable','compact'],renderAllSeries);
+toggleInit('tweak-showAll','showAllInLadder',renderLadder);
+toggleInit('tweak-showCodes','showCodes',renderAllSeries);
+toggleInit('tweak-demoBreadcrumb','demoBreadcrumb',()=>{
+  const on=tweaks.demoBreadcrumb;
+  document.getElementById('demo-banner').style.display=on?'block':'none';
+  document.getElementById('header-nav').style.display=on?'none':'flex';
+  const crumb=document.getElementById('header-crumb');
+  if(on){ crumb.style.display='flex'; crumb.innerHTML='<a href="#top">Home</a><span class="ph-sep">/</span><a href="#">Genesis to Quantum</a><span class="ph-sep">/</span><span class="ph-here">Article 04 — The Day Time Began</span>'; }
+  else{ crumb.style.display='none'; crumb.innerHTML=''; }
+});
+
+// ── Reading Ladder ──────────────────────────────────────────────────────────
+function renderLadder(){
+  const showAll = tweaks.showAllInLadder;
+  for(let t=1;t<=3;t++){
+    const items = SERIES_CATALOG.filter(s=>s.tier===t);
+    const list = document.getElementById('rung-'+t+'-list');
+    const more = document.getElementById('rung-'+t+'-more');
+    if(!list)continue;
+    const visible = showAll ? items : items.slice(0,6);
+    let html='';
+    visible.forEach(s=>{
+      html+=`<li><a href="${s.href}" class="rung-item rung-${s.color}"><span class="rung-code">${s.code}</span><span class="rung-title">${s.title}</span><span class="rung-meta">${s.count}</span></a></li>`;
+    });
+    list.innerHTML=html;
+    if(more) more.style.display = (showAll||items.length<=6)?'none':'block';
+  }
+}
+renderLadder();
+
+// ── Reading Order ───────────────────────────────────────────────────────────
+function renderReadingOrder(){
+  const el = document.getElementById('reading-order-list');
+  if(!el)return;
+  if(tweaks.orderStyle==='timeline'){
+    el.className='order-timeline';
+    el.innerHTML = READING_ORDER.map((a,i)=>{
+      const cls = a.soon?'to-item soon':'to-item';
+      return `<li class="${cls}"><a href="${a.soon?'#':a.href}" class="to-link"><span class="to-act">${a.act}</span><span class="to-dot"></span><span class="to-title">${a.title}</span>${a.soon?'<span class="to-soon">coming soon</span>':''}</a></li>`;
+    }).join('');
+  }else{
+    el.className='order-grid';
+    el.innerHTML = READING_ORDER.map((a,i)=>{
+      const cls = a.soon?'og-item soon':'og-item';
+      return `<li class="${cls}"><a href="${a.soon?'#':a.href}"><span class="og-num">${String(i+1).padStart(2,'0')}</span><div><div class="og-act">${a.act}</div><div class="og-title">${a.title}${a.soon?' <em>· coming soon</em>':''}</div></div></a></li>`;
+    }).join('');
+  }
+}
+renderReadingOrder();
+
+// ── All Series Grid ─────────────────────────────────────────────────────────
+function renderAllSeries(){
+  const q = (document.getElementById('all-search')?.value||'').toLowerCase().trim();
+  const tier = parseInt(document.querySelector('.filter-tier button.on')?.dataset.tier||'0');
+  const cluster = document.getElementById('all-cluster')?.value||'';
+  const grid = document.getElementById('all-grid');
+  if(!grid)return;
+
+  const filtered = SERIES_CATALOG.filter(s=>{
+    if(tier && s.tier!==tier) return false;
+    if(cluster && s.cluster!==cluster) return false;
+    if(!q) return true;
+    const hay = (s.title+' '+s.code+' '+(s.note||'')+' '+s.cluster).toLowerCase();
+    return hay.includes(q);
+  });
+
+  grid.className = 'all-grid all-grid-'+tweaks.density;
+  let html='';
+  filtered.forEach(s=>{
+    const ext = s.external ? ' target="_blank" rel="noopener"' : '';
+    html+=`<a href="${s.href}" class="as-card as-${s.color}"${ext}>
+      <div class="as-row">
+        ${tweaks.showCodes?`<span class="as-code">${s.code}</span>`:''}
+        <span class="as-tier">T${s.tier}</span>
+        ${s.featured?'<span class="as-feat">featured</span>':''}
+        ${s.external?'<span class="as-ext">↗</span>':''}
+      </div>
+      <h3>${s.title}</h3>
+      <p>${s.note}</p>
+      <div class="as-foot">${s.count}</div>
+    </a>`;
+  });
+  if(filtered.length===0) html='<div class="all-empty">Nothing matches. Try clearing filters.</div>';
+  grid.innerHTML=html;
+  const cnt=document.getElementById('filter-count'); if(cnt) cnt.textContent=filtered.length+' of '+SERIES_CATALOG.length;
+}
+
+// Filter events
+document.getElementById('all-search').addEventListener('input',function(){
+  document.getElementById('all-search-clear').style.display=this.value?'inline-block':'none';
+  renderAllSeries();
+});
+document.getElementById('all-search-clear').addEventListener('click',function(){
+  document.getElementById('all-search').value=''; this.style.display='none'; renderAllSeries();
+});
+document.querySelectorAll('.filter-tier button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-tier button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); renderAllSeries();
+  });
+});
+document.getElementById('all-cluster').addEventListener('change',renderAllSeries);
+renderAllSeries();
+
+// ── Command Palette ─────────────────────────────────────────────────────────
+const cpBackdrop = document.getElementById('cp-backdrop');
+const cpInput = document.getElementById('cp-input');
+const cpResults = document.getElementById('cp-results');
+let cpItems=[], cpSel=0, cpOpen=false;
+
+function fuzzy(n,h){
+  if(!n)return 1; n=n.toLowerCase(); h=h.toLowerCase();
+  if(h.includes(n))return 100-h.indexOf(n);
+  const words=h.split(/\s+/); if(words.some(w=>w.startsWith(n)))return 50;
+  let i=0; for(const c of h){ if(c===n[i])i++; if(i===n.length)return 10; } return 0;
+}
+
+function buildCPItems(){
+  const all=[];
+  SERIES_CATALOG.forEach(s=>all.push({kind:'series',title:s.title,sub:`${s.code} · Tier ${s.tier} · ${s.count}`,href:s.href,tier:s.tier,search:`${s.code} ${s.title} ${s.note} ${s.cluster}`}));
+  READING_ORDER.forEach(a=>{ if(!a.soon) all.push({kind:'act',title:a.title,sub:`Reading order · ${a.act}`,href:a.href,tier:0,search:`${a.act} ${a.title} reading order master narrative`}); });
+  return all;
+}
+const CP_ALL = buildCPItems();
+
+function openCP(){ cpOpen=true; cpBackdrop.style.display='flex'; cpInput.value=''; cpSel=0; renderCP(); setTimeout(()=>cpInput.focus(),30); }
+function closeCP(){ cpOpen=false; cpBackdrop.style.display='none'; }
+
+function tierBadge(t){
+  if(t===0)return '<span class="cp-badge" style="background:rgba(212,175,55,.15);color:#d4af37">READ</span>';
+  if(t===1)return '<span class="cp-badge" style="background:rgba(127,199,127,.12);color:#7fc77f">I</span>';
+  if(t===2)return '<span class="cp-badge" style="background:rgba(212,175,55,.12);color:#d4af37">II</span>';
+  return '<span class="cp-badge" style="background:rgba(91,155,213,.12);color:#5b9bd5">III</span>';
+}
+
+function renderCP(){
+  const q=cpInput.value.trim();
+  let items = q ? CP_ALL.map(it=>({it,s:fuzzy(q,it.search)})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,30).map(x=>x.it) : CP_ALL.slice(0,12);
+  cpItems=items; cpSel=Math.min(cpSel,items.length-1);
+  if(items.length===0){ cpResults.innerHTML='<div class="cp-empty">No results. Try "grace", "quantum", "moral"…</div>'; }
+  else{
+    cpResults.innerHTML=items.map((it,i)=>`<a href="${it.href}" class="cp-row ${i===cpSel?'sel':''}"><div>${tierBadge(it.tier)}</div><div class="cp-row-text"><div class="cp-row-title">${it.title}</div><div class="cp-row-sub">${it.sub}</div></div><span class="cp-arrow">↵</span></a>`).join('');
+  }
+  document.getElementById('cp-count').textContent=items.length+' results';
+}
+
+cpInput.addEventListener('input',()=>{cpSel=0;renderCP();});
+cpBackdrop.addEventListener('click',closeCP);
+document.getElementById('cp-modal').addEventListener('click',e=>e.stopPropagation());
+
+document.addEventListener('keydown',e=>{
+  if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){ e.preventDefault(); cpOpen?closeCP():openCP(); }
+  else if(e.key==='/' && document.activeElement?.tagName!=='INPUT' && document.activeElement?.tagName!=='TEXTAREA' && !cpOpen){ e.preventDefault(); openCP(); }
+  else if(!cpOpen)return;
+  else if(e.key==='Escape'){ e.preventDefault(); closeCP(); }
+  else if(e.key==='ArrowDown'){ e.preventDefault(); cpSel=Math.min(cpItems.length-1,cpSel+1); renderCP(); const sel=cpResults.children[cpSel]; if(sel)sel.scrollIntoView({block:'nearest'}); }
+  else if(e.key==='ArrowUp'){ e.preventDefault(); cpSel=Math.max(0,cpSel-1); renderCP(); const sel=cpResults.children[cpSel]; if(sel)sel.scrollIntoView({block:'nearest'}); }
+  else if(e.key==='Enter'){ e.preventDefault(); const it=cpItems[cpSel]; if(it)window.location.href=it.href; }
+});
+
+document.getElementById('search-trigger').addEventListener('click',openCP);
+document.getElementById('hero-search-btn').addEventListener('click',openCP);
+
+// ── Init counts ─────────────────────────────────────────────────────────────
+document.getElementById('hero-series-count').textContent=SERIES_CATALOG.length;
+document.getElementById('hero-acts-count').textContent=READING_ORDER.length;
+document.getElementById('all-series-count').textContent=SERIES_CATALOG.length;
+
+</script>
+</body>
+</html>
