@@ -55,3 +55,27 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.forge-grid-cell {
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  border-radius: 3px;
+  cursor: crosshair;
+  margin: 0 1px;
+  transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.forge-grid-cell:hover {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.55);
+}
+
+.forge-grid-cell.selected {
+  background: rgba(220, 38, 38, 0.26);
+  border-color: #dc2626;
+  box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.45);
+}
+
+.forge-grid-cell.tag-highlighted {
+  background: rgba(245, 158, 11, 0.24);
+  border-color: #f59e0b;
+}

@@ -46,7 +46,7 @@ npm run dev
 npm run build
 ```
 
-The renderer loads local HTML articles from `content/` through the preload bridge and renders the selected article in the document surface. The initial fallback article is `content/moral-decline/mda-part-01-measuring-moral-health.html` because the requested language-of-surrender article is not present in this repository. The sidebar now renders a recursive file tree for `content/` plus `vault/` when present, and the bottom layer bar can inject the existing vanilla Claims, Equations, Glossary, and Audio layers as script/style tags without rewriting `shared/`.
+The renderer loads local HTML articles from `content/` through the preload bridge and renders the selected article in the document surface. The initial fallback article is `content/moral-decline/mda-part-01-measuring-moral-health.html` because the requested language-of-surrender article is not present in this repository. The sidebar now renders a recursive file tree for `content/` plus `vault/` when present, and the bottom layer bar can inject the existing vanilla Claims, Equations, Glossary, and Audio layers as script/style tags without rewriting `shared/`. The same bottom bar now includes a `Grid` toggle for the Layer 2 addressable word grid; when active, words receive row/column cell boundaries, hover coordinates, click selection, and a grid inspection panel.
 
 ## Architecture
 

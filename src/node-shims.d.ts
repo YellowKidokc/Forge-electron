@@ -114,6 +114,7 @@ declare module 'react' {
     Provider: (props: { value: T; children?: JSX.Element | JSX.Element[] }) => JSX.Element;
   }
   export function createContext<T>(defaultValue: T): Context<T>;
+  export function useCallback<T extends (...args: never[]) => unknown>(callback: T, deps: readonly unknown[]): T;
   export function useContext<T>(context: Context<T>): T;
   export function useEffect(effect: () => void | (() => void), deps?: readonly unknown[]): void;
   export function useMemo<T>(factory: () => T, deps: readonly unknown[]): T;

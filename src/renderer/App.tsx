@@ -1,9 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ArticleViewer } from './components/ArticleViewer.tsx';
+import { GridOverlay } from './components/GridOverlay.tsx';
+import { GridPanel } from './components/GridPanel.tsx';
 import { LayerToggleBar } from './components/LayerToggleBar.tsx';
 import { Sidebar } from './components/Sidebar.tsx';
 import { TitleBar } from './components/TitleBar.tsx';
 import { LayerProvider } from './context/LayerProvider.tsx';
+import { useGrid } from './hooks/useGrid.ts';
+import { useGridSelection } from './hooks/useGridSelection.ts';
+import type { GridCell } from './lib/grid.ts';
 import type { DocumentTreeNode } from '../preload/index.ts';
 
 const PREFERRED_START_ARTICLE = 'content/mda-language-of-surrender/mda-language-of-surrender.html';
@@ -45,6 +50,11 @@ function AppShell(): JSX.Element {
   const [articleHtml, setArticleHtml] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [articleVersion, setArticleVersion] = useState(0);
+  const [gridActive, setGridActive] = useState(false);
+  const [selectedCell, setSelectedCell] = useState<GridCell | null>(null);
+  const [highlightedTag, setHighlightedTag] = useState<string | null>(null);
+  const gridTools = useGrid(articleHtml);
+  const gridSelection = useGridSelection(gridTools.grid, gridActive);
 
   useEffect(() => {
     let isMounted = true;
@@ -62,6 +72,8 @@ function AppShell(): JSX.Element {
     if (!selectedDocument) return;
     let isMounted = true;
     setIsLoading(true);
+    setSelectedCell(null);
+    setHighlightedTag(null);
     void window.forge
       .readDocument(selectedDocument.source, selectedDocument.relativePath)
       .then((source) => {
@@ -78,6 +90,7 @@ function AppShell(): JSX.Element {
   }, [selectedDocument]);
 
   const fileCount = useMemo(() => flattenFiles(tree).length, [tree]);
+  const selectedCells = gridSelection.selectedCells.length > 0 ? gridSelection.selectedCells : selectedCell ? [selectedCell] : [];
 
   return (
     <div className="flex h-screen flex-col bg-forge-dark text-forge-text">
@@ -92,15 +105,38 @@ function AppShell(): JSX.Element {
               <p className="mt-1 font-mono text-[11px] text-forge-text/50">{selectedDocument?.source ?? 'content'} / {selectedDocument?.relativePath ?? 'loading'}</p>
             </div>
           </section>
-          <section className="min-h-0 flex-1 p-5">
+          <section className="relative min-h-0 flex-1 p-5">
             <ArticleViewer html={articleHtml} isLoading={isLoading} version={articleVersion} />
+            <GridOverlay
+              active={gridActive && !isLoading}
+              grid={gridTools.grid}
+              articleVersion={articleVersion}
+              selectedCell={selectedCell}
+              highlightedTag={highlightedTag}
+              onSelectCell={setSelectedCell}
+            />
           </section>
-          <LayerToggleBar articleVersion={articleVersion} />
+          <LayerToggleBar articleVersion={articleVersion} gridActive={gridActive} onToggleGrid={() => setGridActive((active) => !active)} />
         </main>
+        {gridActive && (
+          <GridPanel
+            grid={gridTools.grid}
+            selectedCell={selectedCell}
+            selectedCells={selectedCells}
+            tags={gridTools.tags}
+            highlightedTag={highlightedTag}
+            onHighlightTag={setHighlightedTag}
+            onTagSelectedCell={(tag) => {
+              if (!selectedCell) return;
+              gridTools.tagCell(selectedCell.row, selectedCell.col, tag);
+              setSelectedCell({ ...selectedCell, tags: selectedCell.tags.includes(tag) ? selectedCell.tags : [...selectedCell.tags, tag] });
+            }}
+          />
+        )}
       </div>
       <footer className="flex h-9 items-center justify-between border-t border-zinc-900 bg-forge-card px-4 font-mono text-[11px] text-forge-text/60">
-        <span>POF 2828 · FORGE Electron Shell · Step 4 layers</span>
-        <span>{fileCount} local documents indexed</span>
+        <span>POF 2828 · FORGE Electron Shell · Layer 2 Grid</span>
+        <span>{fileCount} local documents indexed · {gridTools.grid.cellCount} grid cells</span>
       </footer>
     </div>
   );
