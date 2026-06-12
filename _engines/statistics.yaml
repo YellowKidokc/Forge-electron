@@ -1,0 +1,5 @@
+id: statistics
+engine: statistics
+enabled: true
+trigger: manual
+output_to: mirror_folder
