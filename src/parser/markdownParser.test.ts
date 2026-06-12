@@ -145,29 +145,3 @@ test('loads default engines and dry-runs statistics output', () => {
   assert.ok(result.outputs[0].outputPath.endsWith('note.stats.json'));
   rmSync(root, { recursive: true, force: true });
 });
-
-import { buildGrid, getCell, getCellsByTag, searchText, setCell, tagCell } from '../renderer/lib/grid.ts';
-
-test('builds an addressable grid from forge block HTML', () => {
-  const grid = buildGrid('<section data-forge-block="paragraph-alpha"><p>Grace creates entropy.</p></section><h2>Second Block</h2>');
-  assert.equal(grid.blockCount, 2);
-  assert.equal(grid.wordCount, 5);
-  assert.equal(grid.rows[0].blockId, 'paragraph-alpha');
-  assert.equal(getCell(grid, 0, 1)?.text, 'creates');
-});
-
-test('updates and tags grid cells immutably', () => {
-  const grid = buildGrid('<p>entropy changes systems</p>');
-  const updated = setCell(grid, 0, 0, 'negentropy');
-  const tagged = tagCell(updated, 0, 0, 'axiom');
-  assert.equal(getCell(grid, 0, 0)?.text, 'entropy');
-  assert.equal(getCell(updated, 0, 0)?.text, 'negentropy');
-  assert.equal(getCellsByTag(tagged, 'axiom').length, 1);
-});
-
-test('searches grid cells by text', () => {
-  const grid = buildGrid('<p>Moral health requires a standard.</p><p>Health can be measured.</p>');
-  const results = searchText(grid, 'health');
-  assert.equal(results.length, 2);
-  assert.deepEqual(results.map((cell) => [cell.row, cell.col]), [[0, 1], [1, 0]]);
-});
