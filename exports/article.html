@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Measuring Moral Health · FORGE Export</title>
+  <style>
+    :root {
+      --dark: #050505;
+      --card: #0a0a0a;
+      --accent: #dc2626;
+      --amber: #f59e0b;
+      --text: #d1d5db;
+      --text-bright: #f9fafb;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--dark); color: var(--text); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; }
+    .panel-controls { display: flex; gap: 8px; left: 50%; position: fixed; top: 12px; transform: translateX(-50%); z-index: 20; }
+    .panel-controls button { background: #141414; border: 1px solid #2a2a2a; border-radius: 999px; color: var(--text-bright); cursor: pointer; padding: 7px 12px; }
+    .forge-shell { display: grid; gap: 20px; grid-template-columns: 280px minmax(0, 960px) 300px; margin: 0 auto; max-width: 1600px; padding: 48px 20px 80px; transition: grid-template-columns 180ms ease; }
+    .forge-document { min-width: 0; }
+    .side-panel { align-self: start; background: var(--card); border: 1px solid #1f1f1f; border-radius: 16px; max-height: calc(100vh - 96px); overflow: auto; padding: 18px; position: sticky; top: 48px; transition: opacity 180ms ease, transform 180ms ease; }
+    body.left-panel-collapsed .forge-shell { grid-template-columns: 0 minmax(0, 1040px) 300px; }
+    body.right-panel-collapsed .forge-shell { grid-template-columns: 280px minmax(0, 1040px) 0; }
+    body.left-panel-collapsed.right-panel-collapsed .forge-shell { grid-template-columns: 0 minmax(0, 1120px) 0; }
+    body.left-panel-collapsed .left-panel { opacity: 0; pointer-events: none; transform: translateX(-110%); }
+    body.right-panel-collapsed .right-panel { opacity: 0; pointer-events: none; transform: translateX(110%); }
+    header, .forge-toc, .forge-metadata, .forge-import-note { background: var(--card); border: 1px solid #1f1f1f; border-radius: 16px; margin-bottom: 20px; padding: 18px 20px; }
+    .eyebrow { color: var(--accent); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+    h1, h2, h3, h4, h5, h6 { color: var(--text-bright); line-height: 1.15; }
+    a { color: var(--amber); }
+    code, pre { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace; }
+    pre { background: #111; border: 1px solid #242424; border-radius: 12px; overflow: auto; padding: 16px; }
+    blockquote { border-left: 3px solid var(--amber); color: var(--text-bright); margin-left: 0; padding-left: 18px; }
+    .forge-toc ol { margin: 0; padding-left: 22px; }
+    .left-panel .forge-toc, .right-panel .forge-metadata { border: 0; margin: 0; padding: 0; }
+    .forge-import-note { color: #a3a3a3; font-size: 0.92rem; }
+    .toc-level-2 { margin-left: 16px; } .toc-level-3, .toc-level-4, .toc-level-5, .toc-level-6 { margin-left: 32px; }
+    .forge-metadata dl { display: grid; gap: 8px 16px; grid-template-columns: max-content 1fr; }
+    .forge-metadata dt { color: var(--amber); font-weight: 700; }
+    .forge-metadata dd { margin: 0; }
+    .forge-block { background: rgba(10,10,10,0.82); border: 1px solid #1f1f1f; border-radius: 16px; margin: 18px 0; padding: 20px; scroll-margin-top: 16px; }
+    .forge-block::before { content: attr(data-forge-block); color: #777; display: block; font-family: "JetBrains Mono", monospace; font-size: 0.74rem; margin-bottom: 10px; }
+    .block-toolbar { display: flex; gap: 8px; justify-content: flex-end; }
+    .block-anchor, .copy-link { background: #141414; border: 1px solid #2a2a2a; border-radius: 999px; color: var(--text); font-size: 0.78rem; padding: 5px 9px; text-decoration: none; }
+    .copy-link { cursor: pointer; }
+    .forge-layers { border-top: 1px solid #222; margin-top: 16px; padding-top: 14px; }
+    .forge-original + .forge-layers .forge-layer[data-layer-panel="original"] { display: none; }
+    .forge-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .forge-tabs button { background: #141414; border: 1px solid #2a2a2a; border-radius: 999px; color: var(--text); cursor: pointer; padding: 7px 11px; }
+    .forge-tabs button.active { background: var(--accent); border-color: var(--accent); color: white; }
+    .forge-layer { display: none; background: #070707; border: 1px solid #202020; border-radius: 12px; padding: 14px 16px; }
+    .forge-layer.active { display: block; }
+    .empty-layer { color: #777; font-style: italic; }
+    dt { color: var(--amber); font-weight: 700; }
+    dd { margin: 0 0 12px; }
+    .claim-card { border-left: 3px solid var(--accent); padding-left: 14px; }
+    @media (max-width: 1100px) {
+      .forge-shell { display: block; padding-left: 16px; padding-right: 16px; }
+      .side-panel { margin-bottom: 16px; max-height: none; position: static; }
+      body.left-panel-collapsed .left-panel, body.right-panel-collapsed .right-panel { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="panel-controls" aria-label="Sliding columns">
+    <button data-toggle-panel="left" type="button">Toggle files</button>
+    <button data-toggle-panel="right" type="button">Toggle layers</button>
+  </div>
+  <div class="forge-shell">
+    <aside class="side-panel left-panel" aria-label="Files and organization">
+      <div class="eyebrow">Files / Organization</div>
+      <p class="forge-import-note">Import many Markdown or text files with <code>npm run forge -- import-folder &lt;folder&gt;</code>. This export shows the current document outline.</p>
+      <nav class="forge-toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li class="toc-level-1"><a href="#block-heading-measuring-moral-health">Measuring Moral Health</a></li><li class="toc-level-2"><a href="#block-heading-introduction">Introduction</a></li>
+    </ol>
+  </nav>
+    </aside>
+    <main class="forge-document">
+    <header>
+      <div class="eyebrow">FORGE Markdown Export</div>
+      <h1>Measuring Moral Health</h1>
+      <p>Document ID: <code>article</code></p>
+    </header>
+    <section id="block-heading-measuring-moral-health" class="forge-block" data-forge-block="heading-measuring-moral-health">
+        <div class="block-toolbar"><a class="block-anchor" href="#block-heading-measuring-moral-health">#</a><button class="copy-link" data-copy-target="block-heading-measuring-moral-health">Copy link</button></div>
+        <div class="forge-original"><h1 id="heading-measuring-moral-health">Measuring Moral Health</h1></div>
+        
+      </section>
+<section id="block-heading-introduction" class="forge-block" data-forge-block="heading-introduction">
+        <div class="block-toolbar"><a class="block-anchor" href="#block-heading-introduction">#</a><button class="copy-link" data-copy-target="block-heading-introduction">Copy link</button></div>
+        <div class="forge-original"><h2 id="heading-introduction">Introduction</h2></div>
+        
+      </section>
+<section id="block-paragraph-a-society-cannot-measure-moral-decline-if-it-has" class="forge-block" data-forge-block="paragraph-a-society-cannot-measure-moral-decline-if-it-has">
+        <div class="block-toolbar"><a class="block-anchor" href="#block-paragraph-a-society-cannot-measure-moral-decline-if-it-has">#</a><button class="copy-link" data-copy-target="block-paragraph-a-society-cannot-measure-moral-decline-if-it-has">Copy link</button></div>
+        <div class="forge-original"><p>A society cannot measure moral decline if it has no standard of moral health.</p></div>
+        <section class="forge-layers" aria-label="Layers for paragraph-a-society-cannot-measure-moral-decline-if-it-has">
+    <div class="forge-tabs" role="tablist">
+      <button class="active" data-layer="original">Original</button>
+      <button data-layer="easy">Easy</button>
+      <button data-layer="academic">Academic</button>
+      <button data-layer="math">Math Translation</button>
+      <button data-layer="claims">Claims</button>
+      <button data-layer="commentary">Commentary</button>
+    </div>
+    <div class="forge-layer active" data-layer-panel="original"><p>A society cannot measure moral decline if it has no standard of moral health.</p></div>
+    <div class="forge-layer" data-layer-panel="easy"><p>You cannot say society is getting worse unless you know what good means.</p></div>
+    <div class="forge-layer" data-layer-panel="academic"><p>A claim of moral decline presupposes a prior normative standard by which decline can be measured.</p></div>
+    <div class="forge-layer" data-layer-panel="math"><p>decline = current moral state - moral-health baseline</p></div>
+    <div class="forge-layer" data-layer-panel="claims"><article class="claim-card">
+            <h4>claim-001</h4>
+            <p>Measuring moral decline requires a standard of moral health.</p>
+            <p><strong>Kill condition:</strong> If moral decline can be measured without any prior standard, this claim fails.</p>
+            <p><strong>Confidence:</strong> unset</p>
+          </article></div>
+    <div class="forge-layer" data-layer-panel="commentary"><dl><dt>Core idea</dt><dd>Moral decline requires a reference standard.</dd></dl></div>
+  </section>
+      </section>
+<section id="block-blockquote-moral-language-becomes-measurable-only-when-the" class="forge-block" data-forge-block="blockquote-moral-language-becomes-measurable-only-when-the">
+        <div class="block-toolbar"><a class="block-anchor" href="#block-blockquote-moral-language-becomes-measurable-only-when-the">#</a><button class="copy-link" data-copy-target="block-blockquote-moral-language-becomes-measurable-only-when-the">Copy link</button></div>
+        <div class="forge-original"><blockquote>Moral language becomes measurable only when the standard is named.</blockquote></div>
+        
+      </section>
+<section id="block-list-define-the-standard-measure-the-drift-test-the-c" class="forge-block" data-forge-block="list-define-the-standard-measure-the-drift-test-the-c">
+        <div class="block-toolbar"><a class="block-anchor" href="#block-list-define-the-standard-measure-the-drift-test-the-c">#</a><button class="copy-link" data-copy-target="block-list-define-the-standard-measure-the-drift-test-the-c">Copy link</button></div>
+        <div class="forge-original"><ul><li>Define the standard.</li><li>Measure the drift.</li><li>Test the counterclaim.</li></ul></div>
+        
+      </section>
+<section id="block-math-decline-observed-state-moral-standard" class="forge-block" data-forge-block="math-decline-observed-state-moral-standard">
+        <div class="block-toolbar"><a class="block-anchor" href="#block-math-decline-observed-state-moral-standard">#</a><button class="copy-link" data-copy-target="block-math-decline-observed-state-moral-standard">Copy link</button></div>
+        <div class="forge-original"><pre class="math-block"><code>decline = observed_state - moral_standard</code></pre></div>
+        
+      </section>
+<section id="block-code-const-standard-moral-health" class="forge-block" data-forge-block="code-const-standard-moral-health">
+        <div class="block-toolbar"><a class="block-anchor" href="#block-code-const-standard-moral-health">#</a><button class="copy-link" data-copy-target="block-code-const-standard-moral-health">Copy link</button></div>
+        <div class="forge-original"><pre><code>const standard = &quot;moral health&quot;;</code></pre></div>
+        
+      </section>
+    </main>
+    <aside class="side-panel right-panel" aria-label="Layers and metadata">
+      <div class="eyebrow">Layers / Metadata</div>
+      <aside class="forge-metadata" aria-label="Document metadata">
+    <h2>Document Metadata</h2>
+    <dl>
+      <dt>Source</dt><dd>/workspace/Forge-electron/samples/article.md</dd>
+      <dt>Document ID</dt><dd><code>article</code></dd>
+      <dt>Block count</dt><dd>7</dd>
+      <dt>Export timestamp</dt><dd>2026-06-11T12:23:29.520Z</dd>
+      <dt>Layer file</dt><dd>article.layers.json: loaded</dd>
+      <dt>Claims file</dt><dd>article.claims.json: loaded</dd>
+    </dl>
+  </aside>
+      <section class="forge-import-note">
+        <h2>Layer Column</h2>
+        <p>This side stays separate from the writing surface so notes, claims, and commentary can slide in and out without rewriting the source Markdown.</p>
+      </section>
+    </aside>
+  </div>
+  <script>
+    document.querySelectorAll('[data-toggle-panel]').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.body.classList.toggle(button.dataset.togglePanel + '-panel-collapsed');
+      });
+    });
+    document.querySelectorAll('.forge-layers').forEach((layerRoot) => {
+      layerRoot.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-layer]');
+        if (!button) return;
+        const layer = button.dataset.layer;
+        layerRoot.querySelectorAll('button[data-layer]').forEach((tab) => tab.classList.toggle('active', tab === button));
+        layerRoot.querySelectorAll('[data-layer-panel]').forEach((panel) => panel.classList.toggle('active', panel.dataset.layerPanel === layer));
+      });
+    });
+    document.querySelectorAll('.copy-link').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const target = button.dataset.copyTarget;
+        const url = new URL(window.location.href);
+        url.hash = target;
+        await navigator.clipboard?.writeText(url.toString());
+        button.textContent = 'Copied';
+        setTimeout(() => { button.textContent = 'Copy link'; }, 1200);
+      });
+    });
+  </script>
+</body>
+</html>

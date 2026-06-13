@@ -1,0 +1,77 @@
+{
+  "document_id": "article",
+  "source": "article.md",
+  "blocks": [
+    {
+      "id": "heading-measuring-moral-health",
+      "type": "heading",
+      "text": "Measuring Moral Health",
+      "raw": "# Measuring Moral Health",
+      "startLine": 1,
+      "endLine": 1,
+      "idSource": "generated",
+      "level": 1
+    },
+    {
+      "id": "heading-introduction",
+      "type": "heading",
+      "text": "Introduction",
+      "raw": "## Introduction",
+      "startLine": 3,
+      "endLine": 3,
+      "idSource": "generated",
+      "level": 2
+    },
+    {
+      "id": "paragraph-a-society-cannot-measure-moral-decline-if-it-has",
+      "type": "paragraph",
+      "text": "A society cannot measure moral decline if it has no standard of moral health.",
+      "raw": "A society cannot measure moral decline if it has no standard of moral health.",
+      "startLine": 5,
+      "endLine": 5,
+      "idSource": "generated"
+    },
+    {
+      "id": "blockquote-moral-language-becomes-measurable-only-when-the",
+      "type": "blockquote",
+      "text": "Moral language becomes measurable only when the standard is named.",
+      "raw": "> Moral language becomes measurable only when the standard is named.",
+      "startLine": 7,
+      "endLine": 7,
+      "idSource": "generated"
+    },
+    {
+      "id": "list-define-the-standard-measure-the-drift-test-the-c",
+      "type": "list",
+      "text": "Define the standard. Measure the drift. Test the counterclaim.",
+      "raw": "- Define the standard.\n- Measure the drift.\n- Test the counterclaim.",
+      "startLine": 9,
+      "endLine": 11,
+      "idSource": "generated",
+      "items": [
+        "Define the standard.",
+        "Measure the drift.",
+        "Test the counterclaim."
+      ]
+    },
+    {
+      "id": "math-decline-observed-state-moral-standard",
+      "type": "math",
+      "text": "decline = observed_state - moral_standard",
+      "raw": "$$\ndecline = observed_state - moral_standard\n$$",
+      "startLine": 13,
+      "endLine": 15,
+      "idSource": "generated"
+    },
+    {
+      "id": "code-const-standard-moral-health",
+      "type": "code",
+      "text": "const standard = \"moral health\";",
+      "raw": "```ts\nconst standard = \"moral health\";\n```",
+      "startLine": 17,
+      "endLine": 19,
+      "idSource": "generated",
+      "language": "ts"
+    }
+  ]
+}

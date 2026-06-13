@@ -1,0 +1,13 @@
+{
+  "document_id": "article",
+  "claims": [
+    {
+      "id": "claim-001",
+      "block_id": "paragraph-a-society-cannot-measure-moral-decline-if-it-has",
+      "claim": "Measuring moral decline requires a standard of moral health.",
+      "evidence": [],
+      "kill_condition": "If moral decline can be measured without any prior standard, this claim fails.",
+      "confidence": null
+    }
+  ]
+}
