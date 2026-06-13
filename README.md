@@ -35,6 +35,19 @@ npm run typecheck
 
 See `docs/PHASE_2_MARKDOWN_HARDENING.md` for the hardened Markdown workflow, `docs/VAULT_IMPORT_AND_COLUMNS.md` for bulk import plus the two-column model, and `docs/DATA_MIRROR_AND_GLOBAL_ENGINE.md` for `_data/` mirrors and YAML engines.
 
+
+## Electron Shell Scaffold
+
+The desktop shell is scaffolded with Electron + electron-vite + React + TypeScript. It opens a frameless dark FORGE window with a custom topbar, sidebar article switcher, content surface, and footer.
+
+```bash
+npm install
+npm run dev
+npm run build
+```
+
+The renderer loads local HTML articles from `content/` through the preload bridge and renders the selected document in the content surface. The initial Markdown fallback is `samples/article.md`, and the HTML fallback is `content/moral-decline/mda-part-01-measuring-moral-health.html` because the requested language-of-surrender article is not present in this repository. The sidebar now renders a recursive file tree for `content/`, `samples/`, and `vault/` when present. Markdown files are parsed through the existing `parseMarkdown()` pipeline and rendered as React block cards with layer tabs and anchors; the right sidebar contains metadata, layer toggles, the Grid toggle, and an Export HTML button backed by the existing `exportHtml()` function. The same bottom/right layer controls can inject the existing vanilla Claims, Equations, Glossary, and Audio layers as script/style tags without rewriting `shared/`. When Grid is active, words receive row/column cell boundaries, hover coordinates, click selection, and a grid inspection panel.
+
 ## Architecture
 
 ```
