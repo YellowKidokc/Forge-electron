@@ -154,7 +154,6 @@ declare namespace JSX {
 }
 
 declare const __dirname: string;
-
 declare const process: {
   argv: string[];
   env: Record<string, string | undefined>;
